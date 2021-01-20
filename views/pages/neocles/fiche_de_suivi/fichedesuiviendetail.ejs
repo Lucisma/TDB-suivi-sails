@@ -30,22 +30,37 @@
     <div class="row">
       <div class="col-md-12">
         <div class=" row ">
-        <div  class="">
-            <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"> <i class="fa fa-bar-chart-o"></i> </h3>
-                <div class="row">
-                <div class="form-group">
-                    <div class="col-xs-2 col-md-2 col-lg-2">
-                        <select class="form-control" tabindex="-1" id="equipeDashAdmin" placeholder = "Equipe" name="equipe" >
-                        <option value="1">EQUIPE</option>
-                        </select>
-                    </div>
-                    <div class="col-xs-2 col-md-2 col-lg-2">
-                        <input class="form-control" tabindex="-1" id="datetim" />
-                    </div>
-                    <div class="col-xs-2 col-md-2 col-lg-2">
-                        <input type="text" class="form-control" tabindex="-1" id="id_pers" placeholder="Matricule"/>
+            <div  class="">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title"> <i class="fa fa-bar-chart-o"></i> </h3>
+                  <div class="row">
+                    <div class="form-group">
+                        <div class="col-xs-2 col-md-2 col-lg-2">
+                          <select class="form-control" tabindex="-1" id="equipeDashAdmin" placeholder = "Equipe" name="equipe" >
+                            <option value="1">EQUIPE</option>
+                          </select>
+                        </div>
+                        <div class="col-xs-2 col-md-2 col-lg-2">
+                          <input class="form-control" tabindex="-1" id="datetim" />
+                        </div>
+                        <div class="col-xs-2 col-md-2 col-lg-2">
+                        <% 
+                        if(manager == true){
+                        %>
+                          <input type="text" class="form-control" tabindex="-1" id="id_pers" placeholder="Matricule"/>
+                        <%
+                        }
+                        else{
+                        %>
+                          <input type="text" class="form-control" tabindex="-1" id="id_pers" placeholder="Matricule" value="<%= id %>" disabled/>
+                        <%
+                        }
+                        %>
+                        </div>
+                        <div class="col-xs-2 col-md-2 col-lg-2">
+                            <button type="submit" style="margin-top:-1px" class="btn btn-info" onclick="go();">ok</button>
+                        </div>
                     </div>
                     <div class="col-xs-2 col-md-2 col-lg-2">
                         <button type="submit" style="margin-top:-1px" class="btn btn-info" onclick="go();">ok</button>

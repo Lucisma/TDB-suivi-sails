@@ -16,8 +16,22 @@ module.exports = {
         menu["statOpAdmin"]= "";
         menu["presence"]= "";
         menu["admin"]= "";
+        //const id = req.session.user;
+        const id=8054;
+        const depart = req.session.id_departement;
+        var sql = "SELECT * FROM neocles_manager WHERE matricule ='"+id+"'";
+        Neocles_manager.query(sql, function(err, resultat){
+            if(err) return res.send(err);
+            //console.log(resultat.rows[0].nom);
+            if(resultat.rowCount == 1){
+                var manager = true;
+            }
+            else{
+                var manager = false;
+            }
+            return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu, manager: manager, id:id});
+        });
         
-        return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu});
     },
     fichedesuivideconformite : function(req, res){
         if (!req.session.user) return res.redirect('/login');
@@ -28,8 +42,21 @@ module.exports = {
         menu["statOpAdmin"]= "";
         menu["presence"]= "";
         menu["admin"]= "";
-        
-        return res.view('pages/neocles/fiche_de_suivi/fichedesuivideconformite', {layout : false, menu : menu});
+        //const id = req.session.user;
+        const id=8054;
+        const depart = req.session.id_departement;
+        var sql = "SELECT * FROM neocles_manager WHERE matricule ='"+id+"'";
+        Neocles_manager.query(sql, function(err, resultat){
+            if(err) return res.send(err);
+            //console.log(resultat.rows[0].nom);
+            if(resultat.rowCount == 1){
+                var manager = true;
+            }
+            else{
+                var manager = false;
+            }
+            return res.view('pages/neocles/fiche_de_suivi/fichedesuivideconformite', {layout : false, menu : menu, manager: manager, id:id});
+        });
     },
 };
 
