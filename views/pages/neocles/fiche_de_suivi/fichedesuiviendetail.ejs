@@ -26,41 +26,236 @@
 
 <% }%>
 <h1>Fiche de suivi en détail</h1>
-
 <div id="page-wrapper">
     <div class="row">
       <div class="col-md-12">
         <div class=" row ">
-            <div  class="">
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title"> <i class="fa fa-bar-chart-o"></i> </h3>
-                  <div class="row">
-                    <div class="form-group">
-                        <div class="col-xs-2 col-md-2 col-lg-2">
-                          <select class="form-control" tabindex="-1" id="equipeDashAdmin" placeholder = "Equipe" name="equipe" >
-                            <option value="1">EQUIPE</option>
-                          </select>
-                        </div>
-                        <div class="col-xs-2 col-md-2 col-lg-2">
-                          <input class="form-control" tabindex="-1" id="datetim" />
-                        </div>
-                      <div class="col-xs-2 col-md-2 col-lg-2">
-                          <input type="text" class="form-control" tabindex="-1" id="id_pers" placeholder="Matricule"/>
-                        </div>
-                        <div class="col-xs-2 col-md-2 col-lg-2">
-                            <button type="submit" style="margin-top:-1px" class="btn btn-info" onclick="go();">ok</button>
-                        </div>
+        <div  class="">
+            <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"> <i class="fa fa-bar-chart-o"></i> </h3>
+                <div class="row">
+                <div class="form-group">
+                    <div class="col-xs-2 col-md-2 col-lg-2">
+                        <select class="form-control" tabindex="-1" id="equipeDashAdmin" placeholder = "Equipe" name="equipe" >
+                        <option value="1">EQUIPE</option>
+                        </select>
                     </div>
-                  </div>
-                </div>
-              </div>
+                    <div class="col-xs-2 col-md-2 col-lg-2">
+                        <input class="form-control" tabindex="-1" id="datetim" />
+                    </div>
+                    <div class="col-xs-2 col-md-2 col-lg-2">
+                        <input type="text" class="form-control" tabindex="-1" id="id_pers" placeholder="Matricule"/>
+                    </div>
+                    <div class="col-xs-2 col-md-2 col-lg-2">
+                        <button type="submit" style="margin-top:-1px" class="btn btn-info" onclick="go();">ok</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
 
-              <div class="clearfix"></div>
-                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                <span class="sr-only">Loading...</span>
-              </div>
-              <div id="div" class="col-md-12 col-sm-12 col-xs-12">
+    <!-- <div class="clearfix"></div>
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+    </div>
+    <div id="div" class="col-md-12 col-sm-12 col-xs-12"> -->
+
+                <!-- tableau -->
+
+     <table class="table" border="1">
+            <th rowspan="2">Ticket</th>
+            <th scope="col">1</th>
+            <th scope="col">2</th>
+            <th scope="col">3</th>
+            <th scope="col">4</th>
+            <th scope="col">5</th>
+            <th scope="col">6</th>
+            <th scope="col">7</th>
+            <th scope="col">8</th>
+            <th scope="col">9</th>
+            <th scope="col">10</th>
+            <th scope="col">11</th>
+            <th scope="col">12</th>
+            <th scope="col">13</th>
+            <th scope="col">14</th>
+            <th scope="col">15</th>
+            <th scope="col">16</th>
+            <th scope="col">17</th>
+            <th scope="col">18</th>
+            <th scope="col">19</th>
+            <th scope="col">20</th>
+            </tr>
+            <!-- ligne vide -->
+            <tr>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td></td>
+            </tr>
+            <tr>
+                <!-- ligne vide -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+                <!-- Qualité- Description et comprehension du ticket -->
+            <th>Qualité- Description et comprehension du ticket</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr> 
+            <tr>
+                <!-- Qualité- Description et comprehension du ticket -->
+            <th>Sollicitation du client bien décrite</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr> 
+            <tr>
+                <!-- Questionnement complet/récup infos complementaire -->
+            <th>Questionnement complet/récup infos complementaire</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr> 
+            <tr>
+                <!-- Hors sujet(Sollicitation du client par mail/front office -->
+            <th>Hors sujet(Sollicitation du client par mail/front office)</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>   
+            <tr>
+                <!-- Traitement complet du ticket -->
+            <th>Traitement complet du ticket</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>  
+                            
+   </table>
+
     <script src="/js/dependencies/sails.io.js"></script>
     <script src="/js/jquery-1.10.2.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
