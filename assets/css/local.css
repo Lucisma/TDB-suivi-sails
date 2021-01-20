@@ -97,6 +97,25 @@ th {
   color: white !important;
 }
 
+/*ajout coleur cellule*/
+
+.green{
+  background-color: black !important;
+  color: #09D780 !important;
+}
+
+.vert{
+  background-color: #09D780;
+  color: black;  
+
+}
+
+.cyan{
+  background-color: #8EFAFA;
+  color: black;
+  font-size: x-small;
+}
+
 .ldt_date
 {
 	padding: 10px;
