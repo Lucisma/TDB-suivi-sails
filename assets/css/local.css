@@ -132,6 +132,7 @@ td input{
 #titrecol {
   font-size:x-small;
   text-align:left;
+  margin-left:10px;
 }
 .qualite{
   background: green;
@@ -143,6 +144,10 @@ td input{
 }
 .orange{
   background: orange;
+}
+.tabl td{
+ /* text-align:left; */
+ margin-left:-10px;
 }
 /* css luc */
 .ldt_date
