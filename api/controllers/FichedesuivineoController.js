@@ -58,5 +58,16 @@ module.exports = {
             return res.view('pages/neocles/fiche_de_suivi/fichedesuivideconformite', {layout : false, menu : menu, manager: manager, id:id});
         });
     },
+
+    suivideconformite : function(req, res){
+        var id = req.param("id");
+        //var mois = req.param("mois");
+        //var annee = req.param("annee");
+        //console.log("bien");
+        //return res.send("<p>OK</p>");
+        //write("<p>votre texte</p>");
+        var p = "<p>votre texte</p>";
+        return  res.send(p);
+    }
 };
 
