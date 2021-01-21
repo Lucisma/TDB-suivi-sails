@@ -97,7 +97,7 @@ th {
   color: white;
 }
 
-/*ajout coleur cellule*/
+/*css Odilon */
 
 .green{
   background-color: black !important;
@@ -112,12 +112,36 @@ th {
 
 .cyan{
   background-color: #8EFAFA;
-  color: black;
-  font-size: x-small;
+  /* color: black; */
+  font-size: small;
 }
 
 #mois{
   color: black;
+  /* width: 175px; */
+}
+
+#implic{
+  /* width: 310px;
+  height: 25px;
+  color: black; */
+  font-size: small;
+  /* border: none; */
+  text-align: none;
+}
+
+.rejet{
+  background-color: #F9CBC0;
+  color: red;
+}
+
+.rejet_tete{
+  background-color: #F0EAE8;
+}
+
+#board tr{
+  height: 25px;
+
 }
 
 /* **************** */
@@ -150,6 +174,8 @@ td input{
  margin-left:-10px;
 }
 /* css luc */
+/* **************** */
+
 .ldt_date
 {
 	padding: 10px;

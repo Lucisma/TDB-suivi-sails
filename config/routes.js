@@ -126,7 +126,8 @@ module.exports.routes = {
   /*********** Ajout suivi ***********************/
   '/fiche_suivi_en_detail': 'FichedesuivineoController.fichedesuiviendetail',
   '/fiche_suivi_de_conformite': 'FichedesuivineoController.fichedesuivideconformite',
-  'get /suivi_conformite' : 'FichedesuivineoController.suivideconformite',
+  'get /suivi_conformite' : 'FichedesuivineoController.suivi_conformite',
+  'get /suivi_en_details' : 'FichedesuivineoController.suivi_en_details',
   /*********** Dossiers ************************************************************************************************/
   '/statOp': 'LienOperDossierController.index',
   '/ajaxStat': 'LienOperDossierController.ajaxStat',

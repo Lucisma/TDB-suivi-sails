@@ -43,7 +43,7 @@ module.exports = {
         menu["presence"]= "";
         menu["admin"]= "";
         const id = req.session.user;
-        // const id=8054;
+        //const id=8054;
         const depart = req.session.id_departement;
         var sql = "SELECT * FROM neocles_manager WHERE matricule ='"+id+"'";
         Neocles_manager.query(sql, function(err, resultat){
@@ -59,22 +59,57 @@ module.exports = {
         });
     },
 
-    suivideconformite : function(req, res){
-        var id = parseInt(req.param("id"), 10);
+    suivi_conformite : function(req, res){
+        if (!req.session.user) return res.redirect('/login');
+        var menu = [];
+        menu["aceuil"]= "";
+        menu["dossierAdmin"]= "";
+        menu["gestionDossier"]= "";
+        menu["statOpAdmin"]= "";
+        menu["presence"]= "";
+        menu["admin"]= "";
+
+        var id = req.param("id");
         var my = req.param("my");
-        var annee = parseInt( my.substr( 0, 4), 10);
-        var mois = parseInt( my.substr( 5, 2), 10);
+        var annee = my.substr( 0, 4);
+        var mois = my.substr( 5, 2);
         var sql = "SELECT * FROM neocles_fiche WHERE id_pers ='"+id+"' AND date_part('month', date) = "+mois+" AND date_part('year', date) = "+annee;
         Neocles_fiche.query(sql, function(err, resultat){
             if(err) return res.send(err);
             if(resultat.rowCount == 1){
-                var existe = true;
+                return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu});
             }
             else{
-                var existe = false;
+                return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu});
             }
         });
-        return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite');
-    }
+        
+    },
+
+    suivi_en_details : function(req, res){
+        if (!req.session.user) return res.redirect('/login');
+        var menu = [];
+        menu["aceuil"]= "";
+        menu["dossierAdmin"]= "";
+        menu["gestionDossier"]= "";
+        menu["statOpAdmin"]= "";
+        menu["presence"]= "";
+        menu["admin"]= "";
+
+        var id = req.param("id");
+        var my = req.param("my");
+        var annee = my.substr( 0, 4);
+        var mois = my.substr( 5, 2);
+        var sql = "SELECT * FROM neocles_fiche WHERE id_pers ='"+id+"' AND date_part('month', date) = "+mois+" AND date_part('year', date) = "+annee;
+        Neocles_fiche.query(sql, function(err, resultat){
+            if(err) return res.send(err);
+            if(resultat.rowCount == 1){
+                return  res.view('pages/neocles/fiche_de_suivi/tableau_en_details', {layout : false, menu : menu});
+            }
+            else{
+                return  res.view('pages/neocles/fiche_de_suivi/tableau_en_details', {layout : false, menu : menu});
+            }
+        });
+    },
 };
 
