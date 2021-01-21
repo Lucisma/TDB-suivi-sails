@@ -81,20 +81,20 @@ tbody.scrol {
 
 
 th, td {
-  text-align: center !important;
-  padding: 8px !important;
+  text-align: center;
+  padding: 8px;
 }
 .ui-datepicker-calendar th, td {
-  text-align: center !important;
-  padding: 0px !important;
+  text-align: center ;
+  padding: 0px;
 }
 
 tr:nth-child(even){background-color: #edf7fc !important}
 
 th {
-  text-align: center !important;
-  background-color: #136ea2 !important;
-  color: white !important;
+  text-align: center;
+  background-color: #136ea2 ;
+  color: white;
 }
 
 /*ajout coleur cellule*/
@@ -139,7 +139,30 @@ th {
   background-color: #F0EAE8;
 }
 /* **************** */
-
+/* css luc */    
+.titre{
+  background: black;
+  color: chartreuse;
+}
+td input{
+  width:100px;
+}
+#titrecol {
+  font-size:x-small;
+  text-align:left;
+}
+.qualite{
+  background: green;
+  color:black;
+}
+.note{
+  background: black;
+  color:white;
+}
+.orange{
+  background: orange;
+}
+/* css luc */
 .ldt_date
 {
 	padding: 10px;

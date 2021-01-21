@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="/morris/morris.css">
     <link rel="stylesheet" href="/css/bootstrap-material-datetimepicker.css">
     <!--STYLES END-->
+    <style>
+        
+    </style>
 </head>
 <body>
 <% if(req.session.droit==1){
@@ -61,9 +64,7 @@
                         <div class="col-xs-2 col-md-2 col-lg-2">
                             <button type="submit" style="margin-top:-1px" class="btn btn-info" onclick="go();">ok</button>
                         </div>
-                    </div>
-                    <div class="col-xs-2 col-md-2 col-lg-2">
-                        <button type="submit" style="margin-top:-1px" class="btn btn-info" onclick="go();">ok</button>
+                   
             </div>
         </div>
         </div>
@@ -78,55 +79,56 @@
 
                 <!-- tableau -->
 
-     <table class="table" border="1">
-            <th rowspan="2">Ticket</th>
-            <th scope="col">1</th>
-            <th scope="col">2</th>
-            <th scope="col">3</th>
-            <th scope="col">4</th>
-            <th scope="col">5</th>
-            <th scope="col">6</th>
-            <th scope="col">7</th>
-            <th scope="col">8</th>
-            <th scope="col">9</th>
-            <th scope="col">10</th>
-            <th scope="col">11</th>
-            <th scope="col">12</th>
-            <th scope="col">13</th>
-            <th scope="col">14</th>
-            <th scope="col">15</th>
-            <th scope="col">16</th>
-            <th scope="col">17</th>
-            <th scope="col">18</th>
-            <th scope="col">19</th>
-            <th scope="col">20</th>
+     <table border="1">
+            <td  id="titrecol" class="titre" rowspan="2">Ticket</td>
+            <td class="titre">1</td>
+            <td class="titre">2</td>
+            <td class="titre">3</td>
+            <td class="titre">4</td>
+            <td class="titre">5</td>
+            <td class="titre">6</td>
+            <td class="titre">7</td>
+            <td class="titre">8</td>
+            <td class="titre">9</td>
+            <td class="titre">10</td>
+            <td class="titre">11</td>
+            <td class="titre">12</td>
+            <td class="titre">13</td>
+            <td class="titre">14</td>
+            <td class="titre">15</td>
+            <td class="titre">16</td>
+            <td class="titre">17</td>
+            <td class="titre">18</td>
+            <td class="titre">19</td>
+            <td class="titre">20</td>
             </tr>
             <!-- ligne vide -->
             <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td></td>
+           
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
             </tr>
             <tr>
                 <!-- ligne vide -->
-            <td></td>
+            <td id="titrecol"></td>
             <td></td>
             <td></td>
             <td></td>
@@ -150,31 +152,31 @@
             </tr>
             <tr>
                 <!-- Qualité- Description et comprehension du ticket -->
-            <th>Qualité- Description et comprehension du ticket</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>1</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="titrecol" class="qualite">Qualité- Description et comprehension du ticket</td>
+            <td><select name="" id="" ><option value="">0</option><option value="">1</option></select></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
+            <td><input type="text" name="" id=""></td>
             </tr> 
             <tr>
                 <!-- Qualité- Description et comprehension du ticket -->
-            <th>Sollicitation du client bien décrite</th>
+            <td id="titrecol">Sollicitation du client bien décrite</td>
             <td></td>
             <td></td>
             <td></td>
@@ -198,7 +200,7 @@
             </tr> 
             <tr>
                 <!-- Questionnement complet/récup infos complementaire -->
-            <th>Questionnement complet/récup infos complementaire</th>
+            <td id="titrecol">Questionnement complet/récup infos complementaire</td>
             <td></td>
             <td></td>
             <td></td>
@@ -222,7 +224,7 @@
             </tr> 
             <tr>
                 <!-- Hors sujet(Sollicitation du client par mail/front office -->
-            <th>Hors sujet(Sollicitation du client par mail/front office)</th>
+            <td id="titrecol">Hors sujet(Sollicitation du client par mail/front office)</td>
             <td></td>
             <td></td>
             <td></td>
@@ -246,7 +248,31 @@
             </tr>   
             <tr>
                 <!-- Traitement complet du ticket -->
-            <th>Traitement complet du ticket</th>
+            <td id="titrecol">Traitement complet du ticket</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+                <!-- Traitement complet du ticket -->
+            <td id="titrecol"  class="note">Note</td>
             <td></td>
             <td></td>
             <td></td>
@@ -268,7 +294,487 @@
             <td></td>
             <td></td>
             </tr>  
-                            
+            <tr>
+                <!-- ligne vide orange -->
+            <td id="titrecol" class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange">1</td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            <td class="orange"></td>
+            </tr>
+            <tr>
+                    <!-- Pertinence des informations -->
+                <td id="titrecol" class="qualite">Pertinence des informations</td>
+                <td><select name="" id="" ><option value="">0</option><option value="">1</option></select></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                </tr> 
+                <tr>
+                    <!-- Outil(s) utilisé(s) bien indiqué(s) -->
+                <td id="titrecol">Outil(s) utilisé(s) bien indiqué(s)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr> 
+                <tr>
+                    <!-- Pertinence des informations(ATD,clôture,mail envoyé au client) -->
+                <td id="titrecol">Pertinence des informations(ATD,clôture,mail envoyé au client)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr> 
+                <tr>
+                    <!-- Relecture -->
+                <td id="titrecol">Relecture</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>   
+                <tr>
+                    <!-- Renseignement correct des informations en cas de recherche personnelle -->
+                <td id="titrecol">Renseignement correct des informations en cas de recherche personnelle</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                    <!-- Note -->
+                <td id="titrecol"  class="note">Note</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>  
+                <tr>
+                    <!-- ligne vide orange -->
+                <td id="titrecol" class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange">1</td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                </tr>  
+                <!-- TECHNICITE- Performance technique -->
+                <td id="titrecol" class="qualite">TECHNICITE- Performance technique</td>
+                <td><select name="" id="" ><option value="">0</option><option value="">1</option></select></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id=""></td>
+                </tr> 
+                <tr>
+                    <!-- Analyse -->
+                <td id="titrecol">Analyse</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr> 
+                <tr>
+                    <!-- Interpretation des analyse/tests faits -->
+                <td id="titrecol">Interpretation des analyse/tests faits</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr> 
+                <tr>
+                    <!-- Recherche personnelle hors jarvis -->
+                <td id="titrecol">Recherche personnelle hors jarvis</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>   
+                <tr>
+                    <!-- Note -->
+                <td id="titrecol"  class="note">Note</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>  
+                <tr>
+                    <!-- ligne vide orange -->
+                <td id="titrecol" class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange">1</td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                <td class="orange"></td>
+                </tr>  
+                 <!-- Suivi de la bonne gestion de la vie d'un ticket/consignes/procédures -->
+                 <td id="titrecol" class="qualite">Suivi de la bonne gestion de la vie d'un ticket/consignes/procédures</td>
+                 <td><select name="" id="" ><option value="">0</option><option value="">1</option></select></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 <td><input type="text" name="" id=""></td>
+                 </tr> 
+                 <tr>
+                     <!-- respect SLA du ticket -->
+                 <td id="titrecol">Respect SLA du ticket</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td>1</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 </tr> 
+                 <tr>
+                     <!-- Suivi consigne spécifique du client -->
+                 <td id="titrecol">Suivi consigne spécifique du client</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td>1</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 </tr> 
+                 <tr>
+                     <!-- Suivi consigne interne-->
+                 <td id="titrecol">Suivi consigne interne</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td>1</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 </tr>   
+                 <tr>
+                     <!-- Suivi de procédure -->
+                 <td id="titrecol">Suivi de procédure</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td>1</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 </tr>
+                 <tr>
+                     <!-- Note -->
+                 <td id="titrecol"  class="note">Note</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td>1</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 </tr>  
+                 <tr>
+               
+                        
    </table>
 
     <script src="/js/dependencies/sails.io.js"></script>
