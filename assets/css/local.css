@@ -97,7 +97,7 @@ th {
   color: white;
 }
 
-/*ajout coleur cellule*/
+/*css Odilon */
 
 .green{
   background-color: black !important;
@@ -126,7 +126,7 @@ th {
   height: 25px;
   color: black; */
   font-size: small;
-  border: none;
+  /* border: none; */
   text-align: none;
 }
 
@@ -138,6 +138,12 @@ th {
 .rejet_tete{
   background-color: #F0EAE8;
 }
+
+#board tr{
+  height: 25px;
+
+}
+
 /* **************** */
 /* css luc */    
 .titre{
@@ -163,6 +169,8 @@ td input{
   background: orange;
 }
 /* css luc */
+/* **************** */
+
 .ldt_date
 {
 	padding: 10px;
