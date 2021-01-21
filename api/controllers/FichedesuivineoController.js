@@ -95,9 +95,9 @@ module.exports = {
         menu["statOpAdmin"]= "";
         menu["presence"]= "";
         menu["admin"]= "";
-
         var id = req.param("id");
         var my = req.param("my");
+
         var annee = my.substr( 0, 4);
         var mois = my.substr( 5, 2);
         var sql = "SELECT * FROM neocles_fiche WHERE id_pers ='"+id+"' AND date_part('month', date) = "+mois+" AND date_part('year', date) = "+annee;

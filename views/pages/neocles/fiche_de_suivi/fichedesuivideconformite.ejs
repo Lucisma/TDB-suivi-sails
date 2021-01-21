@@ -52,13 +52,13 @@
                         </div> -->
                         <div class="col-xs-2 col-md-2 col-lg-2">
                           <!-- <input class="form-control" tabindex="-1" id="datetim" /> -->
-                          <input type="month" id="mois" class="form-control" name="mois"  min="0000-01" max="9999-01" placeholder="mois année" />
+                          <input type="month" id="mois" class="form-control" name="mois"  min="0000-01" max="9999-01" placeholder="mois année" required/>
                         </div>
                         <div class="col-xs-2 col-md-2 col-lg-2">
                         <% 
                         if(manager == true){
                         %>
-                          <input type="text" class="form-control" tabindex="-1" id="id_pers" placeholder="Matricule"/>
+                          <input type="text" class="form-control" tabindex="-1" id="id_pers" placeholder="Matricule" required/>
                         <%
                         }
                         else{
