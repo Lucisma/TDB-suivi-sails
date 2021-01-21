@@ -16,8 +16,8 @@ module.exports = {
         menu["statOpAdmin"]= "";
         menu["presence"]= "";
         menu["admin"]= "";
-        //const id = req.session.user;
-        const id=8054;
+        const id = req.session.user;
+        // const id=8054;
         const depart = req.session.id_departement;
         var sql = "SELECT * FROM neocles_manager WHERE matricule ='"+id+"'";
         Neocles_manager.query(sql, function(err, resultat){
@@ -42,8 +42,8 @@ module.exports = {
         menu["statOpAdmin"]= "";
         menu["presence"]= "";
         menu["admin"]= "";
-        //const id = req.session.user;
-        const id=8054;
+        const id = req.session.user;
+        // const id=8054;
         const depart = req.session.id_departement;
         var sql = "SELECT * FROM neocles_manager WHERE matricule ='"+id+"'";
         Neocles_manager.query(sql, function(err, resultat){

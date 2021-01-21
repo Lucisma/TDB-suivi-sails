@@ -116,6 +116,12 @@ th {
   font-size: x-small;
 }
 
+#mois{
+  color: black;
+}
+
+/* **************** */
+
 .ldt_date
 {
 	padding: 10px;
