@@ -112,14 +112,32 @@ th {
 
 .cyan{
   background-color: #8EFAFA;
-  color: black;
-  font-size: x-small;
+  /* color: black; */
+  font-size: small;
 }
 
 #mois{
   color: black;
+  /* width: 175px; */
 }
 
+#implic{
+  /* width: 310px;
+  height: 25px;
+  color: black; */
+  font-size: small;
+  border: none;
+  text-align: none;
+}
+
+.rejet{
+  background-color: #F9CBC0;
+  color: red;
+}
+
+.rejet_tete{
+  background-color: #F0EAE8;
+}
 /* **************** */
 
 .ldt_date
