@@ -60,14 +60,21 @@ module.exports = {
     },
 
     suivideconformite : function(req, res){
-        var id = req.param("id");
-        //var mois = req.param("mois");
-        //var annee = req.param("annee");
-        //console.log("bien");
-        //return res.send("<p>OK</p>");
-        //write("<p>votre texte</p>");
-        var p = "<p>votre texte</p>";
-        return  res.send(p);
+        var id = parseInt(req.param("id"), 10);
+        var my = req.param("my");
+        var annee = parseInt( my.substr( 0, 4), 10);
+        var mois = parseInt( my.substr( 5, 2), 10);
+        var sql = "SELECT * FROM neocles_fiche WHERE id_pers ='"+id+"' AND date_part('month', date) = "+mois+" AND date_part('year', date) = "+annee;
+        Neocles_fiche.query(sql, function(err, resultat){
+            if(err) return res.send(err);
+            if(resultat.rowCount == 1){
+                var existe = true;
+            }
+            else{
+                var existe = false;
+            }
+        });
+        return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite');
     }
 };
 
