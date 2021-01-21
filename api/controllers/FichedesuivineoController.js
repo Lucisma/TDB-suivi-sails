@@ -43,7 +43,7 @@ module.exports = {
         menu["presence"]= "";
         menu["admin"]= "";
         const id = req.session.user;
-        // const id=8054;
+        //const id=8054;
         const depart = req.session.id_departement;
         var sql = "SELECT * FROM neocles_manager WHERE matricule ='"+id+"'";
         Neocles_manager.query(sql, function(err, resultat){
@@ -60,6 +60,15 @@ module.exports = {
     },
 
     suivideconformite : function(req, res){
+        if (!req.session.user) return res.redirect('/login');
+        var menu = [];
+        menu["aceuil"]= "";
+        menu["dossierAdmin"]= "";
+        menu["gestionDossier"]= "";
+        menu["statOpAdmin"]= "";
+        menu["presence"]= "";
+        menu["admin"]= "";
+
         var id = parseInt(req.param("id"), 10);
         var my = req.param("my");
         var annee = parseInt( my.substr( 0, 4), 10);
@@ -74,7 +83,7 @@ module.exports = {
                 var existe = false;
             }
         });
-        return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite');
+        return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu});
     }
 };
 
