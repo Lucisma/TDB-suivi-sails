@@ -1,7 +1,7 @@
 function suivi_conformite(){
     var id= $("#id_pers").val() ;
     var mois = $("#mois").val();
-    
+    $("#tableau_conformite").empty();
     // $.get(
     //     '/suivi_conformite', // Le fichier cible côté serveur.
     //     //'id=' + id +'&mois=' + mois + '&annee='+ annee, // Nous utilisons false, pour dire que nous n'envoyons pas de données.

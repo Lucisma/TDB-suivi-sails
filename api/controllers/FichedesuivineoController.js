@@ -77,13 +77,13 @@ module.exports = {
         Neocles_fiche.query(sql, function(err, resultat){
             if(err) return res.send(err);
             if(resultat.rowCount == 1){
-                var existe = true;
+                return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu});
             }
             else{
-                var existe = false;
+                return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu});
             }
         });
-        return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu});
+        
     }
 };
 
