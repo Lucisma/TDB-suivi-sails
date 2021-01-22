@@ -57,22 +57,13 @@
                         <!-- <input type="text" class="form-control" tabindex="-1" id="id_pers" placeholder="Matricule" required/> -->
                         <select class="form-control" id="id_pers" placeholder = "Matricule" name="Matricule" >
                             <option value=""></option>
-                            <option value="742">742</option>
-                            <option value="867">867</option>
-                            <option value="1265">1265</option>
-                            <option value="1266">1266</option>
-                            <option value="1390">1390</option>
-                            <option value="1424">1424</option>
-                            <option value="1598">1598</option>
-                            <option value="1600">1600</option>
-                            <option value="1668">1668</option>
-                            <option value="1712">1712</option>
-                            <option value="3020">3020</option>
-                            <option value="3333">3333</option>
-                            <option value="3334">3334</option>
-                            <option value="3335">3335</option>
-                            <option value="3336">3336</option>
-                            <option value="3337">3337</option>
+                            <% 
+                              for (var i = 0 ; i<nbr;i++){
+                            %>
+                            <option value="<%= id_appelation.rows[i].id_pers %>"><%= id_appelation.rows[i].appelation %> <%= id_appelation.rows[i].id_pers %></option>
+                            <% 
+                              }
+                            %>
                       </select>
                       <%
                       }

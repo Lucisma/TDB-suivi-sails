@@ -25,11 +25,18 @@ module.exports = {
             //console.log(resultat.rows[0].nom);
             if(resultat.rowCount == 1){
                 var manager = true;
+                sql = "select neo.id_pers, pers.appelation from neo_pers_niveau neo INNER JOIN r_personnel pers ON neo.id_pers = pers.id_pers";
+                Neo_pers_niveau.query(sql, function(err, resultat){
+                    if(err) return res.send(err);
+                    //console.log(resultat.rows[0].appelation);
+                    var nbr = resultat.rowCount;
+                    return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu, manager: manager, id:id, id_appelation: resultat, nbr:nbr});
+                })
             }
             else{
                 var manager = false;
+                return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu, manager: manager, id:id});
             }
-            return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu, manager: manager, id:id});
         });
         
     },
