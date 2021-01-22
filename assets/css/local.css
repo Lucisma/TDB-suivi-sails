@@ -173,6 +173,11 @@ td input{
  /* text-align:left; */
  margin-left:-10px;
 }
+.icobout{
+  margin-left:10px;
+  border: 1px solid rgb(24, 12, 199);
+  padding:1px 5px;
+}
 /* css luc */
 /* **************** */
 
