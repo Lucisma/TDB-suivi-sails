@@ -178,6 +178,16 @@ td input{
   border: 1px solid rgb(24, 12, 199);
   padding:1px 5px;
 }
+.enregistrer{
+  float: right;
+  padding:5px 2px;
+  width:100px;
+  background: rgb(28, 206, 28);
+  color: rgb(255, 255, 255);
+  position: fixed;
+  border: 2px solid rgb(8, 238, 65);
+  border-radius:5%;
+}
 /* css luc */
 /* **************** */
 
