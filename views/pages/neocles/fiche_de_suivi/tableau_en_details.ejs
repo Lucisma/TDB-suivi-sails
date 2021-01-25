@@ -42,26 +42,13 @@
     <tr>
         <!-- Qualité- Description et comprehension du ticketbi bi-chat-left-text -->
     <td id="titrecol">Sollicitation du client bien décrite</td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem2"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache1"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+    <% for(var i=1; i<=ticket; i++){
+    %>
+        <td id="chem<%= i %>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache<%= i %>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+    <%
+    }
+    %>
+    
     </tr> 
     <tr>
         <!-- Questionnement complet/récup infos complementaire -->
@@ -639,29 +626,4 @@
          <tr>
 </table>
 
-<script>
-    $("#tache").click(function(){
-      if(!$("#chem1").length){
-          $("#chem").append(                   
-          $(          
-          '<input type="text" name="chem1" id="chem1" required>',
-          ));
-        }else{
-          if($("#chem1").length){
-              $('#chem1').remove();
-          }
-      }
-    });
-    $("#tache1").click(function(){
-      if(!$("#chem5").length){
-          $("#chem2").append(                   
-          $(          
-          '<input type="text" name="chem" id="chem5" required>',
-          ));
-        }else{
-          if($("#chem5").length){
-              $('#chem5').remove();
-          }
-      }
-  });
-  </script>
+<script src="js/neocles/js.js"></script>
