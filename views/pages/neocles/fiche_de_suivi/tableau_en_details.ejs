@@ -44,7 +44,7 @@
     <td id="titrecol">Sollicitation du client bien décrite</td>
     <% for(var i=1; i<=ticket; i++){
     %>
-        <td id="chem<%= i %>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache<%= i %>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel1<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl1<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
     <%
     }
     %>
@@ -53,577 +53,526 @@
     <tr>
         <!-- Questionnement complet/récup infos complementaire -->
     <td id="titrecol">Questionnement complet/récup infos complementaire</td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+    <% for(var i=1; i<=ticket; i++){
+        %>
+       <td id="chel2<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl2<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <%
+        }
+    %>
     </tr> 
     <tr>
         <!-- Hors sujet(Sollicitation du client par mail/front office -->
     <td id="titrecol">Hors sujet(Sollicitation du client par mail/front office)</td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+    <% for(var i=1; i<=ticket; i++){
+        %>
+       <td id="chel3<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl3<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <%
+        }
+    %>
     </tr>   
     <tr>
         <!-- Traitement complet du ticket -->
     <td id="titrecol">Traitement complet du ticket</td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-    <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+    <% for(var i=1; i<=ticket; i++){
+        %>
+       <td id="chel4<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl4<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <%
+        }
+    %>
     </tr>
     <tr>
         <!-- Traitement complet du ticket -->
     <td id="titrecol"  class="note">Note</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <% for(var i=1; i<=ticket; i++){
+        %>
+        <td>.</td>
+        <%
+        }
+    %>
     </tr>  
     <tr>
         <!-- ligne vide orange -->
     <td id="titrecol" class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange">1</td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
-    <td class="orange"></td>
+    <% for(var i=1; i<=ticket; i++){
+        %>
+        <td class="orange">.</td>
+        <%
+        }
+    %>
     </tr>
     <tr>
             <!-- Pertinence des informations -->
         <td id="titrecol" class="qualite">Pertinence des informations</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td></td>
+            <%
+            }
+        %>
     </tr> 
         <tr>
             <!-- Outil(s) utilisé(s) bien indiqué(s) -->
         <td id="titrecol">Outil(s) utilisé(s) bien indiqué(s)</td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+           <td id="chel5<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl5<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
         </tr> 
         <tr>
             <!-- Pertinence des informations(ATD,clôture,mail envoyé au client) -->
         <td id="titrecol">Pertinence des informations(ATD,clôture,mail envoyé au client)</td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+           <td id="chel6<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl6<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
         </tr> 
         <tr>
             <!-- Relecture -->
         <td id="titrecol">Relecture</td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+           <td id="chel7<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl7<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
         </tr>   
         <tr>
             <!-- Renseignement correct des informations en cas de recherche personnelle -->
         <td id="titrecol">Renseignement correct des informations en cas de recherche personnelle</td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+           <td id="chel8<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl8<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
         </tr>
         <tr>
             <!-- Note -->
         <td id="titrecol"  class="note">Note</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td>.</td>
+            <%
+            }
+        %>
         </tr>  
         <tr>
             <!-- ligne vide orange -->
         <td id="titrecol" class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange">1</td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td class="orange">.</td>
+            <%
+            }
+        %>
         </tr>  
         <!-- TECHNICITE- Performance technique -->
         <td id="titrecol" class="qualite">TECHNICITE- Performance technique</td>
-        <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td></td>
+            <%
+            }
+        %>
         </tr> 
         <tr>
             <!-- Analyse -->
         <td id="titrecol">Analyse</td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td id="chel9<%=i%>"><select name="" id=""><option value=""></option><option value="">Inexistante/erroné</option><option value="">Basique</option><option value="">Superficielle</option><option value="">Avancée</option><option value="">Trés avancée</option></select><boutton class="icobout"><i id="tacl9<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
         </tr> 
         <tr>
             <!-- Interpretation des analyse/tests faits -->
         <td id="titrecol">Interpretation des analyse/tests faits</td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td id="chel10<%=i%>"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tacl10<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
         </tr> 
         <tr>
             <!-- Recherche personnelle hors jarvis -->
         <td id="titrecol">Recherche personnelle hors jarvis</td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-        <td id="chem"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td id="chel16<%=i%>"><select name="" id=""><option value=""></option><option value="">OUI</option><option value="">NON</option></select><boutton class="icobout"><i id="tacl16<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
         </tr>   
         <tr>
             <!-- Note -->
         <td id="titrecol"  class="note">Note</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td>.</td>
+            <%
+            }
+        %>
         </tr>  
         <tr>
             <!-- ligne vide orange -->
         <td id="titrecol" class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange">1</td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
-        <td class="orange"></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td class="orange">.</td>
+            <%
+            }
+        %>
         </tr>  
          <!-- Suivi de la bonne gestion de la vie d'un ticket/consignes/procédures -->
          <td id="titrecol" class="qualite">Suivi de la bonne gestion de la vie d'un ticket/consignes/procédures</td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
+         <% for(var i=1; i<=ticket; i++){
+            %>
+            <td></td>
+            <%
+            }
+        %>
          </tr> 
          <tr>
              <!-- respect SLA du ticket -->
          <td id="titrecol">Respect SLA du ticket</td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+         <% for(var i=1; i<=ticket; i++){
+            %>
+            <td id="chel12<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tacl12<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
          </tr> 
          <tr>
              <!-- Suivi consigne spécifique du client -->
          <td id="titrecol">Suivi consigne spécifique du client</td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+         <% for(var i=1; i<=ticket; i++){
+            %>
+            <td id="chel13<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tacl13<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
          </tr> 
          <tr>
              <!-- Suivi consigne interne-->
          <td id="titrecol">Suivi consigne interne</td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+         <% for(var i=1; i<=ticket; i++){
+            %>
+            <td id="chel14<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tacl14<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
          </tr>   
          <tr>
              <!-- Suivi de procédure -->
          <td id="titrecol">Suivi de procédure</td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
-         <td id="chem"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tache"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+         <% for(var i=1; i<=ticket; i++){
+            %>
+            <td id="chel15<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i id="tacl15<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <%
+            }
+        %>
          </tr>
          <tr>
              <!-- Note -->
            <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
+        <% for(var i=1; i<=ticket; i++){
+            %>
+            <td></td>
+            <%
+            }
+        %>
          </tr>  
          <tr>
 </table>
+<!-- <script src="js/neocles/js.js"></script> -->
+<script>
+    // l1
+    for(var i=1; i<=20; i++){
+        $("#tacl1"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
 
-<script src="js/neocles/js.js"></script>
+        if(!$("#inpl1"+str).length){
+            // alert(i),
+            $("#chel1"+str).append(                
+            $(          
+            "<input type='text' id='inpl1"+str+"'>",
+            ));
+        }else{
+            if($("#inpl1"+str).length){
+                $("#inpl1"+str).remove();
+            }
+        }
+        });
+    }
+    // l2
+    for(var i=1; i<=20; i++){
+        $("#tacl2"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
+
+        if(!$("#inpl2"+str).length){
+            // alert(i),
+            $("#chel2"+str).append(                
+            $(          
+            "<input type='text' id='inpl2"+str+"'>",
+            ));
+        }else{
+            if($("#inpl2"+str).length){
+                $("#inpl2"+str).remove();
+            }
+        }
+        });
+    }
+    // l3
+    for(var i=1; i<=20; i++){
+        $("#tacl3"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
+
+        if(!$("#inpl3"+str).length){
+            // alert(i),
+            $("#chel3"+str).append(                
+            $(          
+            "<input type='text' id='inpl3"+str+"'>",
+            ));
+        }else{
+            if($("#inpl3"+str).length){
+                $("#inpl3"+str).remove();
+            }
+        }
+        });
+    }
+    // l4
+    for(var i=1; i<=20; i++){
+        $("#tacl4"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
+
+        if(!$("#inpl4"+str).length){
+            // alert(i),
+            $("#chel4"+str).append(                
+            $(          
+            "<input type='text' id='inpl4"+str+"'>",
+            ));
+        }else{
+            if($("#inpl4"+str).length){
+                $("#inpl4"+str).remove();
+            }
+        }
+        });
+    }
+    // l5
+    for(var i=1; i<=20; i++){
+        $("#tacl5"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
+
+        if(!$("#inpl5"+str).length){
+            // alert(i),
+            $("#chel5"+str).append(                
+            $(          
+            "<input type='text' id='inpl5"+str+"'>",
+            ));
+        }else{
+            if($("#inpl5"+str).length){
+                $("#inpl5"+str).remove();
+            }
+        }
+        });
+    }
+     // l6
+     for(var i=1; i<=20; i++){
+        $("#tacl6"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
+        if(!$("#inpl6"+str).length){
+            // alert(i),
+            $("#chel6"+str).append(                
+            $(          
+            "<input type='text' id='inpl6"+str+"'>",
+            ));
+        }else{
+            if($("#inpl6"+str).length){
+                $("#inpl6"+str).remove();
+            }
+        }
+        });
+    }
+    // l7
+    for(var i=1; i<=20; i++){
+        $("#tacl7"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
+
+        if(!$("#inpl7"+str).length){
+            // alert(i),
+            $("#chel7"+str).append(                
+            $(          
+            "<input type='text' id='inpl7"+str+"'>",
+            ));
+        }else{
+            if($("#inpl7"+str).length){
+                $("#inpl7"+str).remove();
+            }
+        }
+        });
+    }
+    // l8
+    for(var i=1; i<=20; i++){
+        $("#tacl8"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
+
+        if(!$("#inpl8"+str).length){
+            // alert(i),
+            $("#chel8"+str).append(                
+            $(          
+            "<input type='text' id='inpl8"+str+"'>",
+            ));
+        }else{
+            if($("#inpl8"+str).length){
+                $("#inpl8"+str).remove();
+            }
+        }
+        });
+    }
+    // l9
+    for(var i=1; i<=20; i++){
+        $("#tacl9"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(5,2);
+
+        if(!$("#inpl9"+str).length){
+            // alert(i),
+            $("#chel9"+str).append(                
+            $(          
+            "<input type='text' id='inpl9"+str+"'>",
+            ));
+        }else{
+            if($("#inpl9"+str).length){
+                $("#inpl9"+str).remove();
+            }
+        }
+        });
+    }
+    // l10
+    for(var i=1; i<=20; i++){
+        $("#tacl10"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(6,1);
+        if(!$("#inpl10"+str).length){
+            // alert(i),
+            $("#chel10"+str).append(                
+            $(          
+            "<input type='text' id='inpl10"+str+"'>",
+            ));
+        }else{
+            if($("#inpl10"+str).length){
+                $("#inpl10"+str).remove();
+            }
+        }
+        });
+    }
+    // l16
+    for(var i=1; i<=20; i++){
+        $("#tacl16"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(6,1);
+        // alert(getid);
+        if(!$("#inpl16"+str).length){
+            // alert(i),
+            $("#chel16"+str).append(                
+            $(          
+            "<input type='text' id='inpl16"+str+"'>",
+            ));
+        }else{
+            if($("#inpl16"+str).length){
+                $("#inpl16"+str).remove();
+            }
+        }
+        });
+    }
+    // l12
+    for(var i=1; i<=20; i++){
+        $("#tacl12"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(6,1);
+  
+        if(!$("#inpl12"+str).length){
+            // alert(i),
+            $("#chel12"+str).append(                
+            $(          
+            "<input type='text' id='inpl12"+str+"'>",
+            ));
+        }else{
+            if($("#inpl12"+str).length){
+                $("#inpl12"+str).remove();
+            }
+        }
+        });
+    }
+    // l13
+    for(var i=1; i<=20; i++){
+        $("#tacl13"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(6,1);
+
+        if(!$("#inpl13"+str).length){
+            // alert(i),
+            $("#chel13"+str).append(                
+            $(          
+            "<input type='text' id='inpl13"+str+"'>",
+            ));
+        }else{
+            if($("#inpl13"+str).length){
+                $("#inpl13"+str).remove();
+            }
+        }
+        });
+    }
+    // l14
+    for(var i=1; i<=20; i++){
+        $("#tacl14"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(6,1);
+
+        if(!$("#inpl14"+str).length){
+            // alert(i),
+            $("#chel14"+str).append(                
+            $(          
+            "<input type='text' id='inpl14"+str+"'>",
+            ));
+        }else{
+            if($("#inpl14"+str).length){
+                $("#inpl14"+str).remove();
+            }
+        }
+        });
+    }
+    // l5
+    for(var i=1; i<=20; i++){
+        $("#tacl15"+i).click(function(){
+        var getid =this.id 
+        var str = getid.substr(6,1);
+
+        if(!$("#inpl15"+str).length){
+            // alert(i),
+            $("#chel15"+str).append(                
+            $(          
+            "<input type='text' id='inpl15"+str+"'>",
+            ));
+        }else{
+            if($("#inpl15"+str).length){
+                $("#inpl15"+str).remove();
+            }
+        }
+        });
+        }
+</script>
