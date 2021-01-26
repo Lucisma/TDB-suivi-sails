@@ -12,7 +12,7 @@ module.exports = {
     attributes: {
       id: { 
         type: 'integer',
-        required: true,
+        required: false,
         columnName:'id'
       },
       id_pers: { 

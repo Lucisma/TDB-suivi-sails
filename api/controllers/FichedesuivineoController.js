@@ -5,6 +5,8 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+const { now } = require("moment");
+
 module.exports = {
   
     fichedesuiviendetail : function(req, res){
@@ -166,7 +168,8 @@ module.exports = {
         menu["statOpAdmin"]= "";
         menu["presence"]= "";
         menu["admin"]= "";
-        var id = req.param("id");
+        const id = req.session.user;
+        var id_pers = req.param("id");
         var my = req.param("my");
         var nbr_ticket = req.param("ticket");
         var nom_ticket = [];
@@ -241,17 +244,16 @@ module.exports = {
         var q3l15 = recevoir_donnee(req, nbr_ticket, "q3l15_");
         var q3l15_com = recevoir_donnee(req, nbr_ticket, "inpl15");
         var note_q3 = calcul_note(q3l12, q3l13, q3l14, q3l15, nbr_ticket);
-        //Technicité 
 
-        for(i=1; i<=nbr_ticket; i++){
-            console.log(i + " note_q3 : " + note_q3[i]);
-        }
-        for(i=1; i<=nbr_ticket; i++){
-            console.log(i + " q3l12_com : " + q3l12_com[i]);
-        }
-        for(i=1; i<=nbr_ticket; i++){
-            console.log(i + " q3l15_com : " + q3l15_com[i]);
-        }
+        //Technicité
+        var tec1 = recevoir_donnee(req, nbr_ticket, "tec1_");
+        var tec1_com = recevoir_donnee(req, nbr_ticket, "inpl9");
+        var tec2 = recevoir_donnee(req, nbr_ticket, "tec2_");
+        var tec2_com = recevoir_donnee(req, nbr_ticket, "inpl10");
+        var tec3 = recevoir_donnee(req, nbr_ticket, "tec3_");
+        var tec3_com = recevoir_donnee(req, nbr_ticket, "inpl16");
+        var note_tect = tec1;
+
 
     }
 }
