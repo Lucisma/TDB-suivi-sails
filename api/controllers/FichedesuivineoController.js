@@ -179,15 +179,80 @@ module.exports = {
         function recevoir_donnee(req, nbr_ticket, name){
             var tab = [];
             for(var i=1; i<=nbr_ticket; i++){
-                tab[i] = req.param(name+""+i);
+                if(req.param(name+""+i) == undefined ){
+                    tab[i] = "";
+                }
+                else{
+                    tab[i] = req.param(name+""+i);
+                }            
             }
             return tab;
         }
-        var nom_ticket = recevoir_donnee(req, nbr_ticket, "ticket");
-        var q1l1 = recevoir_donnee(req, nbr_ticket, "q1l1_")
-        for(i=1; i<=nbr_ticket; i++){
-            console.log(i + " q1l1_ : " + q1l1[i]);
+
+        function calcul_note(l1, l2, l3, l4, nbr_ticket){
+            function verif(l){
+                if(!l || l=="" || l==null){
+                    return 0;
+                }
+                else{
+                    return parseInt(l,10);
+                }
+            }
+            var note = [];
+            for(var i=1; i<=nbr_ticket; i++){
+                l1[i] = verif(l1[i]);
+                l2[i] = verif(l2[i]);
+                l3[i] = verif(l3[i]);
+                l4[i] = verif(l4[i]);
+                note[i] = l1[i] + l2[i] + l3[i] + l4[i];      
+            }
+            return note;
         }
+        //Qualité 2
+        var nom_ticket = recevoir_donnee(req, nbr_ticket, "ticket");
+        var q1l1 = recevoir_donnee(req, nbr_ticket, "q1l1_");
+        var q1l1_com = recevoir_donnee(req, nbr_ticket, "inpl1");
+        var q1l2 = recevoir_donnee(req, nbr_ticket, "q1l2_");
+        var q1l2_com = recevoir_donnee(req, nbr_ticket, "inpl2");
+        var q1l3 = recevoir_donnee(req, nbr_ticket, "q1l3_");
+        var q1l3_com = recevoir_donnee(req, nbr_ticket, "inpl3");
+        var q1l4 = recevoir_donnee(req, nbr_ticket, "q1l4_");
+        var q1l4_com = recevoir_donnee(req, nbr_ticket, "inpl4");
+        var note_q1 = calcul_note(q1l1, q1l2, q1l3, q1l4, nbr_ticket);
+        
+        //Qualité 2
+        var q2l5 = recevoir_donnee(req, nbr_ticket, "q2l5_");
+        var q2l5_com = recevoir_donnee(req, nbr_ticket, "inpl5");
+        var q2l6 = recevoir_donnee(req, nbr_ticket, "q2l6_");
+        var q2l6_com = recevoir_donnee(req, nbr_ticket, "inpl6");
+        var q2l7 = recevoir_donnee(req, nbr_ticket, "q2l7_");
+        var q2l7_com = recevoir_donnee(req, nbr_ticket, "inpl7");
+        var q2l8 = recevoir_donnee(req, nbr_ticket, "q2l8_");
+        var q2l8_com = recevoir_donnee(req, nbr_ticket, "inpl8");
+        var note_q2 = calcul_note(q2l5, q2l6, q2l7, q2l8, nbr_ticket);
+
+        //Qualité 3
+        var q3l12 = recevoir_donnee(req, nbr_ticket, "q3l12_");
+        var q3l12_com = recevoir_donnee(req, nbr_ticket, "inpl12");
+        var q3l13 = recevoir_donnee(req, nbr_ticket, "q3l13_");
+        var q3l13_com = recevoir_donnee(req, nbr_ticket, "inpl13");
+        var q3l14 = recevoir_donnee(req, nbr_ticket, "q3l14_");
+        var q3l14_com = recevoir_donnee(req, nbr_ticket, "inpl14");
+        var q3l15 = recevoir_donnee(req, nbr_ticket, "q3l15_");
+        var q3l15_com = recevoir_donnee(req, nbr_ticket, "inpl15");
+        var note_q3 = calcul_note(q3l12, q3l13, q3l14, q3l15, nbr_ticket);
+        //Technicité 
+
+        for(i=1; i<=nbr_ticket; i++){
+            console.log(i + " note_q3 : " + note_q3[i]);
+        }
+        for(i=1; i<=nbr_ticket; i++){
+            console.log(i + " q3l12_com : " + q3l12_com[i]);
+        }
+        for(i=1; i<=nbr_ticket; i++){
+            console.log(i + " q3l15_com : " + q3l15_com[i]);
+        }
+
     }
-};
+}
 
