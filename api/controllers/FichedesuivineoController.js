@@ -143,11 +143,11 @@ module.exports = {
                     if(err) return res.send(err);
                     if(resultat.rowCount == 1){
                         //Le fiche existe déjà
-                        return  res.view('pages/neocles/fiche_de_suivi/tableau_en_details', {layout : false, menu : menu, ticket : ticket});
+                        return  res.view('pages/neocles/fiche_de_suivi/tableau_en_details', {layout : false, menu : menu, ticket : ticket, my : my, id : id});
                     }
                     else{
                         //Le fiche n'existe pas; nous allons le créer
-                        return  res.view('pages/neocles/fiche_de_suivi/tableau_en_details', {layout : false, menu : menu, ticket : ticket});
+                        return  res.view('pages/neocles/fiche_de_suivi/tableau_en_details', {layout : false, menu : menu, ticket : ticket, my : my, id : id});
                     }
                 });
             }
@@ -156,5 +156,38 @@ module.exports = {
             }
         })
     },
+
+    post_suivi_details: function(req, res){
+        if (!req.session.user) return res.redirect('/login');
+        var menu = [];
+        menu["aceuil"]= "";
+        menu["dossierAdmin"]= "";
+        menu["gestionDossier"]= "";
+        menu["statOpAdmin"]= "";
+        menu["presence"]= "";
+        menu["admin"]= "";
+        var id = req.param("id");
+        var my = req.param("my");
+        var nbr_ticket = req.param("ticket");
+        var nom_ticket = [];
+        /*
+        for(var i=1; i<=nbr_ticket; i++){
+            nom_ticket[i] = req.param("ticket"+i);
+        }
+        */
+        
+        function recevoir_donnee(req, nbr_ticket, name){
+            var tab = [];
+            for(var i=1; i<=nbr_ticket; i++){
+                tab[i] = req.param(name+""+i);
+            }
+            return tab;
+        }
+        var nom_ticket = recevoir_donnee(req, nbr_ticket, "ticket");
+        var q1l1 = recevoir_donnee(req, nbr_ticket, "q1l1_")
+        for(i=1; i<=nbr_ticket; i++){
+            console.log(i + " q1l1_ : " + q1l1[i]);
+        }
+    }
 };
 

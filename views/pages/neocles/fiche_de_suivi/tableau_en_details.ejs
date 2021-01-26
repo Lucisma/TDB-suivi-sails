@@ -1,5 +1,6 @@
-<input class="enregistrer" type="button" value="Enregistrer"><br><br>
-<table border="1" class="tabl">
+<form action="/suivi_details_post/<%= my %>/<%= id %>/<%= ticket %>" method="POST">
+    <input class="enregistrer" type="submit" value="Enregistrer"><br><br>
+    <table border="1" class="tabl">
     <tr>
     <td  id="titrecol" class="titre" rowspan="2">Ticket</td>
     <% for(var i=1; i<=ticket; i++){
@@ -13,7 +14,7 @@
     <tr>
     <% for(var i=1; i<=ticket; i++){
     %>
-        <td><input type="text" name="" id=""></td>
+        <td><input type="text" name="ticket<%= i %>" id=""></td>
     <%
     }
     %>
@@ -44,7 +45,7 @@
     <td id="titrecol">Sollicitation du client bien décrite</td>
     <% for(var i=1; i<=ticket; i++){
     %>
-        <td id="chel1<%=i%>"><select name="" id=""><option value=""></option><option value="">0</option><option value="">1</option></select><boutton class="icobout"><i  id="tacl1<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel1<%=i%>"><select name="q1l1_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl1<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
     <%
     }
     %>
@@ -218,7 +219,7 @@
             <%
             }
         %>
-        </tr>  
+        </tr>
         <tr>
             <!-- ligne vide orange -->
         <td id="titrecol" class="orange"></td>
@@ -289,7 +290,8 @@
         %>
          </tr>  
          <tr>
-</table>
+    </table>
+</form>
 <!-- <script src="js/neocles/js.js"></script> -->
 <script>
     // l1
