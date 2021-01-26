@@ -304,7 +304,7 @@
             // alert(i),
             $("#chel1"+str).append(                
             $(          
-            "<input type='text' id='inpl1"+str+"'>",
+            "<input type='text' name ='inpl1"+str+"' id='inpl1"+str+"'>",
             ));
         }else{
             if($("#inpl1"+str).length){
@@ -323,7 +323,7 @@
             // alert(i),
             $("#chel2"+str).append(                
             $(          
-            "<input type='text' id='inpl2"+str+"'>",
+            "<input type='text' name='inpl2"+str+"' id='inpl2"+str+"'>",
             ));
         }else{
             if($("#inpl2"+str).length){
@@ -342,7 +342,7 @@
             // alert(i),
             $("#chel3"+str).append(                
             $(          
-            "<input type='text' id='inpl3"+str+"'>",
+            "<input type='text' name='inpl3"+str+"' id='inpl3"+str+"'>",
             ));
         }else{
             if($("#inpl3"+str).length){
@@ -361,7 +361,7 @@
             // alert(i),
             $("#chel4"+str).append(                
             $(          
-            "<input type='text' id='inpl4"+str+"'>",
+            "<input type='text' name='inpl4"+str+"' id='inpl4"+str+"'>",
             ));
         }else{
             if($("#inpl4"+str).length){
@@ -380,7 +380,7 @@
             // alert(i),
             $("#chel5"+str).append(                
             $(          
-            "<input type='text' id='inpl5"+str+"'>",
+            "<input type='text' name='inpl5"+str+"'  id='inpl5"+str+"'>",
             ));
         }else{
             if($("#inpl5"+str).length){
@@ -398,7 +398,7 @@
             // alert(i),
             $("#chel6"+str).append(                
             $(          
-            "<input type='text' id='inpl6"+str+"'>",
+            "<input type='text' name='inpl6"+str+"' id='inpl6"+str+"'>",
             ));
         }else{
             if($("#inpl6"+str).length){
@@ -417,7 +417,7 @@
             // alert(i),
             $("#chel7"+str).append(                
             $(          
-            "<input type='text' id='inpl7"+str+"'>",
+            "<input type='text' name='inpl7"+str+"' id='inpl7"+str+"'>",
             ));
         }else{
             if($("#inpl7"+str).length){
@@ -436,7 +436,7 @@
             // alert(i),
             $("#chel8"+str).append(                
             $(          
-            "<input type='text' id='inpl8"+str+"'>",
+            "<input type='text' name='inpl8"+str+"' id='inpl8"+str+"'>",
             ));
         }else{
             if($("#inpl8"+str).length){
@@ -450,12 +450,12 @@
         $("#tacl9"+i).click(function(){
         var getid =this.id 
         var str = getid.substr(5,2);
-
+        alert(getid)
         if(!$("#inpl9"+str).length){
             // alert(i),
             $("#chel9"+str).append(                
             $(          
-            "<input type='text' id='inpl9"+str+"'>",
+            "<input type='text' name='inpl9"+str+"' id='inpl9"+str+"'>",
             ));
         }else{
             if($("#inpl9"+str).length){
@@ -468,12 +468,13 @@
     for(var i=1; i<=20; i++){
         $("#tacl10"+i).click(function(){
         var getid =this.id 
-        var str = getid.substr(6,1);
+        var str = getid.substr(6,2);
+       
         if(!$("#inpl10"+str).length){
             // alert(i),
             $("#chel10"+str).append(                
             $(          
-            "<input type='text' id='inpl10"+str+"'>",
+            "<input type='text' name='inpl10"+str+"' id='inpl10"+str+"'>",
             ));
         }else{
             if($("#inpl10"+str).length){
@@ -486,13 +487,13 @@
     for(var i=1; i<=20; i++){
         $("#tacl16"+i).click(function(){
         var getid =this.id 
-        var str = getid.substr(6,1);
+        var str = getid.substr(6,2);
         // alert(getid);
         if(!$("#inpl16"+str).length){
             // alert(i),
             $("#chel16"+str).append(                
             $(          
-            "<input type='text' id='inpl16"+str+"'>",
+            "<input type='text' name='inpl16"+str+"' id='inpl16"+str+"'>",
             ));
         }else{
             if($("#inpl16"+str).length){
@@ -505,13 +506,13 @@
     for(var i=1; i<=20; i++){
         $("#tacl12"+i).click(function(){
         var getid =this.id 
-        var str = getid.substr(6,1);
+        var str = getid.substr(6,2);
   
         if(!$("#inpl12"+str).length){
             // alert(i),
             $("#chel12"+str).append(                
             $(          
-            "<input type='text' id='inpl12"+str+"'>",
+            "<input type='text' name='inpl12"+str+"' id='inpl12"+str+"'>",
             ));
         }else{
             if($("#inpl12"+str).length){
@@ -524,13 +525,13 @@
     for(var i=1; i<=20; i++){
         $("#tacl13"+i).click(function(){
         var getid =this.id 
-        var str = getid.substr(6,1);
+        var str = getid.substr(6,2);
 
         if(!$("#inpl13"+str).length){
             // alert(i),
             $("#chel13"+str).append(                
             $(          
-            "<input type='text' id='inpl13"+str+"'>",
+            "<input type='text' name='inpl13"+str+"' id='inpl13"+str+"'>",
             ));
         }else{
             if($("#inpl13"+str).length){
@@ -543,13 +544,13 @@
     for(var i=1; i<=20; i++){
         $("#tacl14"+i).click(function(){
         var getid =this.id 
-        var str = getid.substr(6,1);
+        var str = getid.substr(6,2);
 
         if(!$("#inpl14"+str).length){
             // alert(i),
             $("#chel14"+str).append(                
             $(          
-            "<input type='text' id='inpl14"+str+"'>",
+            "<input type='text' name='inpl14"+str+"' id='inpl14"+str+"'>",
             ));
         }else{
             if($("#inpl14"+str).length){
@@ -562,13 +563,13 @@
     for(var i=1; i<=20; i++){
         $("#tacl15"+i).click(function(){
         var getid =this.id 
-        var str = getid.substr(6,1);
+        var str = getid.substr(6,2);
 
         if(!$("#inpl15"+str).length){
             // alert(i),
             $("#chel15"+str).append(                
             $(          
-            "<input type='text' id='inpl15"+str+"'>",
+            "<input type='text' name='inpl15"+str+"' id='inpl15"+str+"'>",
             ));
         }else{
             if($("#inpl15"+str).length){
