@@ -5,8 +5,6 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const { now } = require("moment");
-
 module.exports = {
   
     fichedesuiviendetail : function(req, res){
@@ -94,7 +92,7 @@ module.exports = {
                     var niveau = 1;
                     var ticket = 13;
                 }
-                sql = "SELECT * FROM neocles_fiche WHERE id_pers ='"+id+"' AND date_part('month', date) = "+mois+" AND date_part('year', date) = "+annee;
+                sql = "SELECT * FROM neocles_fiche WHERE id_pers ='"+id+"' AND date_part('month', date_creation) = "+mois+" AND date_part('year', date_creation) = "+annee;
                 Neocles_fiche.query(sql, function(err, resultat){
                     if(err) return res.send(err);
                     if(resultat.rowCount == 1){
@@ -140,7 +138,7 @@ module.exports = {
                     var niveau = 1;
                     var ticket = 13;
                 }
-                sql = "SELECT * FROM neocles_fiche WHERE id_pers ='"+id+"' AND date_part('month', date) = "+mois+" AND date_part('year', date) = "+annee;
+                sql = "SELECT * FROM neocles_fiche WHERE id_pers ='"+id+"' AND date_part('month', date_creation) = "+mois+" AND date_part('year', date_creation) = "+annee;
                 Neocles_fiche.query(sql, function(err, resultat){
                     if(err) return res.send(err);
                     if(resultat.rowCount == 1){
@@ -168,11 +166,11 @@ module.exports = {
         menu["statOpAdmin"]= "";
         menu["presence"]= "";
         menu["admin"]= "";
-        const id = req.session.user;
-        var id_pers = req.param("id");
+        const id = parseInt( req.session.user, 10);
+        var id_pers = parseInt( req.param("id"), 10);
         var my = req.param("my");
         var nbr_ticket = req.param("ticket");
-        var nom_ticket = [];
+        var date_now = new Date().toISOString().slice(0,10);
         /*
         for(var i=1; i<=nbr_ticket; i++){
             nom_ticket[i] = req.param("ticket"+i);
@@ -253,8 +251,25 @@ module.exports = {
         var tec3 = recevoir_donnee(req, nbr_ticket, "tec3_");
         var tec3_com = recevoir_donnee(req, nbr_ticket, "inpl16");
         var note_tect = tec1;
-
-
+        
+        /*
+        var sql = "insert into neocles_fiche(id_pers, id_manager, date) values("+id_pers+","+id+",'"+date_now+"')";
+        Neocles_fiche.query(sql, function(err){
+            if(err) return res.send(err);*/
+            //sql = "insert into neocles_ticket(num, nom, id_fiche) values(1, 'test', 1)";
+            console.log("Insert success");   
+            var sql = "select id from neocles_fiche where id_pers = '"+id_pers+"' AND id_manager = '"+id+"' AND date_creation = '"+date_now+"')";
+            console.log(sql);    
+            Neocles_fiche.query(sql, function(err, resultat){
+                if(err) return res.send(err);
+                console.log(resultat);
+                if(resultat.rowCount == 1){
+                    var id_fiche = resultat.rows[0].id_fiche;
+                    console.log("Biennnnnn " + id_fiche);
+                }
+            })
+        //})
+        
     }
 }
 
