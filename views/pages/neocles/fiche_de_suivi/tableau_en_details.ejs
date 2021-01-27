@@ -45,7 +45,7 @@
         <td id="titrecol">Sollicitation du client bien décrite</td>
         <% for(var i=1; i<=ticket; i++){
         %>
-            <td id="chel1<%=i%>"><select name="q1l1_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl1<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel1<%=i%>"><select name="q1l1_<%= i %>" id="selectq1_<%= i %>_l1"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl1<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
         }
         %>
@@ -56,7 +56,7 @@
         <td id="titrecol">Questionnement complet/récup infos complementaire</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-        <td id="chel2<%=i%>"><select name="q1l2_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl2<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel2<%=i%>"><select name="q1l2_<%= i %>" id="selectq1_<%= i %>_l2"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl2<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -66,7 +66,7 @@
         <td id="titrecol">Hors sujet(Sollicitation du client par mail/front office)</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-        <td id="chel3<%=i%>"><select name="q1l3_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl3<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel3<%=i%>"><select name="q1l3_<%= i %>" id="selectq1_<%= i %>_l3"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl3<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -76,7 +76,7 @@
         <td id="titrecol">Traitement complet du ticket</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-        <td id="chel4<%=i%>"><select name="q1l4_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl4<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel4<%=i%>"><select name="q1l4_<%= i %>" id="selectq1_<%= i %>_l4"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl4<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -86,7 +86,7 @@
         <td id="titrecol"  class="note">Note</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td>.</td>
+            <td id="noteq1_<%= i %>"></td>
             <%
             }
         %>
@@ -116,7 +116,7 @@
         <td id="titrecol">Outil(s) utilisé(s) bien indiqué(s)</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="chel5<%=i%>"><select name="q2l5_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl5<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel5<%=i%>"><select name="q2l5_<%= i %>" id="selectq2_<%= i %>_l1"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl5<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -126,7 +126,7 @@
         <td id="titrecol">Pertinence des informations(ATD,clôture,mail envoyé au client)</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="chel6<%=i%>"><select name="q2l6_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl6<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel6<%=i%>"><select name="q2l6_<%= i %>" id="selectq2_<%= i %>_l2"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl6<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -136,7 +136,7 @@
         <td id="titrecol">Relecture</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="chel7<%=i%>"><select name="q2l7_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl7<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel7<%=i%>"><select name="q2l7_<%= i %>" id="selectq2_<%= i %>_l3"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl7<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -146,7 +146,7 @@
         <td id="titrecol">Renseignement correct des informations en cas de recherche personnelle</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="chel8<%=i%>"><select name="q2l8_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl8<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel8<%=i%>"><select name="q2l8_<%= i %>" id="selectq2_<%= i %>_l4"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl8<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -156,7 +156,7 @@
         <td id="titrecol"  class="note">Note</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td>.</td>
+            <td id="noteq2_<%= i %>"></td>
             <%
             }
         %>
@@ -185,7 +185,7 @@
         <td id="titrecol">Analyse</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="chel9<%=i%>"><select name="tec1_<%= i %>" id=""><option value=""></option><option value="1">Inexistante/erroné</option><option value="2">Basique</option><option value="3">Superficielle</option><option value="4">Avancée</option><option value="5">Trés avancée</option></select><boutton class="icobout"><i id="tacl9<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel9<%=i%>"><select name="tec1_<%= i %>" id="tec_<%= i %>"><option value=""></option><option value="1">Inexistante/erroné</option><option value="2">Basique</option><option value="3">Superficielle</option><option value="4">Avancée</option><option value="5">Trés avancée</option></select><boutton class="icobout"><i id="tacl9<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -195,7 +195,7 @@
         <td id="titrecol">Interpretation des analyse/tests faits</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="chel10<%=i%>"><select name="tec2_<%= i %>" id=""><option value=""></option><option value="OUI">OUI</option><option value="NON">NON</option></select><boutton class="icobout"><i id="tacl10<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel10<%=i%>"><select name="tec2_<%= i %>"><option value=""></option><option value="OUI">OUI</option><option value="NON">NON</option></select><boutton class="icobout"><i id="tacl10<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -205,7 +205,7 @@
         <td id="titrecol">Recherche personnelle hors jarvis</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="chel16<%=i%>"><select name="tec3_<%= i %>" id=""><option value=""></option><option value="OUI">OUI</option><option value="NON">NON</option></select><boutton class="icobout"><i id="tacl16<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel16<%=i%>"><select name="tec3_<%= i %>"><option value=""></option><option value="OUI">OUI</option><option value="NON">NON</option></select><boutton class="icobout"><i id="tacl16<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         %>
@@ -215,7 +215,7 @@
         <td id="titrecol"  class="note">Note</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td>.</td>
+            <td id="notetec_<%= i %>"></td>
             <%
             }
         %>
@@ -244,7 +244,7 @@
         <td id="titrecol">Respect SLA du ticket</td>
         <% for(var i=1; i<=ticket; i++){
         %>
-        <td id="chel12<%=i%>"><select name="q3l12_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl12<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel12<%=i%>"><select name="q3l12_<%= i %>" id="selectq3_<%= i %>_l1"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl12<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
         }
     %>
@@ -254,7 +254,7 @@
         <td id="titrecol">Suivi consigne spécifique du client</td>
         <% for(var i=1; i<=ticket; i++){
         %>
-        <td id="chel13<%=i%>"><select name="q3l13_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl13<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel13<%=i%>"><select name="q3l13_<%= i %>" id="selectq3_<%= i %>_l2"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl13<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
         }
     %>
@@ -264,7 +264,7 @@
         <td id="titrecol">Suivi consigne interne</td>
         <% for(var i=1; i<=ticket; i++){
         %>
-        <td id="chel14<%=i%>"><select name="q3l14_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl14<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel14<%=i%>"><select name="q3l14_<%= i %>" id="selectq3_<%= i %>_l3"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl14<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
         }
     %>
@@ -274,7 +274,7 @@
         <td id="titrecol">Suivi de procédure</td>
         <% for(var i=1; i<=ticket; i++){
         %>
-        <td id="chel15<%=i%>"><select name="q3l15_<%= i %>" id=""><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl15<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel15<%=i%>"><select name="q3l15_<%= i %>" id="selectq3_<%= i %>_l4"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl15<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
         }
     %>
@@ -284,7 +284,7 @@
         <td id="titrecol"  class="note">Note</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td>.</td>
+            <td id="noteq3_<%= i %>"></td>
             <%
             }
         %>
@@ -578,4 +578,154 @@
         }
         });
         }
+// $("select").change(function(){
+//         var getid =this.id 
+//         var str = getid.substr(-14,8);
+//         var val = [];
+//         for(e=1; e<=4; e++){
+//         val[e] = $("#selectq1_1_l"+e).val()
+//             if(val[e]== undefined || val[e]==""){
+//                 val[e]=0;
+//             }else{
+//                 val[e] = parseInt($("#selectq1_1_l"+e).val(),10);   
+//             } 
+//         }
+//         var note = val[1]+val[2]+val[3]+val[4];
+//             // alert(note);
+//         if(!$("#spnote1").length){
+//         $("#noteq1_1").append(
+//             '<span id="spnote1">'+note+'</span>',
+//         )
+//         }else{
+//         if($("#spnote1").length){
+//             $("#spnote1").remove();
+//             $("#noteq1_1").append(
+//             '<span id="spnote1">'+note+'</span>',
+//         )
+//         } 
+//         }   
+// });
+
+// qualité q1
+$("select").change(function(){
+        var getid =this.id 
+        var str = getid.substr(-14,8);
+        var val = [];
+        
+        for(i=1; i<=20; i++){
+        //  for(a=1; a<=3; a++){
+            for(e=1; e<=4; e++){
+            val[e] = $('#selectq1_'+i+'_l'+e).val()
+                if(val[e]== undefined || val[e]==""){
+                    val[e]=0;
+                }else{
+                    val[e] = parseInt($('#selectq1_'+i+'_l'+e).val(),10);   
+                } 
+            var note = val[1]+val[2]+val[3]+val[4];
+            }
+            if(!$("#spnoteq1"+i).length){
+            $("#noteq1_"+i).append(
+                "<span id='spnoteq1"+i+"'>"+note+"</span>",
+            )
+            }else{
+            if($("#spnoteq1"+i).length){
+                $("#spnoteq1"+i).remove();
+                $("#noteq1_"+i).append(
+                "<span id='spnoteq1"+i+"'>"+note+"</span>",
+            )
+            } 
+        }    
+    }
+});
+// qualité q2
+$("select").change(function(){
+        var getid =this.id 
+        var str = getid.substr(-14,8);
+        
+        var val = [];
+        
+        for(i=1; i<=20; i++){
+        //  for(a=1; a<=3; a++){
+            for(e=1; e<=4; e++){
+            val[e] = $('#selectq2_'+i+'_l'+e).val()
+                if(val[e]== undefined || val[e]==""){
+                    val[e]=0;
+                }else{
+                    val[e] = parseInt($('#selectq2_'+i+'_l'+e).val(),10);   
+                } 
+            var note = val[1]+val[2]+val[3]+val[4];
+            }
+            if(!$("#spnoteq2"+i).length){
+            $("#noteq2_"+i).append(
+                "<span id='spnoteq2"+i+"'>"+note+"</span>",
+            )
+            }else{
+            if($("#spnoteq2"+i).length){
+                $("#spnoteq2"+i).remove();
+                $("#noteq2_"+i).append(
+                "<span id='spnoteq2"+i+"'>"+note+"</span>",
+            )
+            } 
+        }    
+    }
+});
+// qualité q3
+$("select").change(function(){
+        var getid =this.id 
+        var str = getid.substr(-14,8);
+      
+        var val = [];
+        
+        for(i=1; i<=20; i++){
+        //  for(a=1; a<=3; a++){
+            for(e=1; e<=4; e++){
+            val[e] = $('#selectq3_'+i+'_l'+e).val()
+                if(val[e]== undefined || val[e]==""){
+                    val[e]=0;
+                }else{
+                    val[e] = parseInt($('#selectq3_'+i+'_l'+e).val(),10);   
+                } 
+            var note = val[1]+val[2]+val[3]+val[4];
+            }
+            if(!$("#spnoteq3"+i).length){
+            $("#noteq3_"+i).append(
+                "<span id='spnoteq3"+i+"'>"+note+"</span>",
+            )
+            }else{
+            if($("#spnoteq3"+i).length){
+                $("#spnoteq3"+i).remove();
+                $("#noteq3_"+i).append(
+                "<span id='spnoteq3"+i+"'>"+note+"</span>",
+            )
+            } 
+        }    
+    }
+});
+
+// Technicité tec_<%= i %>
+$("select").change(function(){
+        var val;
+        var note;
+        for(i=1; i<=20; i++){
+            val = $("#tec_"+i).val();
+            
+            if(val==""){
+                note = 0;
+            }else{
+                note = val;
+            }
+            if(!$("#spntec"+i).length){
+            $("#notetec_"+i).append(
+                "<span id='spntec"+i+"'>"+note+"</span>",
+            )
+            }else{
+            if($("#spntec"+i).length){
+                $("#spntec"+i).remove();
+                $("#notetec_"+i).append(
+                "<span id='spntec"+i+"'>"+note+"</span>",
+            )
+            } 
+        }
+        }
+});
 </script>
