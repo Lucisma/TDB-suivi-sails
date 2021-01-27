@@ -25,10 +25,10 @@ module.exports = {
         required: true,
         columnName:'id_manager'
       },
-      date: {
+      dateCreation: {
           type: 'datetime',
           required: true,
-          columnName:'date'
+          columnName:'date_creation'
       },
   
     },
