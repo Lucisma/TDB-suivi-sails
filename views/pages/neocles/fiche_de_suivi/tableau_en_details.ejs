@@ -2,7 +2,7 @@
     <input class="enregistrer" type="submit" value="Enregistrer"><br><br>
     <table border="1" class="tabl">
         <tr>
-        <td  id="titrecol" class="titre" rowspan="2">Ticket</td>
+        <td id="titrecol" class="titre" rowspan="2">Tickets<br><input disabled class="fikiab" type="text"></td>
         <% for(var i=1; i<=ticket; i++){
         %>
             <td class="titre"><%= i %></td>
@@ -21,10 +21,10 @@
         </tr>
         <tr>
             <!-- ligne vide -->
-        <td id="titrecol"></td>
+        <td id="titrecol1"></td>
         <% for(var i=1; i<=ticket; i++){
         %>
-            <td></td>
+            <td>+</td>
         <%
         }
         %>
@@ -32,7 +32,7 @@
         </tr>
         <tr>
             <!-- Qualité- Description et comprehension du ticket -->
-        <td id="titrecol" class="qualite">Qualité- Description et comprehension du ticket</td>
+        <td id="titrecol1" class="qualite">Qualité- Description et comprehension du ticket</td>
         <% for(var i=1; i<=ticket; i++){
         %>
             <td></td>
@@ -42,7 +42,7 @@
         </tr> 
         <tr>
             <!-- Qualité- Description et comprehension du ticketbi bi-chat-left-text -->
-        <td id="titrecol">Sollicitation du client bien décrite</td>
+        <td id="titrecol1">Sollicitation du client bien décrite</td>
         <% for(var i=1; i<=ticket; i++){
         %>
             <td id="chel1<%=i%>"><select name="q1l1_<%= i %>" id="selectq1_<%= i %>_l1"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl1<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -53,7 +53,7 @@
         </tr> 
         <tr>
             <!-- Questionnement complet/récup infos complementaire -->
-        <td id="titrecol">Questionnement complet/récup infos complementaire</td>
+        <td id="titrecol1">Questionnement complet/récup infos complementaire</td>
         <% for(var i=1; i<=ticket; i++){
             %>
         <td id="chel2<%=i%>"><select name="q1l2_<%= i %>" id="selectq1_<%= i %>_l2"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl2<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -63,7 +63,7 @@
         </tr> 
         <tr>
             <!-- Hors sujet(Sollicitation du client par mail/front office -->
-        <td id="titrecol">Hors sujet(Sollicitation du client par mail/front office)</td>
+        <td id="titrecol1">Hors sujet(Sollicitation du client par mail/front office)</td>
         <% for(var i=1; i<=ticket; i++){
             %>
         <td id="chel3<%=i%>"><select name="q1l3_<%= i %>" id="selectq1_<%= i %>_l3"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl3<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -73,7 +73,7 @@
         </tr>   
         <tr>
             <!-- Traitement complet du ticket -->
-        <td id="titrecol">Traitement complet du ticket</td>
+        <td id="titrecol1">Traitement complet du ticket</td>
         <% for(var i=1; i<=ticket; i++){
             %>
         <td id="chel4<%=i%>"><select name="q1l4_<%= i %>" id="selectq1_<%= i %>_l4"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl4<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -83,17 +83,17 @@
         </tr>
         <tr>
             <!-- Traitement complet du ticket -->
-        <td id="titrecol"  class="note">Note</td>
+        <td id="titrecol1"  class="note">Note</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="noteq1_<%= i %>"></td>
+            <td class="no" id="noteq1_<%= i %>"></td>
             <%
             }
         %>
         </tr>  
         <tr>
             <!-- ligne vide orange -->
-        <td id="titrecol" class="orange"></td>
+        <td id="titrecol1" class="orange"></td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td class="orange">.</td>
@@ -103,7 +103,7 @@
         </tr>
         <tr>
                 <!-- Pertinence des informations -->
-            <td id="titrecol" class="qualite">Pertinence des informations</td>
+            <td id="titrecol1" class="qualite">Pertinence des informations</td>
             <% for(var i=1; i<=ticket; i++){
                 %>
                 <td></td>
@@ -113,7 +113,7 @@
         </tr> 
         <tr>
             <!-- Outil(s) utilisé(s) bien indiqué(s) -->
-        <td id="titrecol">Outil(s) utilisé(s) bien indiqué(s)</td>
+        <td id="titrecol1">Outil(s) utilisé(s) bien indiqué(s)</td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td id="chel5<%=i%>"><select name="q2l5_<%= i %>" id="selectq2_<%= i %>_l1"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl5<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -123,7 +123,7 @@
         </tr> 
         <tr>
             <!-- Pertinence des informations(ATD,clôture,mail envoyé au client) -->
-        <td id="titrecol">Pertinence des informations(ATD,clôture,mail envoyé au client)</td>
+        <td id="titrecol1">Pertinence des informations(ATD,clôture,mail envoyé au client)</td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td id="chel6<%=i%>"><select name="q2l6_<%= i %>" id="selectq2_<%= i %>_l2"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl6<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -133,7 +133,7 @@
         </tr> 
         <tr>
             <!-- Relecture -->
-        <td id="titrecol">Relecture</td>
+        <td id="titrecol1">Relecture</td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td id="chel7<%=i%>"><select name="q2l7_<%= i %>" id="selectq2_<%= i %>_l3"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl7<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -143,7 +143,7 @@
         </tr>   
         <tr>
             <!-- Renseignement correct des informations en cas de recherche personnelle -->
-        <td id="titrecol">Renseignement correct des informations en cas de recherche personnelle</td>
+        <td id="titrecol1">Renseignement correct des informations en cas de recherche personnelle</td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td id="chel8<%=i%>"><select name="q2l8_<%= i %>" id="selectq2_<%= i %>_l4"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl8<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -153,17 +153,17 @@
         </tr>
         <tr>
             <!-- Note -->
-        <td id="titrecol"  class="note">Note</td>
+        <td id="titrecol1"  class="note">Note</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="noteq2_<%= i %>"></td>
+            <td class="no" id="noteq2_<%= i %>"></td>
             <%
             }
         %>
         </tr>  
         <tr>
             <!-- ligne vide orange -->
-        <td id="titrecol" class="orange"></td>
+        <td id="titrecol1" class="orange"></td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td class="orange">.</td>
@@ -172,7 +172,7 @@
         %>
         </tr>  
         <!-- TECHNICITE- Performance technique -->
-        <td id="titrecol" class="qualite">TECHNICITE- Performance technique</td>
+        <td id="titrecol1" class="qualite">TECHNICITE- Performance technique</td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td></td>
@@ -182,7 +182,7 @@
         </tr> 
         <tr>
             <!-- Analyse -->
-        <td id="titrecol">Analyse</td>
+        <td id="titrecol1">Analyse</td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td id="chel9<%=i%>"><select name="tec1_<%= i %>" id="tec_<%= i %>"><option value=""></option><option value="1">Inexistante/erroné</option><option value="2">Basique</option><option value="3">Superficielle</option><option value="4">Avancée</option><option value="5">Trés avancée</option></select><boutton class="icobout"><i id="tacl9<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -192,7 +192,7 @@
         </tr> 
         <tr>
             <!-- Interpretation des analyse/tests faits -->
-        <td id="titrecol">Interpretation des analyse/tests faits</td>
+        <td id="titrecol1">Interpretation des analyse/tests faits</td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td id="chel10<%=i%>"><select name="tec2_<%= i %>"><option value=""></option><option value="OUI">OUI</option><option value="NON">NON</option></select><boutton class="icobout"><i id="tacl10<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -202,7 +202,7 @@
         </tr> 
         <tr>
             <!-- Recherche personnelle hors jarvis -->
-        <td id="titrecol">Recherche personnelle hors jarvis</td>
+        <td id="titrecol1">Recherche personnelle hors jarvis</td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td id="chel16<%=i%>"><select name="tec3_<%= i %>"><option value=""></option><option value="OUI">OUI</option><option value="NON">NON</option></select><boutton class="icobout"><i id="tacl16<%=i%>"class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -212,17 +212,17 @@
         </tr>   
         <tr>
             <!-- Note -->
-        <td id="titrecol"  class="note">Note</td>
+        <td id="titrecol1"  class="note">Note</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="notetec_<%= i %>"></td>
+            <td class="no" id="notetec_<%= i %>"></td>
             <%
             }
         %>
         </tr>
         <tr>
             <!-- ligne vide orange -->
-        <td id="titrecol" class="orange"></td>
+        <td id="titrecol1" class="orange"></td>
         <% for(var i=1; i<=ticket; i++){
             %>
             <td class="orange">.</td>
@@ -231,7 +231,7 @@
         %>
         </tr>  
         <!-- Suivi de la bonne gestion de la vie d'un ticket/consignes/procédures -->
-        <td id="titrecol" class="qualite">Suivi de la bonne gestion de la vie d'un ticket/consignes/procédures</td>
+        <td id="titrecol1" class="qualite">Suivi de la bonne gestion de la vie d'un ticket/consignes/procédures</td>
         <% for(var i=1; i<=ticket; i++){
         %>
         <td></td>
@@ -241,7 +241,7 @@
         </tr> 
         <tr>
             <!-- respect SLA du ticket -->
-        <td id="titrecol">Respect SLA du ticket</td>
+        <td id="titrecol1">Respect SLA du ticket</td>
         <% for(var i=1; i<=ticket; i++){
         %>
         <td id="chel12<%=i%>"><select name="q3l12_<%= i %>" id="selectq3_<%= i %>_l1"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl12<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -251,7 +251,7 @@
         </tr> 
         <tr>
             <!-- Suivi consigne spécifique du client -->
-        <td id="titrecol">Suivi consigne spécifique du client</td>
+        <td id="titrecol1">Suivi consigne spécifique du client</td>
         <% for(var i=1; i<=ticket; i++){
         %>
         <td id="chel13<%=i%>"><select name="q3l13_<%= i %>" id="selectq3_<%= i %>_l2"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl13<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -261,7 +261,7 @@
         </tr> 
         <tr>
             <!-- Suivi consigne interne-->
-        <td id="titrecol">Suivi consigne interne</td>
+        <td id="titrecol1">Suivi consigne interne</td>
         <% for(var i=1; i<=ticket; i++){
         %>
         <td id="chel14<%=i%>"><select name="q3l14_<%= i %>" id="selectq3_<%= i %>_l3"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl14<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -271,7 +271,7 @@
         </tr>   
         <tr>
             <!-- Suivi de procédure -->
-        <td id="titrecol">Suivi de procédure</td>
+        <td id="titrecol1">Suivi de procédure</td>
         <% for(var i=1; i<=ticket; i++){
         %>
         <td id="chel15<%=i%>"><select name="q3l15_<%= i %>" id="selectq3_<%= i %>_l4"><option value=""></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl15<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
@@ -281,10 +281,10 @@
         </tr>
         <tr>
             <!-- Note -->
-        <td id="titrecol"  class="note">Note</td>
+        <td id="titrecol1"  class="note">Note</td>
         <% for(var i=1; i<=ticket; i++){
             %>
-            <td id="noteq3_<%= i %>"></td>
+            <td class="no" id="noteq3_<%= i %>"></td>
             <%
             }
         %>
@@ -578,33 +578,6 @@
         }
         });
         }
-// $("select").change(function(){
-//         var getid =this.id 
-//         var str = getid.substr(-14,8);
-//         var val = [];
-//         for(e=1; e<=4; e++){
-//         val[e] = $("#selectq1_1_l"+e).val()
-//             if(val[e]== undefined || val[e]==""){
-//                 val[e]=0;
-//             }else{
-//                 val[e] = parseInt($("#selectq1_1_l"+e).val(),10);   
-//             } 
-//         }
-//         var note = val[1]+val[2]+val[3]+val[4];
-//             // alert(note);
-//         if(!$("#spnote1").length){
-//         $("#noteq1_1").append(
-//             '<span id="spnote1">'+note+'</span>',
-//         )
-//         }else{
-//         if($("#spnote1").length){
-//             $("#spnote1").remove();
-//             $("#noteq1_1").append(
-//             '<span id="spnote1">'+note+'</span>',
-//         )
-//         } 
-//         }   
-// });
 
 // qualité q1
 $("select").change(function(){

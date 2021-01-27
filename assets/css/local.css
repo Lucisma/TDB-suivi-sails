@@ -148,18 +148,25 @@ th {
 /* css luc */    
 .titre{
   background: black;
-  color: chartreuse;
+  color:rgb(28, 209, 118);
 }
 td input{
   width:205px;
 }
 #titrecol {
-  font-size:x-small;
+  font-size:normal;
+  text-justify: auto;
+  font-size: 20px;
+  margin-top:50px;
+}
+#titrecol1 {
+  font-size:normal;
   text-align:left;
   margin-left:10px;
+  text-justify: auto;
 }
 .qualite{
-  background: green;
+  background:rgb(28, 209, 118);
   color:black;
 }
 .note{
@@ -167,7 +174,7 @@ td input{
   color:white;
 }
 .orange{
-  background: orange;
+  background: rgb(255, 199, 96);
 }
 .tabl td{
  /* text-align:left; */
@@ -175,18 +182,37 @@ td input{
 }
 .icobout{
   margin-left:10px;
-  border: 1px solid rgb(24, 12, 199);
+  border: 1px solid rgb(12, 130, 199);
   padding:1px 5px;
 }
 .enregistrer{
-  float: right;
   padding:5px 2px;
   width:100px;
-  background: rgb(28, 206, 28);
+  height:35px;;
+  background:rgb(28, 209, 118);
   color: rgb(255, 255, 255);
-  position: fixed;
   border: 2px solid rgb(8, 238, 65);
   border-radius:5%;
+  margin-top:-70px;
+  margin-left:1360px;
+}
+.enregistrer:hover{
+  background: chartreuse;
+  transition: 0.7s;
+  color:black;
+}
+.fikiab{
+  width:350px;
+  height:5px;
+  background: #030303;
+}
+.cent{
+  text-align: center !important;
+}
+.no{
+  font-size: 20px;
+  color:rgb(2, 1, 1);
+  
 }
 /* css luc */
 /* **************** */
