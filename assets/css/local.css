@@ -196,7 +196,23 @@ td input{
   margin-top:-70px;
   margin-left:1360px;
 }
+.enregistrer2{
+  padding:5px 2px;
+  width:100px;
+  height:35px;;
+  background:rgb(28, 209, 118);
+  color: rgb(17, 14, 14);
+  border: 2px solid rgb(8, 238, 65);
+  border-radius:5%;
+  margin-top:-72px;
+  margin-left:800px;
+}
 .enregistrer:hover{
+  background: chartreuse;
+  transition: 0.7s;
+  color:black;
+}
+.enregistrer2:hover{
   background: chartreuse;
   transition: 0.7s;
   color:black;
