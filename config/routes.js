@@ -125,10 +125,11 @@ module.exports.routes = {
   
   /*********** Ajout suivi ***********************/
   '/fiche_suivi_en_detail/:create?': 'FichedesuivineoController.fichedesuiviendetail',
-  '/fiche_suivi_de_conformite': 'FichedesuivineoController.fichedesuivideconformite',
+  '/fiche_suivi_de_conformite/:update?': 'FichedesuivineoController.fichedesuivideconformite',
   'get /suivi_conformite' : 'FichedesuivineoController.suivi_conformite',
   'get /suivi_en_details' : 'FichedesuivineoController.suivi_en_details',
   'post /suivi_details_post/:my/:id/:ticket' : 'FichedesuivineoController.post_suivi_details',
+  'post /update_conformite/:my/:id/:ticket' : 'FichedesuivineoController.post_update_conformite',
   /*********** Dossiers ************************************************************************************************/
   '/statOp': 'LienOperDossierController.index',
   '/ajaxStat': 'LienOperDossierController.ajaxStat',

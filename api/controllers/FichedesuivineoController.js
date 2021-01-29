@@ -53,6 +53,10 @@ module.exports = {
         menu["presence"]= "";
         menu["admin"]= "";
         const id = req.session.user;
+        var update = false
+        if(req.param("update")){
+            update = true
+        };
         //const id=8054;
         const depart = req.session.id_departement;
         var sql = "SELECT * FROM neocles_manager WHERE matricule ='"+id+"'";
@@ -65,12 +69,12 @@ module.exports = {
                 Neo_pers_niveau.query(sql, function(err, resultat){
                     if(err) return res.send(err);
                     //console.log(resultat.rows[0].appelation);
-                    return res.view('pages/neocles/fiche_de_suivi/fichedesuivideconformite', {layout : false, menu : menu, manager: manager, id:id, id_appelation: resultat});
+                    return res.view('pages/neocles/fiche_de_suivi/fichedesuivideconformite', {layout : false, menu : menu, manager: manager, id:id, id_appelation: resultat, update: update});
                 })
             }
             else{
                 var manager = false;
-                return res.view('pages/neocles/fiche_de_suivi/fichedesuivideconformite', {layout : false, menu : menu, manager: manager, id:id});
+                return res.view('pages/neocles/fiche_de_suivi/fichedesuivideconformite', {layout : false, menu : menu, manager: manager, id:id, update: update});
             }
             
         });
@@ -90,6 +94,8 @@ module.exports = {
         var my = req.param("my");
         var annee = my.substr( 0, 4);
         var mois = my.substr( 5, 2);
+        var update= false;
+        var fiche ;
         //var sql = "select id_niveau from neo_pers_niveau where id_pers = '"+id+"' and date = (select MAX(date) from neo_pers_niveau where id_pers = '"+id+"')";
         var sql = "select pers_niv.id_niveau, niv.seuil_ticket from neo_pers_niveau pers_niv INNER JOIN neo_niveau niv ON pers_niv.id_niveau = niv.id  where id_pers = '"+id+"' and date = (select MAX(date) from neo_pers_niveau where id_pers = '"+id+"')"
         Neo_pers_niveau.query(sql, function(err, resultat){
@@ -108,27 +114,30 @@ module.exports = {
                 Neocles_fiche.query(sql,  function(err, resultat){
                     if(err) return res.send(err);
                     if(resultat.rowCount == 1){
+                        fiche = true;
                         var id_fiche = resultat.rows[0].id;
 
                         //Nom ticket et son id
-                        sql = "SELECT num, nom, t3, note as note_tec from neocles_technicite tec INNER JOIN neocles_ticket ticket ON tec.id_ticket = ticket.id WHERE ticket.id_fiche = "+ id_fiche+" ORDER BY num;";
+                        sql = "SELECT num, nom, t3, note as note_tec, ticket.id as ticket_id from neocles_technicite tec INNER JOIN neocles_ticket ticket ON tec.id_ticket = ticket.id WHERE ticket.id_fiche = "+ id_fiche+" ORDER BY num;";
                         Neocles_fiche.query(sql, function(err, ticket_tec){
                             if(err) return res.send(err);
                             sql = "select note as note_q1 from neocles_qualite qua INNER JOIN neocles_ticket tic ON tic.id = qua.id_ticket WHERE tic.id_fiche="+ id_fiche+" AND qua.num = 1 ORDER BY tic.num";
                             Neocles_fiche.query(sql, function(err, qualite1){
                                 if(err) return res.send(err);
-                                console.log(qualite1);
                                 //return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu, ticket_tec : ticket_tec, qualite : qualite});
                                 sql = "select note as note_q2 from neocles_qualite qua INNER JOIN neocles_ticket tic ON tic.id = qua.id_ticket WHERE tic.id_fiche="+ id_fiche+" AND qua.num = 2 ORDER BY tic.num";
                                 Neocles_fiche.query(sql, function(err, qualite2){
                                     if(err) return res.send(err);
-                                    console.log(qualite2);
                                     //return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu, ticket_tec : ticket_tec, qualite : qualite});
                                     sql = "select note as note_q3 from neocles_qualite qua INNER JOIN neocles_ticket tic ON tic.id = qua.id_ticket WHERE tic.id_fiche="+ id_fiche+" AND qua.num = 3 ORDER BY tic.num";
                                     Neocles_fiche.query(sql, function(err, qualite3){
                                         if(err) return res.send(err);
-                                        console.log(qualite3);
-                                        return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu, ticket_tec : ticket_tec, qualite1, qualite2, qualite3, seuil_ticket: seuil_ticket});
+                                        sql = "select inactivite, auto_affectation from neocles_implication imp INNER JOIN neocles_ticket tic ON imp.id_ticket = tic.id WHERE tic.id_fiche="+ id_fiche+" ORDER BY tic.num ";
+                                        Neocles_fiche.query(sql, function(err, implication){
+                                            if(err) return res.send(err);
+                                            return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu, fiche: fiche, ticket_tec : ticket_tec, qualite1, qualite2, qualite3, seuil_ticket: seuil_ticket, ticket : ticket, my : my, id : id, imp : implication});
+                                        })
+                                        
                                     })
                                 })
                             })
@@ -138,7 +147,8 @@ module.exports = {
                     }
                     else{
                         //Le fiche n'existe pas; nous allons le créer
-                        return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu, ticket : ticket});
+                        fiche = false;
+                        return  res.view('pages/neocles/fiche_de_suivi/tableau_conformite', {layout : false, menu : menu, ticket : ticket, my : my, id : id, fiche: fiche});
                     }
                 });
             }
@@ -180,7 +190,23 @@ module.exports = {
                     if(err) return res.send(err);
                     if(resultat.rowCount == 1){
                         //Le fiche existe déjà
-                        return  res.view('pages/neocles/fiche_de_suivi/tableau_en_details', {layout : false, menu : menu, ticket : ticket, my : my, id : id});
+                        var id_fiche = resultat.rows[0].id;
+                        //Ticket
+                        sql = "select * from neocles_ticket where id_fiche = " + id_fiche;
+                        Neocles_fiche.query(sql, function(err, ticket){
+                            if(err) return res.send(err);
+                            sql = "select qua.num as type_qaulite, q1, q2, q3, q4, note, tic.num as num_ticket from neocles_qualite qua INNER JOIN neocles_ticket tic ON qua.id_ticket = tic.id where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
+                            Neocles_fiche.query(sql, function(err, qualite){
+                                if(err) return res.send(err);
+                                sql = "select num, t1, t2, t3, note from neocles_technicite tec INNER JOIN neocles_ticket tic ON tec.id_ticket = tic.id where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
+                                Neocles_fiche.query(sql, function(err, technicite){
+                                    if(err) return res.send(err);
+                                    console.log(technicite);
+                                    return res.send("id_fiche");
+                                })
+                            })
+                        })
+                        
                     }
                     else{
                         //Le fiche n'existe pas; nous allons le créer
@@ -203,13 +229,10 @@ module.exports = {
         menu["statOpAdmin"]= "";
         menu["presence"]= "";
         menu["admin"]= "";
-        const id = parseInt( req.session.user, 10);
         var id_pers = parseInt( req.param("id"), 10);
         var my = req.param("my");
         var nbr_ticket = req.param("ticket");
         var date_now = new Date().toISOString().slice(0,10);
-        console.log("Now : " + date_now);
-        console.log("my : " +my);
         var date_ticke = new Date(my).toISOString().slice(0,10);
 
         function recevoir_donnee(req, nbr_ticket, name){
@@ -292,12 +315,9 @@ module.exports = {
         Neocles_fiche.query(sql, function(err){
             if(err) return res.send(err);
             //sql = "insert into neocles_ticket(num, nom, id_fiche) values(1, 'test', 1)";
-            console.log("Insert success");   
-            sql = "select id as id_fiche from neocles_fiche where id_pers = "+id_pers+" AND id_manager = "+id+" AND date_fiche = '"+date_ticke+"'";
-            console.log(sql);    
+            sql = "select id as id_fiche from neocles_fiche where id_pers = "+id_pers+" AND id_manager = "+id+" AND date_fiche = '"+date_ticke+"'";   
             Neocles_fiche.query(sql, function(err, resultat){
                 if(err) return res.send(err);
-                console.log(resultat);
                 if(resultat.rowCount == 1){
                     var id_fiche = resultat.rows[0].id_fiche;
 
@@ -354,7 +374,6 @@ module.exports = {
                         }
                         Neocles_fiche.query(sql, function(err){
                             if(err) return res.send(err);
-                            console.log("com " + sql);
                         }) 
                     }
 
@@ -363,17 +382,77 @@ module.exports = {
                             t1[num_colone] = null;
                         }
                         var sql = "insert into neocles_technicite(id_ticket, t1, t2, t3, note) values("+id_ticket+","+t1[num_colone]+",'"+t2[num_colone]+"','"+t3[num_colone]+"',"+note[num_colone]+")";
-                        console.log("tec " + sql);
                         Neocles_fiche.query(sql, function(err){
                             if(err) return res.send(err);
-                            console.log("techn " + sql);
                         }) 
                     }
                 }
             })
         })
+    },
 
+    post_update_conformite: function(req, res){
+        if (!req.session.user) return res.redirect('/login');
+        var menu = [];
+        menu["aceuil"]= "";
+        menu["dossierAdmin"]= "";
+        menu["gestionDossier"]= "";
+        menu["statOpAdmin"]= "";
+        menu["presence"]= "";
+        menu["admin"]= "";
+        const id = parseInt( req.session.user, 10);
+        var id_pers = parseInt( req.param("id"), 10);
+        var my = req.param("my");
+        var nbr_ticket = req.param("ticket");
+        var date_now = new Date().toISOString().slice(0,10);
+        var date_ticke = new Date(my).toISOString().slice(0,10);
+        function recevoir(req, nbr_ticket, name){
+            var tab = [];
+            for(var i=1; i<=nbr_ticket; i++){
+                if(req.param(name+""+i) == undefined ){
+                    tab[i] = "";
+                }
+                else{
+                    tab[i] = req.param(name+""+i);
+                }            
+            }
+            return tab;
+        }
 
+        var inactivite = recevoir(req, nbr_ticket, "inactivite");
+        var auto_affect = recevoir(req, nbr_ticket, "affect");
+        var id_ticket = recevoir(req, nbr_ticket, "id_ticket")
+
+        function insertion_implication(id_ticket, inactivite, auto_affect){
+            var sql = "insert into neocles_implication(id_ticket, inactivite, auto_affectation) values("+id_ticket+",'"+inactivite+"','"+auto_affect+"')";
+            Neocles_fiche.query(sql, function(err){
+                if(err) return res.send(err);
+                
+            })                     
+        }
+
+        function update_implication(id_ticket, inactivite, auto_affect){
+            var sql = "update neocles_implication set inactivite = '"+inactivite+"', auto_affectation = '"+auto_affect+"' WHERE id_ticket = "+ id_ticket;
+            Neocles_fiche.query(sql, function(err){
+                if(err) return res.send(err);                
+            })  
+        }
+
+        var implic = req.param("implic");
+        var ina, aff, id_tic;
+        for(var i =1; i<= nbr_ticket; i++){
+            ina = inactivite[i];
+            aff = auto_affect[i];
+            id_tic = id_ticket[i];
+            if(implic){
+                update_implication(id_tic, ina, aff);
+            }
+            else{
+                insertion_implication(id_tic, ina, aff);
+            }
+            
+        }
+        return res.redirect("/fiche_suivi_de_conformite/update");
     }
 }
 

@@ -130,9 +130,13 @@ th {
   text-align: none;
 }
 
-.rejet{
+.rouge{
   background-color: #F9CBC0;
   color: red;
+}
+.verte{
+  background-color: #65d838;
+  color: rgb(8, 7, 7);
 }
 
 .rejet_tete{
