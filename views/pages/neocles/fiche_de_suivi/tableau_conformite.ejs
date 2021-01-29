@@ -20,13 +20,26 @@
       <td class="cyan">Prise en compte des consignes et application des procédures</td>
   </tr>
   <% 
-    for(var i=1; i<=ticket; i++){
+    var rejet, total;
+    for(var i=1; i<=ticket_tec.rowCount; i++){
+      total = qualite1.rows[i-1].note_q1 + qualite2.rows[i-1].note_q2 + qualite3.rows[i-1].note_q3 ;
+      if(total >= seuil_ticket ){
+        rejet = 0;
+      }
+      else{
+        rejet = 1;
+      }
     %>
     <tr>
         <td class="green"><%= i %></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= ticket_tec.rows[i-1].nom %></td>
+        <td><% if(ticket_tec.rows[i-1].note_tec){
+          %>
+          <%=  ticket_tec.rows[i-1].note_tec  %>
+          <%
+        }
+          %></td>
+        <td><%= ticket_tec.rows[i-1].t3 %></td>
         <td>
           <select name="implic" id="implic">
             <option value=""></option>
@@ -41,12 +54,12 @@
             <option value="">NON</option>                   
           </select>
         </td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="rejet">1</td>
-        <td></td>
+          <td><%= qualite1.rows[i-1].note_q1 %></td>
+          <td><%= qualite2.rows[i-1].note_q2 %></td>
+          <td><%= qualite3.rows[i-1].note_q3 %></td>
+        <td><%= total %></td>
+        <td class="rejet"><%= rejet %></td>
+        <td><%= seuil_ticket %></td>
     </tr>
     <%
     }

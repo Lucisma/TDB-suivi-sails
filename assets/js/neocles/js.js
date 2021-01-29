@@ -33,4 +33,3 @@ function suivi_en_details(){
     
 }
 
-
