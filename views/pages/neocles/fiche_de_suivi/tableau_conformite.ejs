@@ -1,5 +1,5 @@
-<form action="">
-<input class="enregistrer2" type="submit" value="Enregistrer"><br><br>
+<form action="/update_conformite/<%= my %>/<%= id %>/<%= ticket %>" method="POST">
+<input class="enregistrer" type="submit" value="Enregistrer"><br><br>
 <table border="2" id="board"> 
   <tr> 
       <td colspan="2"></td>
@@ -22,14 +22,29 @@
       <td class="cyan">Prise en compte des consignes et application des procédures</td>
   </tr>
   <% 
-    var rejet, total;
+    var rejet, total, inactivite="", affect="", implic=false, somme1=0, somme2=0, somme3=0, m1, m2, m3, total_rejet = 0, col_rejet;
+    console.log(fiche);
+    if(fiche){
+      console.log(ticket_tec.rowCount);
     for(var i=1; i<=ticket_tec.rowCount; i++){
       total = qualite1.rows[i-1].note_q1 + qualite2.rows[i-1].note_q2 + qualite3.rows[i-1].note_q3 ;
+      somme1 = somme1 + qualite1.rows[i-1].note_q1;
+      somme2 = somme2 + qualite2.rows[i-1].note_q2;
+      somme3 = somme3 + qualite3.rows[i-1].note_q3;
       if(total >= seuil_ticket ){
         rejet = 0;
+        col_rejet = "verte";
       }
       else{
         rejet = 1;
+        col_rejet = "rouge";
+      }
+      total_rejet = total_rejet + rejet;
+
+      if(imp.rowCount != 0){
+        inactivite = imp.rows[i-1].inactivite;
+        affect = imp.rows[i-1].auto_affectation;
+        implic = true;
       }
     %>
     <tr>
@@ -43,28 +58,66 @@
           %></td>
         <td><%= ticket_tec.rows[i-1].t3 %></td>
         <td>
-          <select name="implic" id="implic">
-            <option value=""></option>
-            <option value="">OUI</option>
-            <option value="">NON</option>                   
+          <select name="inactivite<%= i %>" id="implic">
+            <option value="<%= inactivite %>"><%= inactivite %></option>
+            <option value="OUI">OUI</option>
+            <option value="NON">NON</option>                   
           </select>
         </td>
         <td>
-          <select name="implic" id="implic">
-            <option value=""></option>
-            <option value="">OUI</option>
-            <option value="">NON</option>                   
+          <select name="affect<%= i %>" id="implic">
+            <option value="<%= affect %>"><%= affect %></option>
+            <option value="OUI">OUI</option>
+            <option value="NON">NON</option>                   
           </select>
         </td>
           <td><%= qualite1.rows[i-1].note_q1 %></td>
           <td><%= qualite2.rows[i-1].note_q2 %></td>
           <td><%= qualite3.rows[i-1].note_q3 %></td>
         <td><%= total %></td>
-        <td class="rejet"><%= rejet %></td>
+        <td class="<%= col_rejet %>"><%= rejet %></td>
         <td><%= seuil_ticket %></td>
     </tr>
+    <input type="hidden" name="id_ticket<%= i %>" value="<%= ticket_tec.rows[i-1].ticket_id %>">
+    <input type="hidden" name="implic" value="<%= implic %>">
     <%
     }
+    m1 = (somme1 / ticket_tec.rowCount).toFixed(2);
+    m2 = (somme2 / ticket_tec.rowCount).toFixed(2);
+    m3 = (somme3 / ticket_tec.rowCount).toFixed(2);
+  }
+  else{
+    for(var i=1; i<=ticket; i++){
+    %>
+    <tr>
+      <td class="green"><%= i %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <select name="" id="implic">
+          <option value=""></option>
+          <option value="OUI">OUI</option>
+          <option value="NON">NON</option>                   
+        </select>
+      </td>
+      <td>
+        <select name="" id="implic">
+          <option value=""></option>
+          <option value="OUI">OUI</option>
+          <option value="NON">NON</option>                   
+        </select>
+      </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      <td></td>
+      <td class="rejet"></td>
+      <td></td>
+  </tr>
+    <%
+}
+  }
   %>
   <tr>
     <td></td>
@@ -73,11 +126,11 @@
     <td></td>
     <td></td>
     <td class="vert">Moyenne Qualité</td>                  
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><%= m1 %></td>
+    <td><%= m2 %></td>
+    <td><%= m3 %></td>
     <td class="green">Total Nombre de Rejet</td>
-    <td class="green"></td>
+    <td class="green"><%= total_rejet %></td>
     <td></td>
   </tr>
   
