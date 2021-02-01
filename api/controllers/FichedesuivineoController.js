@@ -201,7 +201,11 @@ module.exports = {
                                 sql = "select num, t1, t2, t3, note from neocles_technicite tec INNER JOIN neocles_ticket tic ON tec.id_ticket = tic.id where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
                                 Neocles_fiche.query(sql, function(err, technicite){
                                     if(err) return res.send(err);
-                                    console.log(technicite);
+                                    sql = "select type, com1, com2, com3, num from neocles_commentaire com INNER JOIN neocles_ticket tic where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
+                                    Neocles_fiche.query(sql, function(err, commentaire){
+                                        if(err) return res.send(err);
+                                        console.log(commentaire);
+                                    })
                                     return res.send("id_fiche");
                                 })
                             })
