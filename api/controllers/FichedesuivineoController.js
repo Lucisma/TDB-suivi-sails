@@ -192,7 +192,7 @@ module.exports = {
                         //Le fiche existe déjà
                         var id_fiche = resultat.rows[0].id;
                         //Ticket
-                        sql = "select * from neocles_ticket where id_fiche = " + id_fiche;
+                        sql = "select * from neocles_ticket where id_fiche = " + id_fiche +" ORDER BY num";
                         Neocles_fiche.query(sql, function(err, donne_ticket){
                             if(err) return res.send(err);
                             var nbr_ticket = donne_ticket.rowCount;
@@ -242,48 +242,48 @@ module.exports = {
         var date_now = new Date().toISOString().slice(0,10);
         var date_ticke = new Date(my).toISOString().slice(0,10);
 
-        //Qualité 2
-        var nom_ticket = service.recevoir_donnee(req, nbr_ticket, "ticket");
-        var q1l1 = service.recevoir_donnee(req, nbr_ticket, "q1l1_");
-        var q1l1_com = service.recevoir_donnee(req, nbr_ticket, "inpl1");
-        var q1l2 = service.recevoir_donnee(req, nbr_ticket, "q1l2_");
-        var q1l2_com = service.recevoir_donnee(req, nbr_ticket, "inpl2");
-        var q1l3 = service.recevoir_donnee(req, nbr_ticket, "q1l3_");
-        var q1l3_com = service.recevoir_donnee(req, nbr_ticket, "inpl3");
-        var q1l4 = service.recevoir_donnee(req, nbr_ticket, "q1l4_");
-        var q1l4_com = service.recevoir_donnee(req, nbr_ticket, "inpl4");
-        var note_q1 = service.calcul_note(q1l1, q1l2, q1l3, q1l4, nbr_ticket);
+        //Qualité 1
+        nom_ticket = service.recevoir_donnee(req, nbr_ticket, "ticket");
+        q1l1 = service.recevoir_donnee(req, nbr_ticket, "q1l1_");
+        q1l1_com = service.recevoir_donnee(req, nbr_ticket, "inpl1");
+        q1l2 = service.recevoir_donnee(req, nbr_ticket, "q1l2_");
+        q1l2_com = service.recevoir_donnee(req, nbr_ticket, "inpl2");
+        q1l3 = service.recevoir_donnee(req, nbr_ticket, "q1l3_");
+        q1l3_com = service.recevoir_donnee(req, nbr_ticket, "inpl3");
+        q1l4 = service.recevoir_donnee(req, nbr_ticket, "q1l4_");
+        q1l4_com = service.recevoir_donnee(req, nbr_ticket, "inpl4");
+        note_q1 = service.calcul_note(q1l1, q1l2, q1l3, q1l4, nbr_ticket);
         
         //Qualité 2
-        var q2l5 = service.recevoir_donnee(req, nbr_ticket, "q2l5_");
-        var q2l5_com = service.recevoir_donnee(req, nbr_ticket, "inpl5");
-        var q2l6 = service.recevoir_donnee(req, nbr_ticket, "q2l6_");
-        var q2l6_com = service.recevoir_donnee(req, nbr_ticket, "inpl6");
-        var q2l7 = service.recevoir_donnee(req, nbr_ticket, "q2l7_");
-        var q2l7_com = service.recevoir_donnee(req, nbr_ticket, "inpl7");
-        var q2l8 = service.recevoir_donnee(req, nbr_ticket, "q2l8_");
-        var q2l8_com = service.recevoir_donnee(req, nbr_ticket, "inpl8");
-        var note_q2 = service.calcul_note(q2l5, q2l6, q2l7, q2l8, nbr_ticket);
+        q2l5 = service.recevoir_donnee(req, nbr_ticket, "q2l5_");
+        q2l5_com = service.recevoir_donnee(req, nbr_ticket, "inpl5");
+        q2l6 = service.recevoir_donnee(req, nbr_ticket, "q2l6_");
+        q2l6_com = service.recevoir_donnee(req, nbr_ticket, "inpl6");
+        q2l7 = service.recevoir_donnee(req, nbr_ticket, "q2l7_");
+        q2l7_com = service.recevoir_donnee(req, nbr_ticket, "inpl7");
+        q2l8 = service.recevoir_donnee(req, nbr_ticket, "q2l8_");
+        q2l8_com = service.recevoir_donnee(req, nbr_ticket, "inpl8");
+        note_q2 = service.calcul_note(q2l5, q2l6, q2l7, q2l8, nbr_ticket);
 
         //Qualité 3
-        var q3l12 = service.recevoir_donnee(req, nbr_ticket, "q3l12_");
-        var q3l12_com = service.recevoir_donnee(req, nbr_ticket, "inpl12");
-        var q3l13 = service.recevoir_donnee(req, nbr_ticket, "q3l13_");
-        var q3l13_com = service.recevoir_donnee(req, nbr_ticket, "inpl13");
-        var q3l14 = service.recevoir_donnee(req, nbr_ticket, "q3l14_");
-        var q3l14_com = service.recevoir_donnee(req, nbr_ticket, "inpl14");
-        var q3l15 = service.recevoir_donnee(req, nbr_ticket, "q3l15_");
-        var q3l15_com = service.recevoir_donnee(req, nbr_ticket, "inpl15");
-        var note_q3 = service.calcul_note(q3l12, q3l13, q3l14, q3l15, nbr_ticket);
+        q3l12 = service.recevoir_donnee(req, nbr_ticket, "q3l12_");
+        q3l12_com = service.recevoir_donnee(req, nbr_ticket, "inpl12");
+        q3l13 = service.recevoir_donnee(req, nbr_ticket, "q3l13_");
+        q3l13_com = service.recevoir_donnee(req, nbr_ticket, "inpl13");
+        q3l14 = service.recevoir_donnee(req, nbr_ticket, "q3l14_");
+        q3l14_com = service.recevoir_donnee(req, nbr_ticket, "inpl14");
+        q3l15 = service.recevoir_donnee(req, nbr_ticket, "q3l15_");
+        q3l15_com = service.recevoir_donnee(req, nbr_ticket, "inpl15");
+        note_q3 = service.calcul_note(q3l12, q3l13, q3l14, q3l15, nbr_ticket);
 
         //Technicité
-        var tec1 = service.recevoir_donnee(req, nbr_ticket, "tec1_");
-        var tec1_com = service.recevoir_donnee(req, nbr_ticket, "inpl9");
-        var tec2 = service.recevoir_donnee(req, nbr_ticket, "tec2_");
-        var tec2_com = service.recevoir_donnee(req, nbr_ticket, "inpl10");
-        var tec3 = service.recevoir_donnee(req, nbr_ticket, "tec3_");
-        var tec3_com = service.recevoir_donnee(req, nbr_ticket, "inpl16");
-        var note_tec = tec1;
+        tec1 = service.recevoir_donnee(req, nbr_ticket, "tec1_");
+        tec1_com = service.recevoir_donnee(req, nbr_ticket, "inpl9");
+        tec2 = service.recevoir_donnee(req, nbr_ticket, "tec2_");
+        tec2_com = service.recevoir_donnee(req, nbr_ticket, "inpl10");
+        tec3 = service.recevoir_donnee(req, nbr_ticket, "tec3_");
+        tec3_com = service.recevoir_donnee(req, nbr_ticket, "inpl16");
+        note_tec = tec1;
 
         //insertion fiche
         var sql = "insert into neocles_fiche(id_pers, id_manager, date_creation, date_fiche) values("+id_pers+","+id+",'"+date_now+"','"+date_ticke+"')";
@@ -295,42 +295,42 @@ module.exports = {
                 if(err) return res.send(err);
                 if(resultat.rowCount == 1){
                     var id_fiche = resultat.rows[0].id_fiche;
-
                     //Insertion ticket et son nom dans la table ticket
-                    var id_ticket = 0 , num_colone=0;
-                    for(var i = 1; i<=nbr_ticket; i++ ){                       
-                        sql = "insert into neocles_ticket(num, nom, id_fiche) values ("+i+",'"+nom_ticket[i]+"',"+id_fiche+")";
+                    var id_ticket = 0 , num_colone=0, e=0;
+                    for(var i = 1; i<=nbr_ticket; i++ ){                      
+                        sql = "insert into neocles_ticket(num, nom, id_fiche) values ("+i+",'"+nom_ticket[i]+"',"+id_fiche+")";                   
                         Neocles_fiche.query(sql, function(err){
-                            if(err){
-                                return res.send(err);
-                            } 
+                            if(err) return res.send(err);
+                            e = e + 1;
+                            if(e == nbr_ticket){
+                                donnee_ticket(id_fiche);
+                                return res.redirect("/fiche_suivi_en_detail/create");
+                            }                
                         })
                     }
 
-                    //Select id_ticket et num ticket
-                    sql = "select id as id_ticket, num from neocles_ticket where id_fiche = "+id_fiche;
-                    Neocles_fiche.query(sql, function(err, resultat){
-                        if(err) return res.send(err);
-                        
-                        //insertion qualité
-                        for(var i =0; i<resultat.rowCount; i++){
-                            //console.log(resultat.rows[i].id_ticket + " et num " + resultat.rows[i].num);
-                            id_ticket = resultat.rows[i].id_ticket;
-                            num_colone = resultat.rows[i].num;
-                            insertion_qualite(1, id_ticket, q1l1, q1l2, q1l3, q1l4, note_q1, num_colone);
-                            insertion_qualite(2, id_ticket, q2l5, q2l6, q2l7, q2l8, note_q2, num_colone);
-                            insertion_qualite(3, id_ticket, q3l12, q3l13, q3l14, q3l15, note_q3, num_colone);
-                            insertion_commentaire("q1", id_ticket, q1l1_com, q1l2_com, q1l3_com, num_colone, q1l4_com);
-                            insertion_commentaire("q2", id_ticket, q2l5_com, q2l6_com, q2l7_com, num_colone, q2l8_com);
-                            insertion_commentaire("q3", id_ticket, q3l12_com, q3l13_com, q3l14_com, num_colone, q3l15_com);
-                            insertion_commentaire("tec", id_ticket, tec1_com, tec2_com, tec3_com, num_colone);
-                            insertion_technicite(id_ticket, tec1, tec2, tec3, num_colone, note_tec);
+                    function donnee_ticket(id_fiche) {
+                        var sql = "select id as id_ticket, num from neocles_ticket where id_fiche = "+id_fiche;
+                        Neocles_fiche.query(sql, function(err, resultat){
+                            if(err) return res.send(err);                       
+                            //insertion qualité
+                            for(var i =0; i<resultat.rowCount; i++){
+                                //console.log(resultat.rows[i].id_ticket + " et num " + resultat.rows[i].num);
+                                id_ticket = resultat.rows[i].id_ticket;
+                                num_colone = resultat.rows[i].num;
+                                insertion_qualite(1, id_ticket, q1l1, q1l2, q1l3, q1l4, note_q1, num_colone);
+                                insertion_qualite(2, id_ticket, q2l5, q2l6, q2l7, q2l8, note_q2, num_colone);
+                                insertion_qualite(3, id_ticket, q3l12, q3l13, q3l14, q3l15, note_q3, num_colone);
+                                insertion_commentaire("q1", id_ticket, q1l1_com, q1l2_com, q1l3_com, num_colone, q1l4_com);
+                                insertion_commentaire("q2", id_ticket, q2l5_com, q2l6_com, q2l7_com, num_colone, q2l8_com);
+                                insertion_commentaire("q3", id_ticket, q3l12_com, q3l13_com, q3l14_com, num_colone, q3l15_com);
+                                insertion_commentaire("tec", id_ticket, tec1_com, tec2_com, tec3_com, num_colone);
+                                insertion_technicite(id_ticket, tec1, tec2, tec3, num_colone, note_tec);
+                            } 
 
-                        }
-                        return res.redirect("/fiche_suivi_en_detail/create");
-
-                        
-                    })
+                        })
+                    }                    
+                    
 
                     function insertion_qualite(num_qualite, id_ticket, q1, q2, q3, q4, note, num_colone){
                         var sql = "insert into neocles_qualite(num, id_ticket, q1, q2, q3, q4, note) values("+num_qualite+","+id_ticket+",'"+q1[num_colone]+"','"+q2[num_colone]+"','"+q3[num_colone]+"','"+q4[num_colone]+"',"+note[num_colone]+")";
@@ -432,11 +432,11 @@ module.exports = {
 
         var implic = req.param("implic");
         var ina, aff, id_tic;
-        for(var i =1; i<= nbr_ticket; i++){
+        for(var i = 1; i <= nbr_ticket; i++){
             ina = inactivite[i];
             aff = auto_affect[i];
             id_tic = id_ticket[i];
-            if(implic){
+            if(implic[0] == 1 ){
                 update_implication(id_tic, ina, aff);
             }
             else{
@@ -444,6 +444,7 @@ module.exports = {
             }
             
         }
+        
         return res.redirect("/fiche_suivi_de_conformite/update");
     }
 }

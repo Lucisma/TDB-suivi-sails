@@ -46,8 +46,6 @@
         <td id="titrecol1">Sollicitation du client bien décrite</td>
         <%
         var val; 
-        console.log(qualite.rowCount);
-        console.log(qualite);
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite == 1){
                 val = 0;
@@ -120,7 +118,7 @@
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 1){
         %>
-            <td class="no" id="noteq1_<%= i %>"><%= qualite.rows[i].note %></td>
+            <td class="no" id="noteq1_<%= i %>"><%= qualite.rows[i-1].note %></td>
             <%
             }
         }
@@ -419,7 +417,7 @@
         <td id="titrecol1"  class="note">Note</td>
         <%
         for(var i=1; i<= qualite.rowCount; i++){
-            if(qualite.rows[i-1].type_qaulite === 2){
+            if(qualite.rows[i-1].type_qaulite === 3){
         %>
             <td class="no" id="noteq3_<%= i %>"><%= qualite.rows[i-1].note %></td>
             <%
