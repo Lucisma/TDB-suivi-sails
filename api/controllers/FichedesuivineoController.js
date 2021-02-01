@@ -193,20 +193,22 @@ module.exports = {
                         var id_fiche = resultat.rows[0].id;
                         //Ticket
                         sql = "select * from neocles_ticket where id_fiche = " + id_fiche;
-                        Neocles_fiche.query(sql, function(err, ticket){
+                        Neocles_fiche.query(sql, function(err, donne_ticket){
                             if(err) return res.send(err);
+                            var nbr_ticket = donne_ticket.rowCount;
                             sql = "select qua.num as type_qaulite, q1, q2, q3, q4, note, tic.num as num_ticket from neocles_qualite qua INNER JOIN neocles_ticket tic ON qua.id_ticket = tic.id where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
                             Neocles_fiche.query(sql, function(err, qualite){
                                 if(err) return res.send(err);
                                 sql = "select num, t1, t2, t3, note from neocles_technicite tec INNER JOIN neocles_ticket tic ON tec.id_ticket = tic.id where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
                                 Neocles_fiche.query(sql, function(err, technicite){
                                     if(err) return res.send(err);
-                                    sql = "select type, com1, com2, com3, num from neocles_commentaire com INNER JOIN neocles_ticket tic where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
+                                    sql = "select type, com1, com2, com3, com4, tic.num from neocles_commentaire tec INNER JOIN neocles_ticket tic ON tec.id_ticket = tic.id where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
                                     Neocles_fiche.query(sql, function(err, commentaire){
                                         if(err) return res.send(err);
-                                        console.log(commentaire);
+                                        return  res.view('pages/neocles/fiche_de_suivi/update_tableau_details', {layout : false, menu : menu, donne_ticket : donne_ticket, ticket: nbr_ticket, my : my, id : id, qualite:qualite, technicite: technicite });
                                     })
-                                    return res.send("id_fiche");
+                                    //return res.send("id_fiche");
+                                    
                                 })
                             })
                         })
