@@ -236,84 +236,53 @@ module.exports = {
         menu["presence"]= "";
         menu["admin"]= "";
         var id_pers = parseInt( req.param("id"), 10);
+        const id = req.session.user;
         var my = req.param("my");
         var nbr_ticket = req.param("ticket");
         var date_now = new Date().toISOString().slice(0,10);
         var date_ticke = new Date(my).toISOString().slice(0,10);
 
-        function recevoir_donnee(req, nbr_ticket, name){
-            var tab = [];
-            for(var i=1; i<=nbr_ticket; i++){
-                if(req.param(name+""+i) == undefined ){
-                    tab[i] = "";
-                }
-                else{
-                    tab[i] = req.param(name+""+i);
-                }            
-            }
-            return tab;
-        }
-
-        function calcul_note(l1, l2, l3, l4, nbr_ticket){
-            function verif(l){
-                if(!l || l=="" || l==null){
-                    return 0;
-                }
-                else{
-                    return parseInt(l,10);
-                }
-            }
-            var note = [];
-            for(var i=1; i<=nbr_ticket; i++){
-                l1[i] = verif(l1[i]);
-                l2[i] = verif(l2[i]);
-                l3[i] = verif(l3[i]);
-                l4[i] = verif(l4[i]);
-                note[i] = l1[i] + l2[i] + l3[i] + l4[i];      
-            }
-            return note;
-        }
         //Qualité 2
-        var nom_ticket = recevoir_donnee(req, nbr_ticket, "ticket");
-        var q1l1 = recevoir_donnee(req, nbr_ticket, "q1l1_");
-        var q1l1_com = recevoir_donnee(req, nbr_ticket, "inpl1");
-        var q1l2 = recevoir_donnee(req, nbr_ticket, "q1l2_");
-        var q1l2_com = recevoir_donnee(req, nbr_ticket, "inpl2");
-        var q1l3 = recevoir_donnee(req, nbr_ticket, "q1l3_");
-        var q1l3_com = recevoir_donnee(req, nbr_ticket, "inpl3");
-        var q1l4 = recevoir_donnee(req, nbr_ticket, "q1l4_");
-        var q1l4_com = recevoir_donnee(req, nbr_ticket, "inpl4");
-        var note_q1 = calcul_note(q1l1, q1l2, q1l3, q1l4, nbr_ticket);
+        var nom_ticket = service.recevoir_donnee(req, nbr_ticket, "ticket");
+        var q1l1 = service.recevoir_donnee(req, nbr_ticket, "q1l1_");
+        var q1l1_com = service.recevoir_donnee(req, nbr_ticket, "inpl1");
+        var q1l2 = service.recevoir_donnee(req, nbr_ticket, "q1l2_");
+        var q1l2_com = service.recevoir_donnee(req, nbr_ticket, "inpl2");
+        var q1l3 = service.recevoir_donnee(req, nbr_ticket, "q1l3_");
+        var q1l3_com = service.recevoir_donnee(req, nbr_ticket, "inpl3");
+        var q1l4 = service.recevoir_donnee(req, nbr_ticket, "q1l4_");
+        var q1l4_com = service.recevoir_donnee(req, nbr_ticket, "inpl4");
+        var note_q1 = service.calcul_note(q1l1, q1l2, q1l3, q1l4, nbr_ticket);
         
         //Qualité 2
-        var q2l5 = recevoir_donnee(req, nbr_ticket, "q2l5_");
-        var q2l5_com = recevoir_donnee(req, nbr_ticket, "inpl5");
-        var q2l6 = recevoir_donnee(req, nbr_ticket, "q2l6_");
-        var q2l6_com = recevoir_donnee(req, nbr_ticket, "inpl6");
-        var q2l7 = recevoir_donnee(req, nbr_ticket, "q2l7_");
-        var q2l7_com = recevoir_donnee(req, nbr_ticket, "inpl7");
-        var q2l8 = recevoir_donnee(req, nbr_ticket, "q2l8_");
-        var q2l8_com = recevoir_donnee(req, nbr_ticket, "inpl8");
-        var note_q2 = calcul_note(q2l5, q2l6, q2l7, q2l8, nbr_ticket);
+        var q2l5 = service.recevoir_donnee(req, nbr_ticket, "q2l5_");
+        var q2l5_com = service.recevoir_donnee(req, nbr_ticket, "inpl5");
+        var q2l6 = service.recevoir_donnee(req, nbr_ticket, "q2l6_");
+        var q2l6_com = service.recevoir_donnee(req, nbr_ticket, "inpl6");
+        var q2l7 = service.recevoir_donnee(req, nbr_ticket, "q2l7_");
+        var q2l7_com = service.recevoir_donnee(req, nbr_ticket, "inpl7");
+        var q2l8 = service.recevoir_donnee(req, nbr_ticket, "q2l8_");
+        var q2l8_com = service.recevoir_donnee(req, nbr_ticket, "inpl8");
+        var note_q2 = service.calcul_note(q2l5, q2l6, q2l7, q2l8, nbr_ticket);
 
         //Qualité 3
-        var q3l12 = recevoir_donnee(req, nbr_ticket, "q3l12_");
-        var q3l12_com = recevoir_donnee(req, nbr_ticket, "inpl12");
-        var q3l13 = recevoir_donnee(req, nbr_ticket, "q3l13_");
-        var q3l13_com = recevoir_donnee(req, nbr_ticket, "inpl13");
-        var q3l14 = recevoir_donnee(req, nbr_ticket, "q3l14_");
-        var q3l14_com = recevoir_donnee(req, nbr_ticket, "inpl14");
-        var q3l15 = recevoir_donnee(req, nbr_ticket, "q3l15_");
-        var q3l15_com = recevoir_donnee(req, nbr_ticket, "inpl15");
-        var note_q3 = calcul_note(q3l12, q3l13, q3l14, q3l15, nbr_ticket);
+        var q3l12 = service.recevoir_donnee(req, nbr_ticket, "q3l12_");
+        var q3l12_com = service.recevoir_donnee(req, nbr_ticket, "inpl12");
+        var q3l13 = service.recevoir_donnee(req, nbr_ticket, "q3l13_");
+        var q3l13_com = service.recevoir_donnee(req, nbr_ticket, "inpl13");
+        var q3l14 = service.recevoir_donnee(req, nbr_ticket, "q3l14_");
+        var q3l14_com = service.recevoir_donnee(req, nbr_ticket, "inpl14");
+        var q3l15 = service.recevoir_donnee(req, nbr_ticket, "q3l15_");
+        var q3l15_com = service.recevoir_donnee(req, nbr_ticket, "inpl15");
+        var note_q3 = service.calcul_note(q3l12, q3l13, q3l14, q3l15, nbr_ticket);
 
         //Technicité
-        var tec1 = recevoir_donnee(req, nbr_ticket, "tec1_");
-        var tec1_com = recevoir_donnee(req, nbr_ticket, "inpl9");
-        var tec2 = recevoir_donnee(req, nbr_ticket, "tec2_");
-        var tec2_com = recevoir_donnee(req, nbr_ticket, "inpl10");
-        var tec3 = recevoir_donnee(req, nbr_ticket, "tec3_");
-        var tec3_com = recevoir_donnee(req, nbr_ticket, "inpl16");
+        var tec1 = service.recevoir_donnee(req, nbr_ticket, "tec1_");
+        var tec1_com = service.recevoir_donnee(req, nbr_ticket, "inpl9");
+        var tec2 = service.recevoir_donnee(req, nbr_ticket, "tec2_");
+        var tec2_com = service.recevoir_donnee(req, nbr_ticket, "inpl10");
+        var tec3 = service.recevoir_donnee(req, nbr_ticket, "tec3_");
+        var tec3_com = service.recevoir_donnee(req, nbr_ticket, "inpl16");
         var note_tec = tec1;
 
         //insertion fiche
@@ -395,6 +364,23 @@ module.exports = {
                 }
             })
         })
+    },
+
+    post_update_suivi_details: function(req, res){
+        if (!req.session.user) return res.redirect('/login');
+        var menu = [];
+        menu["aceuil"]= "";
+        menu["dossierAdmin"]= "";
+        menu["gestionDossier"]= "";
+        menu["statOpAdmin"]= "";
+        menu["presence"]= "";
+        menu["admin"]= "";
+        var id_pers = parseInt( req.param("id"), 10);
+        var my = req.param("my");
+        var nbr_ticket = req.param("ticket");
+        var date_now = new Date().toISOString().slice(0,10);
+        var date_ticket = new Date(my).toISOString().slice(0,10);
+
     },
 
     post_update_conformite: function(req, res){
