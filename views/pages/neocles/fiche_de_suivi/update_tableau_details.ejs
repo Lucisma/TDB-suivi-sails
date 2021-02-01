@@ -118,7 +118,7 @@
         for(var i=0; i< qualite.rowCount; i++){
             if(qualite.rows[i].type_qaulite === 1){
         %>
-            <td class="no" id="noteq1_<%= i %>"><%= qualite.rows[i].note %></td>
+            <td class="no" id="noteq1_<%= i %>"><span id="spnoteq1<%= i %>"><%= qualite.rows[i].note %></span></td>
             <%
             }
         }
@@ -219,7 +219,7 @@
         for(var i=0; i< qualite.rowCount; i++){
             if(qualite.rows[i].type_qaulite === 2){
         %>
-            <td class="no" id="noteq2_<%= i %>"><%= qualite.rows[i].note %></td>
+            <td class="no" id="noteq2_<%= i %>"><span id="spnoteq2<%= i %>"><%= qualite.rows[i].note %></span></td>
             <%
             }
         }
@@ -320,7 +320,7 @@
                 note_tec = "";
             }
             %>
-            <td class="no" id="notetec_<%= i %>"><%= note_tec %></td>
+            <td class="no" id="notetec_<%= i %>"><span id="spntec<%= i %>"><%= note_tec %></span></td>
             <%
             }
         %>
@@ -417,9 +417,9 @@
         <td id="titrecol1"  class="note">Note</td>
         <%
         for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 2){
+            if(qualite.rows[i].type_qaulite === 3){
         %>
-            <td class="no" id="noteq3_<%= i %>"><%= qualite.rows[i].note %></td>
+            <td class="no" id="noteq3_<%= i %>"><span id="spnoteq3<%= i %>"><%= qualite.rows[i].note %></span></td>
             <%
             }
         }
