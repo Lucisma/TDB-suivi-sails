@@ -22,10 +22,11 @@
       <td class="cyan">Prise en compte des consignes et application des procédures</td>
   </tr>
   <% 
-    var rejet, total, inactivite="", affect="", implic = 0, somme1=0, somme2=0, somme3=0, m1, m2, m3, total_rejet = 0, col_rejet;
+    var rejet, total = [], inactivite="", affect="", implic = 0, somme1=0, somme2=0, somme3=0, m1, m2, m3, total_rejet = 0, col_rejet;
+    var inexistante = 0, basique = 0, superficielle = 0, avancee = 0, tre_avancee = 0, donne_tec;
     if(fiche){
     for(var i=1; i<=ticket_tec.rowCount; i++){
-      total = qualite1.rows[i-1].note_q1 + qualite2.rows[i-1].note_q2 + qualite3.rows[i-1].note_q3 ;
+      total[i-1] = qualite1.rows[i-1].note_q1 + qualite2.rows[i-1].note_q2 + qualite3.rows[i-1].note_q3 ;
       somme1 = somme1 + qualite1.rows[i-1].note_q1;
       somme2 = somme2 + qualite2.rows[i-1].note_q2;
       somme3 = somme3 + qualite3.rows[i-1].note_q3;
@@ -48,6 +49,22 @@
         <td class="green"><%= i %></td>
         <td><%= ticket_tec.rows[i-1].nom %></td>
         <td><% if(ticket_tec.rows[i-1].note_tec){
+                  donne_tec = ticket_tec.rows[i-1].note_tec;
+                  if(donne_tec == 1){
+                    inexistante = inexistante + 1;
+                  }
+                  else if(donne_tec == 2){
+                    basique = basique + 1;
+                  }
+                  else if(donne_tec == 3){
+                    superficielle = superficielle + 1;
+                  }
+                  else if(donne_tec == 4){
+                    avancee = avancee + 1;
+                  }
+                  else if(donne_tec == 5){
+                    tre_avancee = tre_avancee + 1;
+                  }
           %>
           <%=  ticket_tec.rows[i-1].note_tec  %>
           <%
@@ -71,7 +88,7 @@
           <td><%= qualite1.rows[i-1].note_q1 %></td>
           <td><%= qualite2.rows[i-1].note_q2 %></td>
           <td><%= qualite3.rows[i-1].note_q3 %></td>
-        <td><%= total %></td>
+        <td><%= total[i-1] %></td>
         <td class="<%= col_rejet %>"><%= rejet %></td>
         <td><%= seuil_ticket %></td>
     </tr>
