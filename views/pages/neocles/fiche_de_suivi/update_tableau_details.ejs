@@ -127,7 +127,7 @@
             if(qualite.rows[i-1].type_qaulite === 1){
                 e = e + 1;
         %>
-            <td class="no" id="noteq1_<%= e %>"><%= qualite.rows[i-1].note %></td>
+            <td class="no" id="noteq1_<%= e %>"><span id="spnoteq1<%= e %>"><%= qualite.rows[i-1].note %></span></td>
             <%
             }
         }
@@ -238,7 +238,7 @@
             if(qualite.rows[i-1].type_qaulite === 2){
                 e = e + 1;
         %>
-            <td class="no" id="noteq2_<%= e %>"><%= qualite.rows[i-1].note %></td>
+            <td class="no" id="noteq2_<%= e %>"><span id="spnoteq2<%= e %>"><%= qualite.rows[i-1].note %></span></td>
             <%
             }
         }
@@ -340,7 +340,7 @@
                 note_tec = 0;
             }
             %>
-            <td class="no" id="notetec_<%= i %>"><%= note_tec %></td>
+            <td class="no" id="notetec_<%= i %>"><span id="spntec<%= i %>"><%= note_tec %></span></td>
             <%
             }
         %>
@@ -449,7 +449,7 @@
             if(qualite.rows[i-1].type_qaulite === 3){
                 e = e + 1;
         %>
-            <td class="no" id="noteq3_<%= e %>"><%= qualite.rows[i-1].note %></td>
+            <td class="no" id="noteq3_<%= e %>"><span id="spnoteq3<%= e %>"><%= qualite.rows[i-1].note %></span></td>
             <%
             }
         }
