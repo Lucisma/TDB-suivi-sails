@@ -23,7 +23,7 @@
   </tr>
   <% 
     var rejet, total = [], inactivite="", affect="", implic = 0, somme1=0, somme2=0, somme3=0, m1, m2, m3, total_rejet = 0, col_rejet;
-    var inexistante = 0, basique = 0, superficielle = 0, avancee = 0, tre_avancee = 0, donne_tec;
+    var inexistante = 0, basique = 0, superficielle = 0, avancee = 0, tre_avancee = 0, donne_tec, nbr_inactivite_oui = 0, nbr_inactivite_non = 0;
     if(fiche){
     for(var i=1; i<=ticket_tec.rowCount; i++){
       total[i-1] = qualite1.rows[i-1].note_q1 + qualite2.rows[i-1].note_q2 + qualite3.rows[i-1].note_q3 ;
@@ -41,6 +41,12 @@
       total_rejet = total_rejet + rejet;
       if(imp.rowCount != 0){
         inactivite = imp.rows[i-1].inactivite;
+        if(inactivite == "OUI"){
+          nbr_inactivite_oui = nbr_inactivite_oui + 1;
+        }
+        else if(inactivite == "NON"){
+          nbr_inactivite_non = nbr_inactivite_non + 1;
+        }
         affect = imp.rows[i-1].auto_affectation;
         implic = 1;
       }

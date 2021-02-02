@@ -7,11 +7,8 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Ticket traités avec action',     <%= nbr_inactivite_oui %>],
+          ['Ticket sans action de traitement',     <%= nbr_inactivite_non %>]
         ]);
 
         var options = {
