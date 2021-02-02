@@ -1,31 +1,49 @@
 
-<body>
-        <h3 align="center">Graphe Qualité</h3>
-        <div id="top_x_div" width="800" height="500">
-        </div>
-        <script>
-             google.charts.load('current', {'packages':['bar']});
-             google.charts.setOnLoadCallback(drawStuff);
-            function drawStuff() {
+
+        <body>
+                 <h3 align="center">Graphe Qualité</h3>
+                <div class="Gqualite"><canvas id="barChart" ></canvas></div>
+                <script>
+                         var vehicles = ["Description et\n compréhension du ticket",
+                                        "Pertinence des informations",
+                                        "Prise en compte des\n consignes et application\ndes procédures"];
+         
+                         //The percentage of vehicles of each type
+                         var percentage = [<%= m1 %>,<%= m2 %>,<%= m3 %>];
+         
+                         var ctx = document.getElementById("barChart");
+                         var lineChart = new Chart(ctx, {
+                         type: 'bar',
+                         data: {
+                         labels: vehicles,
+                         datasets: [{
+                         data: percentage,
+                         label: "Moyenne qualité",
+                         backgroundColor: "#3e95cd",
+                         fill: false
+                         }]
+                         },
+                         options: {
+                         scales: {
+                         yAxes: [{
+                                 ticks: {
+                                 beginAtZero: true,
+                                 min: 0,
+                                 max:4,
+                                 stepSize:1,
+                                 }
+                         }],
+                         xAxes: [{
+                                ticks: {
+                                autoSkip: false,
+                                maxRotation:0,
+                                minRotation:0
+                                }
+                        }]
+                         }
+                         }
+                         });
+                </script> 
                 
-                var data = new google.visualization.arrayToDataTable([
-                ['Opening Move', 'Moyenne Qualité'],
-                ["Description et compréhension du ticket",<%= m1 %>],
-                ["Pertinence des informations",<%= m2 %>],
-                ["Prise en compte des consignes \n et application des procédures",<%= m3 %>]
-                ]);
-                var options = {
-                title: '',
-                bar: {groupWidth: '60%'},
-                width:800,
-                height:500,
-                legend: { position: 'bottom',
-                        label: 'Moyenne Qualité'
-                        },
-                bars: 'vertical', // Required for Material Bar Charts.
-                };
-                var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-                chart.draw(data, options);
-            };
-        </script> 
-</body>
+        </body>
+

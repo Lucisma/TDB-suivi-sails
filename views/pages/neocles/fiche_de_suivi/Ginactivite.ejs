@@ -1,3 +1,4 @@
+
 <html>
   <head>
     <script type="text/javascript">
@@ -16,17 +17,16 @@
         var options = {
           title: 'My Daily Activities',
           is3D: true,
-          width:900,
-          height: 500,
+          width:800,
+          height:400,
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('inactivite'));
         chart.draw(data, options);
       }
     </script>
   </head>
   <body>
-        <h2 align="center">Graphe Implication - Inactivité sur les tickets</h2>
-    <div class="Gqualite" id="inactivite" style="width: 900px; height: 500px;"></div>
+    <h2 align="center">Graphe Implication - Inactivité sur les tickets</h2>
+    <div  align="center" id="inactivite"></div>
   </body>
 </html>
