@@ -1,0 +1,31 @@
+
+<body>
+        <h3 align="center">Graphe Qualité</h3>
+        <div id="top_x_div" width="800" height="500">
+        </div>
+        <script>
+             google.charts.load('current', {'packages':['bar']});
+             google.charts.setOnLoadCallback(drawStuff);
+            function drawStuff() {
+                
+                var data = new google.visualization.arrayToDataTable([
+                ['Opening Move', 'Moyenne Qualité'],
+                ["Description et compréhension du ticket",<%= m1 %>],
+                ["Pertinence des informations",<%= m2 %>],
+                ["Prise en compte des consignes \n et application des procédures",<%= m3 %>]
+                ]);
+                var options = {
+                title: '',
+                bar: {groupWidth: '60%'},
+                width:800,
+                height:500,
+                legend: { position: 'bottom',
+                        label: 'Moyenne Qualité'
+                        },
+                bars: 'vertical', // Required for Material Bar Charts.
+                };
+                var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+                chart.draw(data, options);
+            };
+        </script> 
+</body>
