@@ -130,6 +130,7 @@ module.exports.routes = {
   'get /suivi_en_details' : 'FichedesuivineoController.suivi_en_details',
   'post /suivi_details_post/:my/:id/:ticket' : 'FichedesuivineoController.post_suivi_details',
   'post /update_conformite/:my/:id/:ticket' : 'FichedesuivineoController.post_update_conformite',
+  'post /update_suivi_details/:my/:id/:ticket' : 'FichedesuivineoController.post_update_suivi_details',
   /*********** Dossiers ************************************************************************************************/
   '/statOp': 'LienOperDossierController.index',
   '/ajaxStat': 'LienOperDossierController.ajaxStat',

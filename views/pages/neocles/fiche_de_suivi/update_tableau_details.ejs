@@ -1,4 +1,4 @@
-<form action="/suivi_details_post/<%= my %>/<%= id %>/<%= ticket %>" method="POST">
+<form action="/update_suivi_details/<%= my %>/<%= id %>/<%= ticket %>" method="POST">
     <input class="enregistrer" type="submit" value="Enregistrer"><br><br>
     <table border="1" class="tabl">
         <tr>
@@ -46,10 +46,12 @@
         <td id="titrecol1">Sollicitation du client bien décrite</td>
         <%
         var val; 
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 1){
+        console.log(qualite.rowCount);
+        console.log(qualite);
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite == 1){
                 val = 0;
-                if(qualite.rows[i].q1 === true){
+                if(qualite.rows[i-1].q1 === true){
                     val = 1;
                 };
         %>
@@ -64,10 +66,10 @@
             <!-- Questionnement complet/récup infos complementaire -->
         <td id="titrecol1">Questionnement complet/récup infos complementaire</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 1){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 1){
                 val = 0;
-                if(qualite.rows[i].q2 === true){
+                if(qualite.rows[i-1].q2 === true){
                     val = 1;
                 };
         %>
@@ -81,10 +83,10 @@
             <!-- Hors sujet(Sollicitation du client par mail/front office -->
         <td id="titrecol1">Hors sujet(Sollicitation du client par mail/front office)</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 1){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 1){
                 val = 0;
-                if(qualite.rows[i].q3 === true){
+                if(qualite.rows[i-1].q3 === true){
                     val = 1;
                 };
         %>
@@ -98,10 +100,10 @@
             <!-- Traitement complet du ticket -->
         <td id="titrecol1">Traitement complet du ticket</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 1){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 1){
                 val = 0;
-                if(qualite.rows[i].q4 === true){
+                if(qualite.rows[i-1].q4 === true){
                     val = 1;
                 };
         %>
@@ -115,10 +117,10 @@
             <!-- Traitement complet du ticket -->
         <td id="titrecol1"  class="note">Note</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 1){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 1){
         %>
-            <td class="no" id="noteq1_<%= i %>"><span id="spnoteq1<%= i %>"><%= qualite.rows[i].note %></span></td>
+            <td class="no" id="noteq1_<%= i %>"><span id="spnoteq1<%= i %>"><%= qualite.rows[i-1].note %></span></td>
             <%
             }
         }
@@ -148,10 +150,10 @@
             <!-- Outil(s) utilisé(s) bien indiqué(s) -->
         <td id="titrecol1">Outil(s) utilisé(s) bien indiqué(s)</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 2){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 2){
                 val = 0;
-                if(qualite.rows[i].q1 === true){
+                if(qualite.rows[i-1].q1 === true){
                     val = 1;
                 };
         %>
@@ -165,10 +167,10 @@
             <!-- Pertinence des informations(ATD,clôture,mail envoyé au client) -->
         <td id="titrecol1">Pertinence des informations(ATD,clôture,mail envoyé au client)</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 2){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 2){
                 val = 0;
-                if(qualite.rows[i].q2 === true){
+                if(qualite.rows[i-1].q2 === true){
                     val = 1;
                 };
         %>
@@ -182,10 +184,10 @@
             <!-- Relecture -->
         <td id="titrecol1">Relecture</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 2){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 2){
                 val = 0;
-                if(qualite.rows[i].q3 === true){
+                if(qualite.rows[i-1].q3 === true){
                     val = 1;
                 };
         %>
@@ -199,10 +201,10 @@
             <!-- Renseignement correct des informations en cas de recherche personnelle -->
         <td id="titrecol1">Renseignement correct des informations en cas de recherche personnelle</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 2){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 2){
                 val = 0;
-                if(qualite.rows[i].q4 === true){
+                if(qualite.rows[i-1].q4 === true){
                     val = 1;
                 };
         %>
@@ -216,10 +218,10 @@
             <!-- Note -->
         <td id="titrecol1"  class="note">Note</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 2){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 2){
         %>
-            <td class="no" id="noteq2_<%= i %>"><span id="spnoteq2<%= i %>"><%= qualite.rows[i].note %></span></td>
+            <td class="no" id="noteq2_<%= i %>"><span id="spnoteq2<%= i %>"><%= qualite.rows[i-1].note %></span></td>
             <%
             }
         }
@@ -317,7 +319,7 @@
         for(var i=1; i<=technicite.rowCount; i++){
             note_tec = technicite.rows[i-1].note;
             if(note_tec == null){
-                note_tec = "";
+                note_tec = 0;
             }
             %>
             <td class="no" id="notetec_<%= i %>"><span id="spntec<%= i %>"><%= note_tec %></span></td>
@@ -348,10 +350,10 @@
             <!-- respect SLA du ticket -->
         <td id="titrecol1">Respect SLA du ticket</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 3){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 3){
                 val = 0;
-                if(qualite.rows[i].q1 === true){
+                if(qualite.rows[i-1].q1 === true){
                     val = 1;
                 };
         %>
@@ -365,10 +367,10 @@
             <!-- Suivi consigne spécifique du client -->
         <td id="titrecol1">Suivi consigne spécifique du client</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 3){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 3){
                 val = 0;
-                if(qualite.rows[i].q2 === true){
+                if(qualite.rows[i-1].q2 === true){
                     val = 1;
                 };
         %>
@@ -382,10 +384,10 @@
             <!-- Suivi consigne interne-->
         <td id="titrecol1">Suivi consigne interne</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 3){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 3){
                 val = 0;
-                if(qualite.rows[i].q3 === true){
+                if(qualite.rows[i-1].q3 === true){
                     val = 1;
                 };
         %>
@@ -399,10 +401,10 @@
             <!-- Suivi de procédure -->
         <td id="titrecol1">Suivi de procédure</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 3){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 3){
                 val = 0;
-                if(qualite.rows[i].q4 === true){
+                if(qualite.rows[i-1].q4 === true){
                     val = 1;
                 };
         %>
@@ -416,10 +418,10 @@
             <!-- Note -->
         <td id="titrecol1"  class="note">Note</td>
         <%
-        for(var i=0; i< qualite.rowCount; i++){
-            if(qualite.rows[i].type_qaulite === 3){
+        for(var i=1; i<= qualite.rowCount; i++){
+            if(qualite.rows[i-1].type_qaulite === 3){
         %>
-            <td class="no" id="noteq3_<%= i %>"><span id="spnoteq3<%= i %>"><%= qualite.rows[i].note %></span></td>
+            <td class="no" id="noteq3_<%= i %>"><span id="spnoteq3<%= i %>"><%= qualite.rows[i-1].note %></span></td>
             <%
             }
         }
