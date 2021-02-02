@@ -45,17 +45,16 @@
             <!-- Qualité- Description et comprehension du ticketbi bi-chat-left-text -->
         <td id="titrecol1">Sollicitation du client bien décrite</td>
         <%
-        var val; 
-        console.log(qualite.rowCount);
-        console.log(qualite);
+        var val, e=0; 
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite == 1){
                 val = 0;
                 if(qualite.rows[i-1].q1 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-            <td id="chel1<%=i%>"><select name="q1l1_<%= i %>" id="selectq1_<%= i %>_l1"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl1<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel1<%=e%>"><select name="q1l1_<%= e %>" id="selectq1_<%= e %>_l1"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl1<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
             }
         }
@@ -66,14 +65,16 @@
             <!-- Questionnement complet/récup infos complementaire -->
         <td id="titrecol1">Questionnement complet/récup infos complementaire</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 1){
                 val = 0;
                 if(qualite.rows[i-1].q2 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-        <td id="chel2<%=i%>"><select name="q1l2_<%= i %>" id="selectq1_<%= i %>_l2"><option value="<%= val %>"><%= val %></option></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl2<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel2<%=e%>"><select name="q1l2_<%= e %>" id="selectq1_<%= e %>_l2"><option value="<%= val %>"><%= val %></option></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl2<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
             }
         }
@@ -83,14 +84,16 @@
             <!-- Hors sujet(Sollicitation du client par mail/front office -->
         <td id="titrecol1">Hors sujet(Sollicitation du client par mail/front office)</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 1){
                 val = 0;
                 if(qualite.rows[i-1].q3 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-        <td id="chel3<%=i%>"><select name="q1l3_<%= i %>" id="selectq1_<%= i %>_l3"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl3<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel3<%=e%>"><select name="q1l3_<%= e %>" id="selectq1_<%= e %>_l3"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl3<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
             }
         }
@@ -100,14 +103,16 @@
             <!-- Traitement complet du ticket -->
         <td id="titrecol1">Traitement complet du ticket</td>
         <%
+        e = 0
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 1){
                 val = 0;
                 if(qualite.rows[i-1].q4 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-        <td id="chel4<%=i%>"><select name="q1l4_<%= i %>" id="selectq1_<%= i %>_l4"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl4<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel4<%=e%>"><select name="q1l4_<%= e %>" id="selectq1_<%= e %>_l4"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl4<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
             }
         }
@@ -117,10 +122,12 @@
             <!-- Traitement complet du ticket -->
         <td id="titrecol1"  class="note">Note</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 1){
+                e = e + 1;
         %>
-            <td class="no" id="noteq1_<%= i %>"><span id="spnoteq1<%= i %>"><%= qualite.rows[i-1].note %></span></td>
+            <td class="no" id="noteq1_<%= e %>"><%= qualite.rows[i-1].note %></td>
             <%
             }
         }
@@ -150,14 +157,16 @@
             <!-- Outil(s) utilisé(s) bien indiqué(s) -->
         <td id="titrecol1">Outil(s) utilisé(s) bien indiqué(s)</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 2){
                 val = 0;
                 if(qualite.rows[i-1].q1 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-            <td id="chel5<%=i%>"><select name="q2l5_<%= i %>" id="selectq2_<%= i %>_l1"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl5<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel5<%=e%>"><select name="q2l5_<%= e %>" id="selectq2_<%= e %>_l1"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl5<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         }
@@ -167,14 +176,16 @@
             <!-- Pertinence des informations(ATD,clôture,mail envoyé au client) -->
         <td id="titrecol1">Pertinence des informations(ATD,clôture,mail envoyé au client)</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 2){
                 val = 0;
                 if(qualite.rows[i-1].q2 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-            <td id="chel6<%=i%>"><select name="q2l6_<%= i %>" id="selectq2_<%= i %>_l2"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl6<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel6<%=e%>"><select name="q2l6_<%= e %>" id="selectq2_<%= e %>_l2"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl6<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         }
@@ -184,14 +195,16 @@
             <!-- Relecture -->
         <td id="titrecol1">Relecture</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 2){
                 val = 0;
                 if(qualite.rows[i-1].q3 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-            <td id="chel7<%=i%>"><select name="q2l7_<%= i %>" id="selectq2_<%= i %>_l3"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl7<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel7<%=e%>"><select name="q2l7_<%= e %>" id="selectq2_<%= e %>_l3"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl7<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         }
@@ -201,14 +214,16 @@
             <!-- Renseignement correct des informations en cas de recherche personnelle -->
         <td id="titrecol1">Renseignement correct des informations en cas de recherche personnelle</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 2){
                 val = 0;
                 if(qualite.rows[i-1].q4 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-            <td id="chel8<%=i%>"><select name="q2l8_<%= i %>" id="selectq2_<%= i %>_l4"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl8<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+            <td id="chel8<%=e%>"><select name="q2l8_<%= e %>" id="selectq2_<%= e %>_l4"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i  id="tacl8<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         }
@@ -218,10 +233,12 @@
             <!-- Note -->
         <td id="titrecol1"  class="note">Note</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 2){
+                e = e + 1;
         %>
-            <td class="no" id="noteq2_<%= i %>"><span id="spnoteq2<%= i %>"><%= qualite.rows[i-1].note %></span></td>
+            <td class="no" id="noteq2_<%= e %>"><%= qualite.rows[i-1].note %></td>
             <%
             }
         }
@@ -277,6 +294,7 @@
                 tec_val = 5;
             }
             %>
+            
             <td id="chel9<%=i%>">
                 <select name="tec1_<%= i %>" id="tec_<%= i %>">
                     <option value="<%= tec_val %>"><%= tec %></option>
@@ -350,14 +368,16 @@
             <!-- respect SLA du ticket -->
         <td id="titrecol1">Respect SLA du ticket</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 3){
                 val = 0;
                 if(qualite.rows[i-1].q1 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-        <td id="chel12<%=i%>"><select name="q3l12_<%= i %>" id="selectq3_<%= i %>_l1"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl12<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel12<%=e%>"><select name="q3l12_<%= e %>" id="selectq3_<%= e %>_l1"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl12<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         }
@@ -367,14 +387,16 @@
             <!-- Suivi consigne spécifique du client -->
         <td id="titrecol1">Suivi consigne spécifique du client</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 3){
                 val = 0;
                 if(qualite.rows[i-1].q2 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-        <td id="chel13<%=i%>"><select name="q3l13_<%= i %>" id="selectq3_<%= i %>_l2"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl13<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel13<%=e%>"><select name="q3l13_<%= e %>" id="selectq3_<%= e %>_l2"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl13<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         }
@@ -384,14 +406,16 @@
             <!-- Suivi consigne interne-->
         <td id="titrecol1">Suivi consigne interne</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 3){
                 val = 0;
                 if(qualite.rows[i-1].q3 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-        <td id="chel14<%=i%>"><select name="q3l14_<%= i %>" id="selectq3_<%= i %>_l3"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl14<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel14<%=e%>"><select name="q3l14_<%= e %>" id="selectq3_<%= e %>_l3"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl14<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
             <%
             }
         }
@@ -401,27 +425,31 @@
             <!-- Suivi de procédure -->
         <td id="titrecol1">Suivi de procédure</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 3){
                 val = 0;
                 if(qualite.rows[i-1].q4 === true){
                     val = 1;
                 };
+                e = e + 1;
         %>
-        <td id="chel15<%=i%>"><select name="q3l15_<%= i %>" id="selectq3_<%= i %>_l4"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl15<%=i%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
+        <td id="chel15<%=e%>"><select name="q3l15_<%= e %>" id="selectq3_<%= e %>_l4"><option value="<%= val %>"><%= val %></option><option value="0">0</option><option value="1">1</option></select><boutton class="icobout"><i id="tacl15<%=e%>" class="glyphicon glyphicon-pencil" style="color:#257ac0"></i></button></td>
         <%
+            }
         }
-    }
-    %>
+        %>
         </tr>
         <tr>
             <!-- Note -->
         <td id="titrecol1"  class="note">Note</td>
         <%
+        e = 0;
         for(var i=1; i<= qualite.rowCount; i++){
             if(qualite.rows[i-1].type_qaulite === 3){
+                e = e + 1;
         %>
-            <td class="no" id="noteq3_<%= i %>"><span id="spnoteq3<%= i %>"><%= qualite.rows[i-1].note %></span></td>
+            <td class="no" id="noteq3_<%= e %>"><%= qualite.rows[i-1].note %></td>
             <%
             }
         }

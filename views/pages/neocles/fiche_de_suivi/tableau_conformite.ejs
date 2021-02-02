@@ -22,10 +22,8 @@
       <td class="cyan">Prise en compte des consignes et application des procédures</td>
   </tr>
   <% 
-    var rejet, total, inactivite="", affect="", implic=false, somme1=0, somme2=0, somme3=0, m1, m2, m3, total_rejet = 0, col_rejet;
-    console.log(fiche);
+    var rejet, total, inactivite="", affect="", implic = 0, somme1=0, somme2=0, somme3=0, m1, m2, m3, total_rejet = 0, col_rejet;
     if(fiche){
-      console.log(ticket_tec.rowCount);
     for(var i=1; i<=ticket_tec.rowCount; i++){
       total = qualite1.rows[i-1].note_q1 + qualite2.rows[i-1].note_q2 + qualite3.rows[i-1].note_q3 ;
       somme1 = somme1 + qualite1.rows[i-1].note_q1;
@@ -40,11 +38,10 @@
         col_rejet = "rouge";
       }
       total_rejet = total_rejet + rejet;
-
       if(imp.rowCount != 0){
         inactivite = imp.rows[i-1].inactivite;
         affect = imp.rows[i-1].auto_affectation;
-        implic = true;
+        implic = 1;
       }
     %>
     <tr>
@@ -79,7 +76,7 @@
         <td><%= seuil_ticket %></td>
     </tr>
     <input type="hidden" name="id_ticket<%= i %>" value="<%= ticket_tec.rows[i-1].ticket_id %>">
-    <input type="hidden" name="implic" value="<%= implic %>">
+    <input type="hidden" name="implic" value="<%=implic%>">
     <%
     }
     m1 = (somme1 / ticket_tec.rowCount).toFixed(2);
