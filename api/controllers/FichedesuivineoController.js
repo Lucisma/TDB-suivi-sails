@@ -17,8 +17,12 @@ module.exports = {
         menu["presence"]= "";
         menu["admin"]= "";
         var create = false;
-        if(req.param('create')){
+        var update = false;
+        if(req.param('create') == "create"){
             create = true;
+        }
+        else if(req.param('create') == "update"){
+            update = true;
         }
         const id = req.session.user;
         // const id=8054;
@@ -33,12 +37,12 @@ module.exports = {
                 Neo_pers_niveau.query(sql, function(err, resultat){
                     if(err) return res.send(err);
                     //console.log(resultat.rows[0].appelation);
-                    return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu, manager: manager, id:id, id_appelation: resultat, create: create});
+                    return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu, manager: manager, id:id, id_appelation: resultat, create: create, update});
                 })
             }
             else{
                 var manager = false;
-                return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu, manager: manager, id:id,create: create});
+                return res.view('pages/neocles/fiche_de_suivi/fichedesuiviendetail', {layout : false, menu : menu, manager: manager, id:id,create: create, update});
             }
         });
         
@@ -205,7 +209,7 @@ module.exports = {
                                     sql = "select type, com1, com2, com3, com4, tic.num from neocles_commentaire tec INNER JOIN neocles_ticket tic ON tec.id_ticket = tic.id where tic.id_fiche = "+id_fiche+" ORDER BY tic.num ";
                                     Neocles_fiche.query(sql, function(err, commentaire){
                                         if(err) return res.send(err);
-                                        return  res.view('pages/neocles/fiche_de_suivi/update_tableau_details', {layout : false, menu : menu, donne_ticket : donne_ticket, ticket: nbr_ticket, my : my, id : id, qualite:qualite, technicite: technicite });
+                                        return  res.view('pages/neocles/fiche_de_suivi/update_tableau_details', {layout : false, menu : menu, id_fiche, donne_ticket : donne_ticket, ticket: nbr_ticket, my : my, id : id, qualite:qualite, technicite: technicite });
                                     })
                                     //return res.send("id_fiche");
                                     
@@ -353,7 +357,7 @@ module.exports = {
                     }
 
                     function insertion_technicite(id_ticket, t1, t2, t3, num_colone, note){
-                        if(!t1[num_colone || t1[num_colone] == '']){
+                        if(!t1[num_colone] || t1[num_colone] == ''){
                             t1[num_colone] = null;
                         }
                         var sql = "insert into neocles_technicite(id_ticket, t1, t2, t3, note) values("+id_ticket+","+t1[num_colone]+",'"+t2[num_colone]+"','"+t3[num_colone]+"',"+note[num_colone]+")";
@@ -378,9 +382,126 @@ module.exports = {
         var id_pers = parseInt( req.param("id"), 10);
         var my = req.param("my");
         var nbr_ticket = req.param("ticket");
+        var id_fiche = req.param("id_fiche");
         var date_now = new Date().toISOString().slice(0,10);
         var date_ticket = new Date(my).toISOString().slice(0,10);
 
+        //Qualité 1
+        nom_ticket = service.recevoir_donnee(req, nbr_ticket, "ticket");
+        q1l1 = service.recevoir_donnee(req, nbr_ticket, "q1l1_");
+        q1l1_com = service.recevoir_donnee(req, nbr_ticket, "inpl1");
+        q1l2 = service.recevoir_donnee(req, nbr_ticket, "q1l2_");
+        q1l2_com = service.recevoir_donnee(req, nbr_ticket, "inpl2");
+        q1l3 = service.recevoir_donnee(req, nbr_ticket, "q1l3_");
+        q1l3_com = service.recevoir_donnee(req, nbr_ticket, "inpl3");
+        q1l4 = service.recevoir_donnee(req, nbr_ticket, "q1l4_");
+        q1l4_com = service.recevoir_donnee(req, nbr_ticket, "inpl4");
+        note_q1 = service.calcul_note(q1l1, q1l2, q1l3, q1l4, nbr_ticket);
+        
+        //Qualité 2
+        q2l5 = service.recevoir_donnee(req, nbr_ticket, "q2l5_");
+        q2l5_com = service.recevoir_donnee(req, nbr_ticket, "inpl5");
+        q2l6 = service.recevoir_donnee(req, nbr_ticket, "q2l6_");
+        q2l6_com = service.recevoir_donnee(req, nbr_ticket, "inpl6");
+        q2l7 = service.recevoir_donnee(req, nbr_ticket, "q2l7_");
+        q2l7_com = service.recevoir_donnee(req, nbr_ticket, "inpl7");
+        q2l8 = service.recevoir_donnee(req, nbr_ticket, "q2l8_");
+        q2l8_com = service.recevoir_donnee(req, nbr_ticket, "inpl8");
+        note_q2 = service.calcul_note(q2l5, q2l6, q2l7, q2l8, nbr_ticket);
+
+        //Qualité 3
+        q3l12 = service.recevoir_donnee(req, nbr_ticket, "q3l12_");
+        q3l12_com = service.recevoir_donnee(req, nbr_ticket, "inpl12");
+        q3l13 = service.recevoir_donnee(req, nbr_ticket, "q3l13_");
+        q3l13_com = service.recevoir_donnee(req, nbr_ticket, "inpl13");
+        q3l14 = service.recevoir_donnee(req, nbr_ticket, "q3l14_");
+        q3l14_com = service.recevoir_donnee(req, nbr_ticket, "inpl14");
+        q3l15 = service.recevoir_donnee(req, nbr_ticket, "q3l15_");
+        q3l15_com = service.recevoir_donnee(req, nbr_ticket, "inpl15");
+        note_q3 = service.calcul_note(q3l12, q3l13, q3l14, q3l15, nbr_ticket);
+
+        //Technicité
+        tec1 = service.recevoir_donnee(req, nbr_ticket, "tec1_");
+        tec1_com = service.recevoir_donnee(req, nbr_ticket, "inpl9");
+        tec2 = service.recevoir_donnee(req, nbr_ticket, "tec2_");
+        tec2_com = service.recevoir_donnee(req, nbr_ticket, "inpl10");
+        tec3 = service.recevoir_donnee(req, nbr_ticket, "tec3_");
+        tec3_com = service.recevoir_donnee(req, nbr_ticket, "inpl16");
+        note_tec = tec1;
+
+        //sql = "insert into neocles_ticket(num, nom, id_fiche) values(1, 'test', 1)";
+        //Insertion ticket et son nom dans la table ticket
+        var sql = "select id as id_ticket, num from neocles_ticket where id_fiche = "+id_fiche;
+        Neocles_fiche.query(sql, function(err, info_ticket){
+            if(err) return res.send(err);
+            for(var i = 1; i<=info_ticket.rowCount; i++ ){  
+                id_ticket = info_ticket.rows[i-1].id_ticket;
+                num_colone = info_ticket.rows[i-1].num;
+                update_nom(id_ticket, nom_ticket[num_colone]);
+                update_qualite(1, id_ticket, q1l1, q1l2, q1l3, q1l4, note_q1, num_colone);
+                update_qualite(2, id_ticket, q2l5, q2l6, q2l7, q2l8, note_q2, num_colone);
+                update_qualite(3, id_ticket, q3l12, q3l13, q3l14, q3l15, note_q3, num_colone);
+                update_commentaire("q1", id_ticket, q1l1_com, q1l2_com, q1l3_com, num_colone, q1l4_com);
+                update_commentaire("q2", id_ticket, q2l5_com, q2l6_com, q2l7_com, num_colone, q2l8_com);
+                update_commentaire("q3", id_ticket, q3l12_com, q3l13_com, q3l14_com, num_colone, q3l15_com);
+                update_commentaire("tec", id_ticket, tec1_com, tec2_com, tec3_com, num_colone);
+                update_technicite(id_ticket, tec1, tec2, tec3, num_colone, note_tec);
+                if(i == info_ticket.rowCount){
+                    return res.redirect("/fiche_suivi_en_detail/update");
+                }
+            }
+        })
+
+        /*
+        var id_ticket = 0 , num_colone=0, e=0;
+        for(var i = 1; i<=nbr_ticket; i++ ){                      
+            sql = "insert into neocles_ticket(num, nom, id_fiche) values ("+i+",'"+nom_ticket[i]+"',"+id_fiche+")";                   
+            Neocles_fiche.query(sql, function(err){
+                if(err) return res.send(err);
+                e = e + 1;
+                if(e == nbr_ticket){
+                    donnee_ticket(id_fiche);
+                    return res.redirect("/fiche_suivi_en_detail/create");
+                }                
+            })
+        }
+        */
+                                    
+        function update_nom(id_ticket, nom){
+            var sql = "update neocles_ticket set nom ='"+nom+"' where id ="+id_ticket;
+            Neocles_fiche.query(sql, function(err){
+                if(err) return res.send(err);
+            }) 
+        }
+        function update_qualite(num_qualite, id_ticket, q1, q2, q3, q4, note, num_colone){
+            var sql = "update neocles_qualite set q1 ='"+q1[num_colone]+"', q2='"+q2[num_colone]+"', q3='"+q3[num_colone]+"', q4='"+q4[num_colone]+"', note="+note[num_colone]+" where id_ticket ="+id_ticket+" and num="+num_qualite;
+            Neocles_fiche.query(sql, function(err){
+                if(err) return res.send(err);
+            })                     
+        } 
+        
+        function update_commentaire(type, id_ticket, com1, com2, com3,  num_colone, com4 = ""){
+            var sql;
+            if(type == "tec"){
+                sql = "update neocles_commentaire set com1='"+com1[num_colone]+"', com2='"+com2[num_colone]+"', com3='"+com3[num_colone]+"' where id_ticket ="+id_ticket+" and type='"+type+"' ";
+            }
+            else{
+                sql = "update neocles_commentaire set com1='"+com1[num_colone]+"', com2='"+com2[num_colone]+"', com3='"+com3[num_colone]+"', com4='"+com4[num_colone]+"' where id_ticket ="+id_ticket;
+            }
+            Neocles_fiche.query(sql, function(err){
+                if(err) return res.send(err);
+            }) 
+        }
+
+        function update_technicite(id_ticket, t1, t2, t3, num_colone, note){
+            if(!t1[num_colone] || t1[num_colone] == ''){
+                t1[num_colone] = null;
+            }
+            var sql = "update neocles_technicite set t1="+t1[num_colone]+", t2='"+t2[num_colone]+"', t3='"+t3[num_colone]+"', note="+note[num_colone]+" where id_ticket = "+id_ticket;
+            Neocles_fiche.query(sql, function(err){
+                if(err) return res.send(err);
+            }) 
+        }
     },
 
     post_update_conformite: function(req, res){
