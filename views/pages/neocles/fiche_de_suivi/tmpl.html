@@ -19,6 +19,12 @@
             height:200px;
             resize: none;
         }
+        .cont{
+            float: right;
+            margin-right:155px;
+            margin-bottom:10px;
+        }
+        
 
         .cul{
             list-style: none;
@@ -45,6 +51,11 @@
     </style>
 </head>
 <body>
+   <div class="cont">
+       <input type="button" value="Conserver">
+       <input type="button" value="Valider">
+  </div>
+   <div class="conttab">
     <Table class="tabcoaching" border="1">
         <thead>
             <th class="coultab">CRITERES</th>
@@ -67,27 +78,7 @@
             </tr>
         </tbody>
     </Table>
-
-    <ul class="cul">
-        <li class="cli"><input type="button"  id="Jan" value="Janvier"></li>
-        <li class="cli"><input type="button"  id="Fev" value="Février"></li>
-        <li class="cli"><input type="button"  id="Mars" value="Mars"></li>
-        <li class="cli"><input type="button"  id="Avril" value="Avril"></li>
-        <li class="cli"><input type="button"  id="Mai" value="Mai"></li>
-        <li class="cli"><input type="button"  id="Juin" value="Juin"></li>
-        <li class="cli"><input type="button"  id="Juil" value="Juillet"></li>
-        <li class="cli"><input type="button"  id="Aou" value="Août"></li>
-        <li class="cli"><input type="button"  id="Sep" value="Septembre"></li>
-        <li class="cli"><input type="button"  id="Oct" value="Octobre"></li>
-        <li class="cli"><input type="button"  id="Nov" value="Novembre"></li>
-        <li class="cli"><input type="button"  id="Dec" value="Décembre"></li>
-    </ul>
+</div>
 </body>
-<script>
-    const button = document.querySelector('input');
 
-    button.addEventListener('click', event => {
-    var getid = getelementbyId()
-    });
-</script>
 </html>

@@ -282,6 +282,72 @@ details[open] summary ~ * {
   height: 500px;
   margin-left: 250px;
 }
+/* fichecoaching css  */
+#board tr th{
+  color: green;
+
+}
+
+input,
+label {
+    margin: .4rem 0;
+    color:black;
+}
+.cul{
+  list-style: none;
+}
+.cli{
+  display: inline;
+}
+.cli input{
+  color: white;
+  width:80px;
+  height:30px;
+  background: #0069d9;
+  border: 1px solid rgb(17, 0, 255);
+  border-radius: 5%;
+}
+.cli input:hover{
+  background: rgb(71, 203, 255);
+  transition-duration: 0.6s;
+}
+.red{
+background: red;
+}
+.tabcoaching{
+  font-family: Arial;
+  font-size: 15px;
+}
+.tabcoaching .coultab{
+  background: brown;
+  color: beige;
+  text-align: center;           
+}
+textarea{
+  width:460px;
+  height:200px;
+  resize: none;
+  padding: 10px;
+}
+.cont{
+  float: right;
+  margin-right:10px;
+  margin-bottom:10px;
+}
+.cont input{
+  width: 100px;
+}
+.cul .cli .red{
+background: red;
+}
+.vid{
+  background: beige;
+  color: black;
+  width:300px;
+  height:200px;
+}
+
+/* fichecoaching css  */
 
 /* css luc */
 /* **************** */

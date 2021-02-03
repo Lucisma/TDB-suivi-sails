@@ -1,11 +1,4 @@
-<head>
-    
-    <style>
-       .cul .cli .red{
-          background: red;
-        }
-    </style>
-</head>
+
 <ul class="cul">
     <li class="cli"><input type="button" onclick="alert('bonjour');" id="Jan" value="Janvier" <%= disabled[1] %> class="<%= couleur[1] %>"></li>
     <li class="cli"><input type="button" onclick="alert('slaur');" id="Fev" value="Février" <%= disabled[2] %> class="<%= couleur[2] %>"></li>
@@ -20,4 +13,33 @@
     <li class="cli"><input type="button" onclick="" id="Nov" value="Novembre" <%= disabled[11] %> class="<%= couleur[11] %>"></li>
     <li class="cli"><input type="button" onclick="" id="Dec" value="Décembre" <%= disabled[12] %> class="<%= couleur[12] %>"></li>
 </ul>
+
+<div class="cont">
+        <input type="button" value="Conserver">
+        <input type="button" value="Valider">
+   </div>
+    
+     <Table class="tabcoaching" border="1">
+         <thead>
+             <th class="coultab">CRITERES</th>
+             <th class="coultab">QUALITE</th>
+             <th class="coultab">TECHNICITE</th>
+             <th class="coultab">IMPLICATION</th>
+         </thead>
+         <tbody>
+             <tr>
+                 <th class="vid">POINTS POSITIFS</th>
+                 <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                 <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                 <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+             </tr>
+             <tr>
+                 <th class="vid">POINTS A AMELIORER</th>
+                 <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                 <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                 <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+             </tr>
+         </tbody>
+     </Table>
+
 
