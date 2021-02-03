@@ -50,13 +50,14 @@ function suivi_coaching(){
 }
 
 function  compte_rendu(mois, annee, id_pers){
+    $("#tableau_cr").empty();
     $.ajax({
         url : '/suivi_coaching_month', // La ressource ciblée
         type : 'POST', // Le type de la requête HTTP.
         data : 'id_pers=' + id_pers+'&m='+mois+'&y='+annee,
         dataType : 'html', // On désire recevoir du HTML
         success : function(code_html, statut){ // code_html contient le HTML renvoyé
-            $("#mois_menu").append(code_html);
+            $("#tableau_cr").append(code_html);
         }
     });
 }

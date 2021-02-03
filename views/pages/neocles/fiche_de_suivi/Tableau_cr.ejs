@@ -1,0 +1,29 @@
+<form action="/compte_rendu_post/<%= mois %>/<%= annee %>/<%= id_pers %>" method="POST">
+<div class="cont">
+    <input type="submit" name="submit" value="Conserver">
+    <input type="submit" name="submit" value="Valider">
+</div>
+
+ <Table class="tabcoaching" border="1">
+     <thead>
+         <th class="coultab">CRITERES</th>
+         <th class="coultab">QUALITE</th>
+         <th class="coultab">TECHNICITE</th>
+         <th class="coultab">IMPLICATION</th>
+     </thead>
+     <tbody>
+         <tr>
+             <th class="vid">POINTS POSITIFS</th>
+             <td><textarea name="q1" id="" cols="30" rows="10"></textarea></td>
+             <td><textarea name="t1" id="" cols="30" rows="10"></textarea></td>
+             <td><textarea name="imp1" id="" cols="30" rows="10"></textarea></td>
+         </tr>
+         <tr>
+             <th class="vid">POINTS A AMELIORER</th>
+             <td><textarea name="q2" id="" cols="30" rows="10"></textarea></td>
+             <td><textarea name="t2" id="" cols="30" rows="10"></textarea></td>
+             <td><textarea name="imp2" id="" cols="30" rows="10"></textarea></td>
+         </tr>
+     </tbody>
+    </form>
+ </Table>

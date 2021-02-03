@@ -134,6 +134,7 @@ module.exports.routes = {
   'post /update_suivi_details/:my/:id/:ticket/:id_fiche' : 'FichedesuivineoController.post_update_suivi_details',
   '/suivi_coaching' : 'CoachingController.suivi_coaching',
   'post /suivi_coaching_month' : 'CoachingController.suivi_coaching_month',
+  'post /compte_rendu_post/:mois/:annee/:id_pers' : 'CoachingController.compte_rendu_post',
   /*********** Dossiers ************************************************************************************************/
   '/statOp': 'LienOperDossierController.index',
   '/ajaxStat': 'LienOperDossierController.ajaxStat',
