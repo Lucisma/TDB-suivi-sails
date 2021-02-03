@@ -311,9 +311,7 @@ label {
   background: rgb(71, 203, 255);
   transition-duration: 0.6s;
 }
-.red{
-background: red;
-}
+
 .tabcoaching{
   font-family: Arial;
   font-size: 15px;
@@ -346,7 +344,12 @@ background: red;
   width:300px;
   height:200px;
 }
-
+.cul .cli .vert{
+background: green;
+}
+.cul .cli .gris{
+  background: gray;
+}
 /* fichecoaching css  */
 
 /* css luc */
