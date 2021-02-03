@@ -285,6 +285,9 @@ details[open] summary ~ * {
 
 /* css luc */
 /* **************** */
+.tit{
+  margin-left: 20px;
+}
 
 .ldt_date
 {

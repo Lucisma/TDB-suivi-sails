@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-        <h3 align="center">Graphe note mensuelle</h3>
+       
         <div class="Gnote">
+        <h3 align="center">GRAPHE NOTE MENSUELLE</h3>
            <canvas id="notemoi"></canvas> 
         </div><br><br><br>
         <script>
@@ -22,8 +23,6 @@
                     %>
 
                 ];
-         
-                         //The percentage of vehicles of each type
                          var percentage = [
                                         <%
                                 for(var i = 0; i < ticket; i++){
@@ -46,25 +45,45 @@
                          fill: false
                          }]
                          },
-                         options: {
-                         scales: {
-                         yAxes: [{
-                                 ticks: {
-                                 beginAtZero: true,
-                                 min: 0,
-                                 max:12,
-                                 stepSize:2,
-                                 }
-                         }],
-                         xAxes: [{
-                                ticks: {
-                                autoSkip: false,
-                                maxRotation:0,
-                                minRotation:0
-                                }
-                        }]
-                         }
-                         }
+                            options: {
+                                annotation: {
+                                        annotations: [{
+                                                type: 'line',
+                                                display:true,
+                                                mode: 'horizontal',
+                                                scaleID: 'y-axis-0',
+                                                value: '10',
+                                                borderColor: 'red',
+                                                borderWidth: 4
+                                        }],
+                                        drawTime: "afterDraw" // (default)
+                                        },
+                                plugins: {
+                // Change options for ALL labels of THIS CHART
+                                    datalabels: {
+                                            color: '#ffffff',
+                                            FontSize :25,
+                                    }
+                                   
+                                    },
+                            scales: {
+                            yAxes: [{
+                                    ticks: {
+                                    beginAtZero: true,
+                                    min: 0,
+                                    max:12,
+                                    stepSize:2,
+                                    }
+                            }],
+                            xAxes: [{
+                                    ticks: {
+                                    autoSkip: false,
+                                    maxRotation:0,
+                                    minRotation:0
+                                    }
+                            }]
+                            }
+                            }
                          });
         </script>
 </body>

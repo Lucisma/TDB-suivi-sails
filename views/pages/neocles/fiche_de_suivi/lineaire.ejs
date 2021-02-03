@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h3 align="center">GRAPHE CONFORMITE ISO 2859</h3>
     <canvas id="lineaire"></canvas>
     <script>
          var ctx = document.getElementById("lineaire");
@@ -14,17 +15,30 @@
             type: 'line',
             data: {
                 datasets: [{
-                    label: 'First dataset',
+                    label: 'Résultat conformité %',
                     data: [0, 20, 40, 50]
                 }],
-                labels: ['January', 'February', 'March', 'April']
+                labels: ['Janvier', 'Février', 'Mars', 'Avril','Mai','Juin','Juillet','Août','September','Octobre','Novembre','Décembre']
             },
             options: {
+                annotation: {
+                annotations: [{
+                        type: 'line',
+                        display:true,
+                        mode: 'horizontal',
+                        scaleID: 'y-axis-0',
+                        value: '98',
+                        borderColor: 'red',
+                        borderWidth: 4
+                }],
+                drawTime: "afterDraw" // (default)
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
-                            suggestedMin: 50,
-                            suggestedMax: 100
+                            min:90,
+                            max:100,
+                            stepSize:1,
                         }
                     }]
                 }

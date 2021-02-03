@@ -1,16 +1,13 @@
 
 
         <body>
-                 <h3 align="center">Graphe Qualité</h3>
+                <h3 align="center">GRAPHE QUALITE</h3>
                 <div class="Gqualite"><canvas id="barChart" ></canvas></div><br><br><br>
                 <script>
                         var vehicles = ["Description et\ncompréhension du ticket",
                                 "Pertinence des informations",
                                 "Prise en compte des\nconsignes et application\ndes procédures"];
-
-                        //The percentage of vehicles of each type
                         var percentage = [<%= m1 %>,<%= m2 %>,<%= m3 %>];
-
                         var ctx = document.getElementById("barChart");
                         var lineChart = new Chart(ctx, {
                         type: 'bar',
@@ -19,30 +16,43 @@
                         datasets: [{
                         data: percentage,
                         label: "Moyenne qualité",
-                        backgroundColor: "#3e95cd",
+                        backgroundColor: "orange",
                         fill: false
                         }]
                         },
-                        options: {        
-                        scales: {
-                        yAxes: [{
-                                ticks: {
-                                beginAtZero: true,
-                                min: 0,
-                                max:4,
-                                stepSize:1,
+                        options: {  
+                                label:{
+                                  position:'bottom'
+                                },
+                                plugins: {
+                                datalabels: {
+                                        color: '#ffffff',
+                                        fontSize:25
                                 }
-                        }],
-                        xAxes: [{
-                        ticks: {
-                        autoSkip: false,
-                        maxRotation:0,
-                        minRotation:0
-                        }
-                        }]
-                        }
-                        },
+                                },
+                              
+                                scales: {
+                                        yAxes: [{
+                                                ticks: {
+                                                beginAtZero: true,
+                                                min: 0,
+                                                max:4,
+                                                stepSize:1,
+                                                }
+                                        }],
+                                        xAxes: [{                                                
+                                                ticks: {
+                                                autoSkip: false,
+                                                maxRotation:0,
+                                                minRotation:0
+                                                }
+                                        }]
+                                        }
+                                 },
                         });
                 </script>    
         </body>
 
+       
+            
+           
