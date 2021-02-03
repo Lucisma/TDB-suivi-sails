@@ -16,12 +16,30 @@
             color: green;
     
           }
-        
+          
           input,
           label {
               margin: .4rem 0;
               color:black;
           }
+          .cul{
+            list-style: none;
+        }
+        .cli{
+            display: inline;
+        }
+        .cli input{
+            color: white;
+            width:80px;
+            height:30px;
+            background: #0069d9;
+            border: 1px solid rgb(17, 0, 255);
+            border-radius: 5%;
+        }
+        .cli input:hover{
+            background: rgb(71, 203, 255);
+            transition-duration: 0.6s;
+        }
   
         </style>
         <!--STYLES END-->
@@ -40,7 +58,7 @@
     <% }%>
     <body>
             <h1 class="tit">Fiche de coaching QUALITE/TECHNICITE </h1>
-
+          
             <div id="page-wrapper">
                 <div class="row">
                   <div class="col-md-12">
@@ -96,7 +114,22 @@
                             </div>
                           </div>
 
-                          
+                          <div>
+                              <ul class="cul">
+                                  <li class="cli"><input type="button"  id="Jan" value="Janvier"></li>
+                                  <li class="cli"><input type="button"  id="Fev" value="Février"></li>
+                                  <li class="cli"><input type="button"  id="Mars" value="Mars"></li>
+                                  <li class="cli"><input type="button"  id="Avril" value="Avril"></li>
+                                  <li class="cli"><input type="button"  id="Mai" value="Mai"></li>
+                                  <li class="cli"><input type="button"  id="Juin" value="Juin"></li>
+                                  <li class="cli"><input type="button"  id="Juil" value="Juillet"></li>
+                                  <li class="cli"><input type="button"  id="Aou" value="Août"></li>
+                                  <li class="cli"><input type="button"  id="Sep" value="Septembre"></li>
+                                  <li class="cli"><input type="button"  id="Oct" value="Octobre"></li>
+                                  <li class="cli"><input type="button"  id="Nov" value="Novembre"></li>
+                                  <li class="cli"><input type="button"  id="Dec" value="Décembre"></li>
+                              </ul>
+                            </div>   
             <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
             <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
             <script src="chartjs-plugin-datalabels.js"></script>
