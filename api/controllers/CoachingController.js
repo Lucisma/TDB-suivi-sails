@@ -122,16 +122,19 @@ module.exports = {
         menu["admin"]= "";
         const id = req.session.user;
         var date_now = new Date().toISOString().slice(0,10);
-
+        
         var id_pers= req.param("id_pers"), mois = req.param("mois"), annee = req.param("annee");
         var q1 = req.param("q1"), q2 = req.param("q2"), t1 = req.param("t1"), t2 = req.param("t2"), imp1 = req.param("imp1"), imp2 = req.param("imp2");
         var submit = req.param("submit");
         var sauve = true;
+        var date_compte_rendu_or = annee+"-"+mois+"-01";
+        var date_compte_rendu = new Date(annee, mois, 01).toISOString().slice(0,10);
         if(submit == "Conserver"){
             sauve = false;
         }
         console.log(date_now);
-
+        console.log(date_compte_rendu_or);
+        console.log(date_compte_rendu);
     }
 
 };
