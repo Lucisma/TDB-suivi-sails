@@ -61,21 +61,37 @@ module.exports = {
             var disabled = [], couleur = [];
             for(var i =1; i<=12; i++){
                 disabled[i] =  "disabled";
-                couleur[i] = "bleu";
+                couleur[i] = "gris";
             }
             if(resultat.rowCount == 0){
                 if(annee == annee_now){
                     disabled[1] = "";
+                    couleur[1] = "vert";
+                    disabled[2] = "";
+                    couleur[2] = "vert"
                     if(mois_now > 1){
                         couleur[1] = "red";
                     }                   
-                    return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur})
+                    return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur, id_pers, annee})
+                }
+                else if(annee<annee_now){
+                    for(var i =1; i<=12; i++){
+                        disabled[i] =  "";
+                        couleur[i] = "red";
+                    }
+                    return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur, id_pers, annee})
                 }
                 else{
-                    return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur})
+                    return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur,id_pers, annee})
                 }
             }
         })
+    },
+
+    suivi_coaching_month: function (req, res) {
+        var id_pers= req.param("id_pers"), mois = req.param("m"), annee = req.param("y");
+        console.log(id_pers + " *** " + mois + " ** " + annee);
     }
+
 };
 
