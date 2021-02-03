@@ -60,12 +60,12 @@ module.exports = {
             if(err) return res.send(err);
             var disabled = [], couleur = [];
             for(var i =1; i<=12; i++){
-                disabled[i] = true;
+                disabled[i] =  "disabled";
                 couleur[i] = "bleu";
             }
             if(resultat.rowCount == 0){
                 if(annee == annee_now){
-                    disabled[1] = false;
+                    disabled[1] = "";
                     if(mois_now > 1){
                         couleur[1] = "red";
                     }                   

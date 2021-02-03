@@ -36,7 +36,7 @@ function suivi_coaching(){
     var id= $("#id_pers").val() ;
     var mois = $("#mois").val();
     if(id && mois){
-        $("#tableau_en_details").empty();
+        $("#mois_menu").empty();
         $.ajax({
         url : '/suivi_coaching', // La ressource ciblée
         type : 'GET', // Le type de la requête HTTP.
