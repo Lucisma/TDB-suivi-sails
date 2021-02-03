@@ -22,10 +22,11 @@
       <td class="cyan">Prise en compte des consignes et application des procédures</td>
   </tr>
   <% 
-    var rejet, total = [], inactivite="", affect="", implic = 0, somme1=0, somme2=0, somme3=0, m1, m2, m3, total_rejet = 0, col_rejet;
+    var rejet, total = [], inactivite="", affect="", implic = 0, somme1=0, somme2=0, somme3=0, m1, m2, m3, total_rejet = 0, col_rejet, seuil_ticket_pers=0;
     var inexistante = 0, basique = 0, superficielle = 0, avancee = 0, tre_avancee = 0, donne_tec, nbr_inactivite_oui = 0, nbr_inactivite_non = 0;
     var nbr_affect_oui = 0, nbr_affect_non = 0;
     if(fiche){
+      seuil_ticket_pers = seuil_ticket;
     for(var i=1; i<=ticket_tec.rowCount; i++){
       total[i-1] = qualite1.rows[i-1].note_q1 + qualite2.rows[i-1].note_q2 + qualite3.rows[i-1].note_q3 ;
       somme1 = somme1 + qualite1.rows[i-1].note_q1;
@@ -161,12 +162,14 @@
     <td></td>
   </tr>
  </table><br><br>
+
  <% include Gqualite.ejs %>
  <% include Gnote_mois.ejs %>
  <% include Gtechnicite.ejs %>
  <% include Ginactivite.ejs %>
  <% include Gaffectation.ejs %>
- <% include lineaire.ejs %>
+ <!-- <% include lineaire.ejs %> -->
+
  <!-- <details>
     <summary>Graphe Qualité</summary>
     <div class="faq__content">

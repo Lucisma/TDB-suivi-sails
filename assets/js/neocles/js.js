@@ -29,7 +29,22 @@ function suivi_en_details(){
             $("#tableau_en_details").append(code_html);
         }
     });
-   }
-    
+   }  
 }
 
+function suivi_coaching(){
+    var id= $("#id_pers").val() ;
+    var mois = $("#mois").val();
+    if(id && mois){
+        $("#tableau_en_details").empty();
+        $.ajax({
+        url : '/suivi_coaching', // La ressource ciblée
+        type : 'GET', // Le type de la requête HTTP.
+        data : 'id=' + id+'&my='+mois,
+        dataType : 'html', // On désire recevoir du HTML
+        success : function(code_html, statut){ // code_html contient le HTML renvoyé
+            alert(code_html);
+        }
+    });
+   }  
+}
