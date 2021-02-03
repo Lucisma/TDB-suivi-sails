@@ -43,7 +43,7 @@ function suivi_coaching(){
         data : 'id=' + id+'&my='+mois,
         dataType : 'html', // On désire recevoir du HTML
         success : function(code_html, statut){ // code_html contient le HTML renvoyé
-            alert(code_html);
+            $("#mois_menu").append(code_html);
         }
     });
    }  

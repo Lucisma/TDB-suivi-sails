@@ -56,15 +56,26 @@ module.exports = {
         var annee_now = date_now.substr( 0, 4);
 
         var sql = "select * from neocles_compte_rendu where id_pers ="+id_pers+" and date_part('year', date_compte_rendu) = "+annee;
-        Neocles_manager.query(sql, function (err, resulat) {
+        Neocles_manager.query(sql, function (err, resultat) {
             if(err) return res.send(err);
+            var disabled = [], couleur = [];
+            for(var i =1; i<=12; i++){
+                disabled[i] = true;
+                couleur[i] = "bleu";
+            }
             if(resultat.rowCount == 0){
-                var ouvert = 1;
-                
+                if(annee == annee_now){
+                    disabled[1] = false;
+                    if(mois_now > 1){
+                        couleur[1] = "red";
+                    }                   
+                    return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur})
+                }
+                else{
+                    return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur})
+                }
             }
         })
-        console.log(mois_now + " : " + annee_now);
-        return res.send(my);
     }
 };
 
