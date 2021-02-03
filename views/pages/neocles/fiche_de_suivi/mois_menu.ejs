@@ -1,23 +1,15 @@
-<head>
-    
-    <style>
-       .cul .cli .red{
-          background: red;
-        }
-    </style>
-</head>
 <ul class="cul">
-    <li class="cli"><input type="button" onclick="alert('bonjour');" id="Jan" value="Janvier" <%= disabled[1] %> class="<%= couleur[1] %>"></li>
-    <li class="cli"><input type="button" onclick="alert('slaur');" id="Fev" value="Février" <%= disabled[2] %> class="<%= couleur[2] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Mars" value="Mars" <%= disabled[3] %> class="<%= couleur[3] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Avril" value="Avril" <%= disabled[4] %> class="<%= couleur[4] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Mai" value="Mai" <%= disabled[5] %>"class="<%= couleur[5] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Juin" value="Juin" <%= disabled[6] %> class="<%= couleur[6] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Juil" value="Juillet" <%= disabled[7] %> class="<%= couleur[7] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Aou" value="Août" <%= disabled[8] %> class="<%= couleur[8] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Sep" value="Septembre" <%= disabled[9] %> class="<%= couleur[9] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Oct" value="Octobre" <%= disabled[10] %> class="<%= couleur[10] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Nov" value="Novembre" <%= disabled[11] %> class="<%= couleur[11] %>"></li>
-    <li class="cli"><input type="button" onclick="" id="Dec" value="Décembre" <%= disabled[12] %> class="<%= couleur[12] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(1, <%= annee %>, <%= id_pers %>);" id="Jan" value="Janvier" <%= disabled[1] %> class="<%= couleur[1] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(2, <%= annee %>, <%= id_pers %>);" id="Fev" value="Février" <%= disabled[2] %> class="<%= couleur[2] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(3, <%= annee %>, <%= id_pers %>);" id="Mars" value="Mars" <%= disabled[3] %> class="<%= couleur[3] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(4, <%= annee %>, <%= id_pers %>);" id="Avril" value="Avril" <%= disabled[4] %> class="<%= couleur[4] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(5, <%= annee %>, <%= id_pers %>);" id="Mai" value="Mai" <%= disabled[5] %> class="<%= couleur[5] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(6, <%= annee %>, <%= id_pers %>);" id="Juin" value="Juin" <%= disabled[6] %> class="<%= couleur[6] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(7, <%= annee %>, <%= id_pers %>);" id="Juil" value="Juillet" <%= disabled[7] %> class="<%= couleur[7] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(8, <%= annee %>, <%= id_pers %>);" id="Aou" value="Août" <%= disabled[8] %> class="<%= couleur[8] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(9, <%= annee %>, <%= id_pers %>);" id="Sep" value="Septembre" <%= disabled[9] %> class="<%= couleur[9] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(10, <%= annee %>, <%= id_pers %>);" id="Oct" value="Octobre" <%= disabled[10] %> class="<%= couleur[10] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(11, <%= annee %>, <%= id_pers %>);" id="Nov" value="Novembre" <%= disabled[11] %> class="<%= couleur[11] %>"></li>
+    <li class="cli"><input type="button" onclick="compte_rendu(12, <%= annee %>, <%= id_pers %>);" id="Dec" value="Décembre" <%= disabled[12] %> class="<%= couleur[12] %>"></li>
 </ul>
 
