@@ -338,6 +338,15 @@ textarea{
 .cul .cli .red{
 background: red;
 }
+.cul .cli .orange{
+  background: orangered;
+  }
+.cul .cli .jaune{
+  background: yellow;
+}
+.cul .cli .violet{
+  background: violet;
+}
 .vid{
   background: beige;
   color: black;

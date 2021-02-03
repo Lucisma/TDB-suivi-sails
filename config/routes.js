@@ -124,7 +124,7 @@ module.exports.routes = {
   '/neocles-reporting-conformite-annuelle' : 'NeoclesReportingController.getConformiteParEquipe',
   
   /*********** Ajout suivi ***********************/
-  '/coaching':'CoachingController.fichecoaching',
+  '/coaching/:create?':'CoachingController.fichecoaching',
   '/fiche_suivi_en_detail/:create?': 'FichedesuivineoController.fichedesuiviendetail',
   '/fiche_suivi_de_conformite/:update?': 'FichedesuivineoController.fichedesuivideconformite',
   'get /suivi_conformite' : 'FichedesuivineoController.suivi_conformite',

@@ -25,7 +25,15 @@
     %>
     <% include ../../../includes/enteteOperateur.ejs %>
     
-    <% }%>
+    <% }
+    if(create == true){
+      %>
+      <script>
+        alert("Compte rendu sauvegarder");
+      </script>
+      <%
+    }
+    %>
     <body>
             <h1 class="tit">Fiche de coaching QUALITE/TECHNICITE </h1>
           

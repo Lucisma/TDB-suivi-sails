@@ -17,6 +17,10 @@ module.exports = {
         menu["presence"]= "";
         menu["admin"]= "";
         const id = req.session.user;
+        var create = false;
+        if(req.param("create")){
+            create = true;
+        }
         var sql = "SELECT * FROM neocles_manager WHERE matricule ='"+id+"'";
         Neocles_manager.query(sql, function(err, resultat){
             if(err) return res.send(err);
@@ -27,12 +31,12 @@ module.exports = {
                 Neo_pers_niveau.query(sql, function(err, resultat){
                     if(err) return res.send(err);
                     //console.log(resultat.rows[0].appelation);
-                    return res.view('pages/neocles/fiche_de_suivi/fichedecoaching', {layout : false, menu : menu, manager: manager, id:id, id_appelation: resultat});
+                    return res.view('pages/neocles/fiche_de_suivi/fichedecoaching', {layout : false, menu : menu, manager: manager, id:id, id_appelation: resultat, create});
                 })
             }
             else{
                 var manager = false;
-                return res.view('pages/neocles/fiche_de_suivi/fichedecoaching', {layout : false, menu : menu, manager: manager, id:id});
+                return res.view('pages/neocles/fiche_de_suivi/fichedecoaching', {layout : false, menu : menu, manager: manager, id:id, create});
             }
         });
     },
@@ -68,7 +72,7 @@ module.exports = {
                     disabled[1] = "";
                     couleur[1] = "vert";
                     disabled[2] = "";
-                    couleur[2] = "vert"
+                    couleur[2] = "vert";
                     if(mois_now > 1){
                         couleur[1] = "red";
                     }                   
@@ -84,6 +88,39 @@ module.exports = {
                 else{
                     return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur,id_pers, annee});
                 }
+            }
+            else{
+                var date_cr, mois, valider;
+                console.log(mois_now);
+                mois_now = parseInt( mois_now, 10);
+                console.log(mois_now);
+                mois_now = 3;
+                disabled[mois_now] = "";
+                couleur[mois_now] = "vert";
+                for(var i=0; i<resultat.rowCount; i++){
+                    date_cr = resultat.rows[i].date_compte_rendu;
+                    mois = new Date(date_cr).toISOString().slice(0,10);
+                    console.log(mois);
+                    mois = parseInt( mois.substr( 5, 2), 10);
+                    console.log(mois);
+                    valider = resultat.rows[i].valider;
+
+
+                    if(valider == false){
+                        disabled[mois] = "";
+                        couleur[mois] = "jaune";
+                        if(mois < mois_now){
+                            couleur[mois] = "orange"; //Efa conserver fa tsy valider
+                        }
+                    }
+                    else{
+                        disabled[mois] = "";
+                        couleur[mois] = "violet"; //Efa valider nef afaka jerena
+                    }
+                }
+                console.log(disabled);
+                console.log(couleur);
+                return res.view('pages/neocles/fiche_de_suivi/mois_menu', {layout : false, menu : menu, disabled, couleur,id_pers, annee});
             }
         })
     },
@@ -127,14 +164,16 @@ module.exports = {
         var q1 = req.param("q1"), q2 = req.param("q2"), t1 = req.param("t1"), t2 = req.param("t2"), imp1 = req.param("imp1"), imp2 = req.param("imp2");
         var submit = req.param("submit");
         var sauve = true;
-        var date_compte_rendu_or = annee+"-"+mois+"-01";
         var date_compte_rendu = new Date(annee, mois, 01).toISOString().slice(0,10);
         if(submit == "Conserver"){
             sauve = false;
         }
-        console.log(date_now);
-        console.log(date_compte_rendu_or);
-        console.log(date_compte_rendu);
+        var sql = "insert into neocles_compte_rendu(id_pers, id_manager, date_creation, date_compte_rendu, qual_positif, technicite_positif, implication_positif, qual_ameliorer, technicite_ameliorer, implication_ameliorer, valider) values("+id_pers+","+id+",'"+date_now+"','"+date_compte_rendu+"','"+q1+"','"+t1+"','"+imp1+"','"+q2+"','"+t2+"','"+imp2+"',"+sauve+")";
+        console.log(sql);
+        Neocles_manager.query(sql, function (err) {
+            if(err) return res.send(err);
+            return res.redirect('/coaching/create');
+        })
     }
 
 };
